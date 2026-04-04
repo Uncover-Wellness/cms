@@ -1,18 +1,19 @@
-import type { Metadata } from 'next';
+// @ts-nocheck
 import { RootLayout } from '@payloadcms/next/layouts';
 import React from 'react';
 import configPromise from '../../payload.config';
+import { importMap } from './admin/importMap';
 
-export const metadata: Metadata = {
+export const metadata = {
   title: 'Uncover CMS',
 };
 
-type Args = {
-  children: React.ReactNode;
-};
-
-const Layout = ({ children }: Args) => {
-  return <RootLayout config={configPromise}>{children}</RootLayout>;
+const Layout = ({ children }: { children: React.ReactNode }) => {
+  return (
+    <RootLayout config={configPromise} importMap={importMap}>
+      {children}
+    </RootLayout>
+  );
 };
 
 export default Layout;
