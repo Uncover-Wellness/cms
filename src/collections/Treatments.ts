@@ -68,8 +68,8 @@ export const Treatments: CollectionConfig = {
         },
         {
           name: 'mainImage',
-          type: 'upload',
-          relationTo: 'media',
+          type: 'text',
+          
         },
         {
           name: 'mainImageAltText',
@@ -126,8 +126,8 @@ export const Treatments: CollectionConfig = {
         },
         {
           name: 'image',
-          type: 'upload',
-          relationTo: 'media',
+          type: 'text',
+          
         },
         {
           name: 'imageAltText',
@@ -149,8 +149,8 @@ export const Treatments: CollectionConfig = {
         },
         {
           name: 'image',
-          type: 'upload',
-          relationTo: 'media',
+          type: 'text',
+          
         },
         {
           name: 'imageAltText',
