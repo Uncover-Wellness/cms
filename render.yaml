@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: uncover-cms
+    runtime: node
+    plan: free
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    envVars:
+      - key: DATABASE_URL
+        sync: false
+      - key: PAYLOAD_SECRET
+        sync: false
+      - key: PAYLOAD_PUBLIC_SERVER_URL
+        value: https://uncover-cms.onrender.com
+      - key: NODE_ENV
+        value: production

@@ -1,0 +1,29 @@
+{
+  "name": "uncover-cms",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Payload CMS for Uncover Clinics",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "payload": "cross-env NODE_OPTIONS=--no-deprecation payload"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "dependencies": {
+    "@payloadcms/db-postgres": "^3.81.0",
+    "@payloadcms/next": "^3.81.0",
+    "@payloadcms/richtext-lexical": "^3.81.0",
+    "cross-env": "^10.1.0",
+    "next": "^16.2.2",
+    "payload": "^3.81.0",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4",
+    "typescript": "^6.0.2",
+    "@types/node": "^25.5.2",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0"
+  }
+}
