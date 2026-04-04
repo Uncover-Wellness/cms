@@ -1,12 +1,22 @@
-// @ts-nocheck
-import { DefaultTemplate } from '@payloadcms/next/templates';
-import { importMap } from '../importMap';
-import configPromise from '../../../../payload.config';
+import type { Metadata } from 'next'
 
-export { generatePageMetadata as generateMetadata } from '@payloadcms/next/views';
+import config from '@payload-config'
+import { RootPage, generatePageMetadata } from '@payloadcms/next/views'
+import { importMap } from '../importMap'
 
-const Page = (props) => {
-  return <DefaultTemplate config={configPromise} importMap={importMap} {...props} />;
-};
+type Args = {
+  params: Promise<{
+    segments: string[]
+  }>
+  searchParams: Promise<{
+    [key: string]: string | string[]
+  }>
+}
 
-export default Page;
+export const generateMetadata = ({ params, searchParams }: Args): Promise<Metadata> =>
+  generatePageMetadata({ config, params, searchParams })
+
+const Page = ({ params, searchParams }: Args) =>
+  RootPage({ config, params, searchParams, importMap })
+
+export default Page
