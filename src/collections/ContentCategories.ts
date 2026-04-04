@@ -12,7 +12,7 @@ export const ContentCategories: CollectionConfig = {
     plural: 'Content Categories',
   },
   versions: {
-    drafts: true,
+    drafts: false,
   },
   access: {
     read: () => true,

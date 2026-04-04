@@ -12,7 +12,7 @@ export const Skus: CollectionConfig = {
     plural: 'SKUs',
   },
   versions: {
-    drafts: true,
+    drafts: false,
   },
   access: {
     read: () => true,

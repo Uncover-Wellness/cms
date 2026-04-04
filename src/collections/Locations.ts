@@ -12,7 +12,7 @@ export const Locations: CollectionConfig = {
     plural: 'Locations',
   },
   versions: {
-    drafts: true,
+    drafts: false,
   },
   access: {
     read: () => true,

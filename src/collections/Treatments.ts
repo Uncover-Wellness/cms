@@ -12,7 +12,7 @@ export const Treatments: CollectionConfig = {
     plural: 'Treatments',
   },
   versions: {
-    drafts: true,
+    drafts: false,
   },
   access: {
     read: () => true,

@@ -12,7 +12,7 @@ export const BlogPostCategories: CollectionConfig = {
     plural: 'Blog Post Categories',
   },
   versions: {
-    drafts: true,
+    drafts: false,
   },
   access: {
     read: () => true,

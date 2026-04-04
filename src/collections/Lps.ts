@@ -12,7 +12,7 @@ export const Lps: CollectionConfig = {
     plural: 'LPs',
   },
   versions: {
-    drafts: true,
+    drafts: false,
   },
   access: {
     read: () => true,

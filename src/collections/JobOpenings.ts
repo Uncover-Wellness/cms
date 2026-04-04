@@ -12,7 +12,7 @@ export const JobOpenings: CollectionConfig = {
     plural: 'Job Openings',
   },
   versions: {
-    drafts: true,
+    drafts: false,
   },
   access: {
     read: () => true,

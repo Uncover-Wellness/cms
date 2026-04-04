@@ -12,7 +12,7 @@ export const Concerns: CollectionConfig = {
     plural: 'Concerns',
   },
   versions: {
-    drafts: true,
+    drafts: false,
   },
   access: {
     read: () => true,

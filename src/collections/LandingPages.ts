@@ -12,7 +12,7 @@ export const LandingPages: CollectionConfig = {
     plural: 'Landing Pages',
   },
   versions: {
-    drafts: true,
+    drafts: false,
   },
   access: {
     read: () => true,

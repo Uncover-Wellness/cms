@@ -12,7 +12,7 @@ export const ProductCategories: CollectionConfig = {
     plural: 'Product Categories',
   },
   versions: {
-    drafts: true,
+    drafts: false,
   },
   access: {
     read: () => true,

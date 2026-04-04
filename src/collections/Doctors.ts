@@ -12,7 +12,7 @@ export const Doctors: CollectionConfig = {
     plural: 'Doctors',
   },
   versions: {
-    drafts: true,
+    drafts: false,
   },
   access: {
     read: () => true,

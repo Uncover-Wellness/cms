@@ -12,7 +12,7 @@ export const Costs: CollectionConfig = {
     plural: 'Costs',
   },
   versions: {
-    drafts: true,
+    drafts: false,
   },
   access: {
     read: () => true,
