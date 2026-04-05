@@ -1,6 +1,20 @@
 import { CollectionConfig } from 'payload';
 import { isEditor } from '../access';
 
+/**
+ * Service Categories drive the `/c/:slug` pages (Skin, Hair, Body,
+ * Laser Hair Removal). The original Webflow collection held only lorem-ipsum
+ * placeholder copy — the actual copy shown on uncover.co.in/c/:slug was
+ * hand-typed into 4 separate static pages in the Webflow Designer and was
+ * never exposed via the Data API. These fields give editors proper control
+ * over that copy in Payload admin.
+ *
+ * The existing `excerpt*` + `experienceText` fields are kept for backwards
+ * compatibility with already-imported data.
+ *
+ * Admin UI is split into tabs (Overview / Hero / Why Choose / Technologies /
+ * Results / Closing Pitch) so the long form isn't overwhelming.
+ */
 export const ServiceCategories: CollectionConfig = {
   slug: 'service-categories',
   admin: {
@@ -21,6 +35,7 @@ export const ServiceCategories: CollectionConfig = {
     delete: isEditor,
   },
   fields: [
+    // Always-visible header fields
     {
       name: 'name',
       type: 'text',
@@ -32,41 +47,336 @@ export const ServiceCategories: CollectionConfig = {
       type: 'text',
       required: true,
       unique: true,
-      admin: {
-        readOnly: true,
-      },
+      admin: { readOnly: true },
     },
     {
-      name: 'thumbnailImageUrl',
-      type: 'text',
-    },
-    {
-      name: 'featuredImageUrl',
-      type: 'text',
-    },
-    {
-      name: 'excerpt',
-      type: 'textarea',
-    },
-    {
-      name: 'excerptFeaturedShort',
-      type: 'textarea',
-    },
-    {
-      name: 'excerptFeaturedLarge',
-      type: 'textarea',
-    },
-    {
-      name: 'categoryLink',
-      type: 'text',
-    },
-    {
-      name: 'imageLinks',
-      type: 'text',
-    },
-    {
-      name: 'experienceText',
-      type: 'richText',
+      type: 'tabs',
+      tabs: [
+        // ─── OVERVIEW (legacy fields kept for compat) ───
+        {
+          label: 'Overview',
+          fields: [
+            {
+              name: 'thumbnailImageUrl',
+              type: 'text',
+              admin: {
+                description: 'Square thumbnail used in homepage category grid',
+              },
+            },
+            {
+              name: 'featuredImageUrl',
+              type: 'text',
+              admin: {
+                description: 'Legacy featured image. Prefer `hero.image` on the Hero tab.',
+              },
+            },
+            {
+              name: 'excerpt',
+              type: 'textarea',
+              admin: {
+                description: 'Short category summary used in meta description fallbacks.',
+              },
+            },
+            {
+              name: 'excerptFeaturedShort',
+              type: 'textarea',
+            },
+            {
+              name: 'excerptFeaturedLarge',
+              type: 'textarea',
+            },
+            {
+              name: 'categoryLink',
+              type: 'text',
+            },
+            {
+              name: 'imageLinks',
+              type: 'text',
+            },
+            {
+              name: 'experienceText',
+              type: 'richText',
+              admin: {
+                description:
+                  'Legacy rich-text field. The structured Why Choose / Technologies tabs should be used instead.',
+              },
+            },
+          ],
+        },
+        // ─── HERO ───
+        {
+          label: 'Hero',
+          description: 'The top-of-page headline, tagline, body copy, and lifestyle image.',
+          fields: [
+            {
+              name: 'hero',
+              type: 'group',
+              label: 'Hero content',
+              fields: [
+                {
+                  name: 'headline',
+                  label: 'H1 headline',
+                  type: 'text',
+                  admin: {
+                    description:
+                      'Full hero H1. Example: "Custom Skin Care Treatments for Men & Women at UNCOVER Clinics"',
+                  },
+                },
+                {
+                  name: 'tagline',
+                  label: 'Uppercase tagline',
+                  type: 'text',
+                  admin: {
+                    description: 'Short uppercase line under the H1. Example: "Treatments for all tones and textures"',
+                  },
+                },
+                {
+                  name: 'body',
+                  label: 'Intro paragraph',
+                  type: 'textarea',
+                  admin: {
+                    description: 'One or two sentences below the tagline.',
+                  },
+                },
+                {
+                  name: 'image',
+                  label: 'Hero image URL',
+                  type: 'text',
+                  admin: {
+                    description: 'Full-width lifestyle photo shown at the top of the page.',
+                  },
+                },
+                {
+                  name: 'imageAlt',
+                  label: 'Hero image alt text',
+                  type: 'text',
+                },
+              ],
+            },
+          ],
+        },
+        // ─── WHY CHOOSE ───
+        {
+          label: 'Why Choose',
+          description: 'Bullet list of benefits shown just below the hero.',
+          fields: [
+            {
+              name: 'whyChoose',
+              type: 'group',
+              label: 'Why Choose section',
+              fields: [
+                {
+                  name: 'heading',
+                  type: 'text',
+                  admin: {
+                    description: 'Example: "Why Choose UNCOVER Clinics for Hair Treatments?"',
+                  },
+                },
+                {
+                  name: 'intro',
+                  type: 'textarea',
+                  admin: { description: 'Optional intro paragraph above the bullet list.' },
+                },
+                {
+                  name: 'bullets',
+                  type: 'array',
+                  minRows: 0,
+                  labels: { singular: 'Bullet', plural: 'Bullets' },
+                  fields: [
+                    { name: 'title', type: 'text', required: true },
+                    { name: 'body', type: 'textarea', required: true },
+                  ],
+                },
+              ],
+            },
+          ],
+        },
+        // ─── ADVANCED TECHNOLOGY / TREATMENTS ───
+        {
+          label: 'Technologies',
+          description:
+            'Either a tile grid (like "Our Advanced Treatment Technologies" on /c/skin) or a bullet list (hair/body/laser style). Pick one via "kind".',
+          fields: [
+            {
+              name: 'technologies',
+              type: 'group',
+              label: 'Technologies / Treatments section',
+              fields: [
+                {
+                  name: 'heading',
+                  type: 'text',
+                  admin: { description: 'Example: "Our Advanced Treatment Technologies"' },
+                },
+                {
+                  name: 'intro',
+                  type: 'textarea',
+                  admin: {
+                    description: 'Optional intro paragraph. Shown above the tiles or bullets.',
+                  },
+                },
+                {
+                  name: 'kind',
+                  type: 'select',
+                  defaultValue: 'bullets',
+                  required: true,
+                  options: [
+                    { label: 'Tile grid (image + name + description)', value: 'tiles' },
+                    { label: 'Bullet list (title + body)', value: 'bullets' },
+                  ],
+                },
+                {
+                  name: 'tiles',
+                  type: 'array',
+                  labels: { singular: 'Tile', plural: 'Tiles' },
+                  admin: {
+                    condition: (_data, siblingData) => siblingData?.kind === 'tiles',
+                    description: 'Only used when kind = "Tile grid".',
+                  },
+                  fields: [
+                    { name: 'name', type: 'text', required: true },
+                    { name: 'description', type: 'textarea', required: true },
+                    { name: 'image', type: 'text', required: true },
+                    { name: 'imageAlt', type: 'text' },
+                  ],
+                },
+                {
+                  name: 'bullets',
+                  type: 'array',
+                  labels: { singular: 'Bullet', plural: 'Bullets' },
+                  admin: {
+                    condition: (_data, siblingData) => siblingData?.kind === 'bullets',
+                    description: 'Only used when kind = "Bullet list".',
+                  },
+                  fields: [
+                    { name: 'title', type: 'text', required: true },
+                    { name: 'body', type: 'textarea', required: true },
+                  ],
+                },
+              ],
+            },
+          ],
+        },
+        // ─── NARRATIVE SECTIONS ───
+        {
+          label: 'Narrative sections',
+          description:
+            'Long-form body content like "Our Skin Treatments" → "Acne & Scar Treatment" → bullets. Each section has a heading, optional intro, and a list of subsections with their own titled bullet lists.',
+          fields: [
+            {
+              name: 'narrativeSections',
+              type: 'array',
+              labels: { singular: 'Narrative section', plural: 'Narrative sections' },
+              fields: [
+                {
+                  name: 'heading',
+                  type: 'text',
+                  required: true,
+                  admin: { description: 'Example: "Our Skin Treatments"' },
+                },
+                {
+                  name: 'intro',
+                  type: 'textarea',
+                  admin: { description: 'Optional intro paragraph for this section.' },
+                },
+                {
+                  name: 'subsections',
+                  type: 'array',
+                  labels: { singular: 'Subsection', plural: 'Subsections' },
+                  fields: [
+                    {
+                      name: 'title',
+                      type: 'text',
+                      required: true,
+                      admin: { description: 'Example: "Acne & Scar Treatment"' },
+                    },
+                    {
+                      name: 'bullets',
+                      type: 'array',
+                      labels: { singular: 'Item', plural: 'Items' },
+                      fields: [
+                        { name: 'title', type: 'text' },
+                        { name: 'body', type: 'textarea', required: true },
+                      ],
+                    },
+                  ],
+                },
+              ],
+            },
+          ],
+        },
+        // ─── RESULTS ───
+        {
+          label: 'Results',
+          description: 'Before/after carousel ("Our Results Speak For Themselves").',
+          fields: [
+            {
+              name: 'results',
+              type: 'group',
+              label: 'Results section',
+              fields: [
+                {
+                  name: 'heading',
+                  type: 'text',
+                  defaultValue: 'Our Results Speak For Themselves',
+                },
+                {
+                  name: 'images',
+                  type: 'array',
+                  labels: { singular: 'Image', plural: 'Images' },
+                  fields: [
+                    { name: 'src', type: 'text', required: true },
+                    { name: 'alt', type: 'text' },
+                  ],
+                },
+              ],
+            },
+          ],
+        },
+        // ─── CLOSING PITCH ───
+        {
+          label: 'Closing pitch',
+          description:
+            'Optional final section before the booking CTA. Example: "Unlock Your Skin\'s Potential with UNCOVER Clinics".',
+          fields: [
+            {
+              name: 'closingPitch',
+              type: 'group',
+              label: 'Closing pitch section',
+              fields: [
+                { name: 'heading', type: 'text' },
+                { name: 'intro', type: 'textarea' },
+                {
+                  name: 'bullets',
+                  type: 'array',
+                  labels: { singular: 'Bullet', plural: 'Bullets' },
+                  fields: [
+                    { name: 'title', type: 'text' },
+                    { name: 'body', type: 'textarea', required: true },
+                  ],
+                },
+              ],
+            },
+          ],
+        },
+        // ─── SEO ───
+        {
+          label: 'SEO',
+          fields: [
+            {
+              name: 'seoPageTitle',
+              type: 'text',
+              admin: {
+                description:
+                  'Overrides the default <title> on /c/:slug. If blank, the page title falls back to "{name} Treatments in India".',
+              },
+            },
+            {
+              name: 'seoMetaDescription',
+              type: 'textarea',
+            },
+          ],
+        },
+      ],
     },
   ],
 };
