@@ -281,6 +281,12 @@ export const ServiceCategories: CollectionConfig = {
                 {
                   name: 'subsections',
                   type: 'array',
+                  // Shortened relation-table name to keep the auto-generated
+                  // Payload version table (_service_categories_v_version_*)
+                  // under Postgres' 63-char identifier limit. Matches the
+                  // hand-written migration at
+                  // uncover-astro/scripts/migrations/2026-04-05-service-categories-content-fields.sql
+                  dbName: 'narrative_subsections',
                   labels: { singular: 'Subsection', plural: 'Subsections' },
                   fields: [
                     {
@@ -292,6 +298,11 @@ export const ServiceCategories: CollectionConfig = {
                     {
                       name: 'bullets',
                       type: 'array',
+                      // Same reason as subsections above — without dbName,
+                      // the default version table name is 68 chars and
+                      // Payload init fails on Render with "Exceeded max
+                      // identifier length for table or enum name of 63".
+                      dbName: 'narrative_subsection_bullets',
                       labels: { singular: 'Item', plural: 'Items' },
                       fields: [
                         { name: 'title', type: 'text' },
