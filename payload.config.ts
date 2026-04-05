@@ -51,10 +51,7 @@ export default buildConfig({
       connectionString: process.env.DATABASE_URL,
     },
     schemaName: 'cms',
-    // push=true auto-adds missing tables/columns on boot (non-destructive).
-    // Needed so the deploy_state global table is created automatically
-    // without requiring a manual migration step.
-    push: true,
+    push: false,
   }),
   collections: [
     {
