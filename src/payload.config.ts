@@ -26,6 +26,10 @@ import { ProductCategories } from './collections/ProductCategories';
 import { Products } from './collections/Products';
 import { Skus } from './collections/Skus';
 
+import { DeployState } from './globals/DeployState';
+import { withDeployHooks } from './hooks/deployHooks';
+import { publishNow } from './endpoints/publishNow';
+
 const filename = fileURLToPath(import.meta.url);
 const dirname = path.dirname(filename);
 
@@ -36,6 +40,9 @@ export default buildConfig({
     user: 'users',
     meta: {
       titleSuffix: '| Uncover CMS',
+    },
+    components: {
+      beforeNavLinks: ['/components/admin/PublishButton/index.tsx#default'],
     },
   },
   editor: lexicalEditor({}),
@@ -53,28 +60,32 @@ export default buildConfig({
       admin: { useAsTitle: 'email' },
       fields: [],
     },
-    ContentCategories,
-    ServiceCategories,
-    Concerns,
-    Treatments,
-    Doctors,
-    Locations,
-    BlogPostCategories,
-    BlogPosts,
-    Faqs,
-    Testimonials,
-    VideoTestimonials,
-    TreatmentCosts,
-    Costs,
-    LandingPages,
-    Lps,
-    Lp2s,
-    JobOpenings,
+    // Content collections that affect the public Astro site get auto-deploy hooks.
+    withDeployHooks(ContentCategories),
+    withDeployHooks(ServiceCategories),
+    withDeployHooks(Concerns),
+    withDeployHooks(Treatments),
+    withDeployHooks(Doctors),
+    withDeployHooks(Locations),
+    withDeployHooks(BlogPostCategories),
+    withDeployHooks(BlogPosts),
+    withDeployHooks(Faqs),
+    withDeployHooks(Testimonials),
+    withDeployHooks(VideoTestimonials),
+    withDeployHooks(TreatmentCosts),
+    withDeployHooks(Costs),
+    withDeployHooks(LandingPages),
+    withDeployHooks(Lps),
+    withDeployHooks(Lp2s),
+    withDeployHooks(JobOpenings),
+    // Internal — no public-facing pages, no deploy hook needed
     SurveyQuestions,
     ProductCategories,
     Products,
     Skus,
   ],
+  globals: [DeployState],
+  endpoints: [publishNow],
   typescript: {
     outputFile: path.resolve(dirname, 'payload-types.ts'),
   },
