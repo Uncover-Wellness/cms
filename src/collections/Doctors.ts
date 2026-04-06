@@ -43,12 +43,12 @@ export const Doctors: CollectionConfig = {
         {
           name: 'pageTitle',
           type: 'text',
-          maxLength: 60,
+          maxLength: 80,
         },
         {
           name: 'metaDescription',
           type: 'textarea',
-          maxLength: 160,
+          maxLength: 200,
         },
       ],
     },
