@@ -4,9 +4,10 @@ export const Media: CollectionConfig = {
   slug: 'media',
   admin: {
     useAsTitle: 'filename',
-    description: 'Upload and manage images. All images are stored on Cloudinary CDN.',
+    description: 'Upload and manage images.',
   },
   upload: {
+    staticDir: 'media',
     mimeTypes: ['image/*'],
     imageSizes: [
       { name: 'thumbnail', width: 400, height: 300, position: 'centre' },
