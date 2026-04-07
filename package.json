@@ -5,7 +5,7 @@
   "description": "Payload CMS for Uncover Clinics",
   "scripts": {
     "dev": "next dev -p ${PORT:-3500}",
-    "build": "next build",
+    "build": "cross-env NODE_OPTIONS=--no-deprecation payload migrate && next build",
     "start": "next start -p ${PORT:-3500}",
     "payload": "cross-env NODE_OPTIONS=--no-deprecation payload"
   },
