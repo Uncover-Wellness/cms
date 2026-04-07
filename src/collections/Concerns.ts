@@ -1,5 +1,6 @@
 import { CollectionConfig } from 'payload';
 import { isEditor } from '../access';
+import { TextSection, VideoEmbed, HtmlEmbed } from '../blocks';
 
 export const Concerns: CollectionConfig = {
   slug: 'concerns',
@@ -108,7 +109,6 @@ export const Concerns: CollectionConfig = {
       name: 'textSections',
       type: 'array',
       minRows: 1,
-      maxRows: 4,
       labels: { singular: 'Text Section', plural: 'Text Sections' },
       admin: {
         description: 'Body content sections with heading, rich text, and optional image.',
@@ -144,6 +144,15 @@ export const Concerns: CollectionConfig = {
           type: 'text',
         },
       ],
+    },
+    {
+      name: 'pageBlocks',
+      type: 'blocks',
+      blocks: [TextSection, VideoEmbed, HtmlEmbed],
+      admin: {
+        description: 'Flexible page content. Add text sections, video embeds, or HTML embeds in any order.',
+        initCollapsed: true,
+      },
     },
     {
       name: 'technology',

@@ -1,5 +1,6 @@
 import { CollectionConfig } from 'payload';
 import { isEditor } from '../access';
+import { TextSection, VideoEmbed, HtmlEmbed } from '../blocks';
 
 export const Treatments: CollectionConfig = {
   slug: 'treatments',
@@ -161,7 +162,6 @@ export const Treatments: CollectionConfig = {
       name: 'contentSections',
       type: 'array',
       minRows: 0,
-      maxRows: 4,
       labels: { singular: 'Content Section', plural: 'Content Sections' },
       admin: {
         description: 'Rich-text body sections shown below the hero. Each section has a heading, content, and optional image.',
@@ -201,6 +201,15 @@ export const Treatments: CollectionConfig = {
           },
         },
       ],
+    },
+    {
+      name: 'pageBlocks',
+      type: 'blocks',
+      blocks: [TextSection, VideoEmbed, HtmlEmbed],
+      admin: {
+        description: 'Flexible page content. Add text sections, video embeds, or HTML embeds in any order.',
+        initCollapsed: true,
+      },
     },
     {
       name: 'technology',
