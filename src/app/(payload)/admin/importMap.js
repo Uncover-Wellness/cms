@@ -1,5 +1,5 @@
-import { default as PublishButton } from '/src/components/admin/PublishButton/index.tsx'
-import { default as RowLabel } from '/src/components/admin/RowLabel/index.tsx'
+import { default as PublishButton } from '../../../components/admin/PublishButton/index.tsx'
+import { default as RowLabel } from '../../../components/admin/RowLabel/index.tsx'
 import { RscEntrySlateCell as RscEntrySlateCell_6 } from '@payloadcms/richtext-lexical/rsc'
 import { RscEntrySlateField as RscEntrySlateField_7 } from '@payloadcms/richtext-lexical/rsc'
 import { LexicalDiffComponent as LexicalDiffComponent_8 } from '@payloadcms/richtext-lexical/rsc'
