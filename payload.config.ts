@@ -22,9 +22,6 @@ import { Lps } from './src/collections/Lps';
 import { Lp2s } from './src/collections/Lp2s';
 import { JobOpenings } from './src/collections/JobOpenings';
 import { SurveyQuestions } from './src/collections/SurveyQuestions';
-import { ProductCategories } from './src/collections/ProductCategories';
-import { Products } from './src/collections/Products';
-import { Skus } from './src/collections/Skus';
 
 import { DeployState } from './src/globals/DeployState';
 import { withDeployHooks } from './src/hooks/deployHooks';
@@ -80,9 +77,6 @@ export default buildConfig({
     withDeployHooks(JobOpenings),
     // Internal — no public-facing pages, no deploy hook needed
     SurveyQuestions,
-    ProductCategories,
-    Products,
-    Skus,
   ],
   globals: [DeployState],
   endpoints: [publishNow],
