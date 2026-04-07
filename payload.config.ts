@@ -50,7 +50,7 @@ export default buildConfig({
       connectionString: process.env.DATABASE_URL,
     },
     schemaName: 'cms',
-    push: false,
+    push: true,
   }),
   collections: [
     {
