@@ -15,6 +15,7 @@
   "dependencies": {
     "@payloadcms/db-postgres": "^3.81.0",
     "@payloadcms/next": "^3.81.0",
+    "@payloadcms/plugin-seo": "^3.81.0",
     "@payloadcms/richtext-lexical": "^3.81.0",
     "@types/node": "^25.5.2",
     "@types/react": "^19.2.14",

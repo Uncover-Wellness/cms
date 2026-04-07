@@ -1,6 +1,8 @@
 import { buildConfig } from 'payload';
 import { postgresAdapter } from '@payloadcms/db-postgres';
 import { lexicalEditor } from '@payloadcms/richtext-lexical';
+import { seoPlugin } from '@payloadcms/plugin-seo';
+import type { GenerateTitle, GenerateDescription } from '@payloadcms/plugin-seo/types';
 import path from 'path';
 import { fileURLToPath } from 'url';
 
@@ -80,6 +82,25 @@ export default buildConfig({
   ],
   globals: [DeployState],
   endpoints: [publishNow],
+  plugins: [
+    seoPlugin({
+      collections: [
+        'treatments',
+        'concerns',
+        'doctors',
+        'blog-posts',
+        'costs',
+        'locations',
+        'landing-pages',
+        'lps',
+        'job-openings',
+        'service-categories',
+        'blog-post-categories',
+      ],
+      generateTitle: (({ doc }) => doc?.name || '') as GenerateTitle,
+      generateDescription: (({ doc }) => (doc as any)?.excerpt || '') as GenerateDescription,
+    }),
+  ],
   typescript: {
     outputFile: path.resolve(dirname, 'payload-types.ts'),
   },
