@@ -53,11 +53,11 @@ export default buildConfig({
     : {}),
   secret: process.env.PAYLOAD_SECRET || 'uncover-cms-change-this-in-production',
   cors: [
-    process.env.PREVIEW_URL || 'http://agentsunny.in:4322',
+    process.env.PREVIEW_URL || 'https://ai.uncover.co.in',
     'http://localhost:4322',
   ],
   csrf: [
-    process.env.PREVIEW_URL || 'http://agentsunny.in:4322',
+    process.env.PREVIEW_URL || 'https://ai.uncover.co.in',
     'http://localhost:4322',
   ],
   admin: {
@@ -70,7 +70,7 @@ export default buildConfig({
     },
     livePreview: {
       url: ({ data, collectionConfig }) => {
-        const previewBase = process.env.PREVIEW_URL || 'http://agentsunny.in:4322';
+        const previewBase = process.env.PREVIEW_URL || 'https://ai.uncover.co.in';
         if (collectionConfig?.slug === 'treatments') {
           return `${previewBase}/preview/treatment/${data?.slug || ''}`;
         }
