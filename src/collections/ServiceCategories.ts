@@ -26,7 +26,7 @@ export const ServiceCategories: CollectionConfig = {
     plural: 'Service Categories',
   },
   versions: {
-    drafts: false,
+    drafts: true,
   },
   access: {
     read: () => true,

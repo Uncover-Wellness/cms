@@ -12,7 +12,7 @@ export const JobOpenings: CollectionConfig = {
     plural: 'Job Openings',
   },
   versions: {
-    drafts: false,
+    drafts: true,
   },
   access: {
     read: () => true,
@@ -39,10 +39,16 @@ export const JobOpenings: CollectionConfig = {
     {
       name: 'jobSummary',
       type: 'textarea',
+      admin: {
+        description: 'One-line summary shown on the careers listing card.',
+      },
     },
     {
       name: 'location',
       type: 'text',
+      admin: {
+        description: 'Job location. Example: "Gurgaon", "Remote", "Delhi NCR"',
+      },
     },
     {
       name: 'jobType',
@@ -56,15 +62,24 @@ export const JobOpenings: CollectionConfig = {
     {
       name: 'locationBubbleColour',
       type: 'text',
+      admin: {
+        description: 'CSS colour for the location badge. Example: "#f48f28"',
+      },
     },
     {
       name: 'applicationEmailAddress',
       type: 'text',
       required: true,
+      admin: {
+        description: 'Email address for applications. Shown as "Apply" link.',
+      },
     },
     {
       name: 'jobDescription',
       type: 'richText',
+      admin: {
+        description: 'Full job description with responsibilities and requirements.',
+      },
     },
   ],
 };

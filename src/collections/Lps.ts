@@ -12,7 +12,7 @@ export const Lps: CollectionConfig = {
     plural: 'LPs',
   },
   versions: {
-    drafts: false,
+    drafts: true,
   },
   access: {
     read: () => true,
@@ -40,36 +40,57 @@ export const Lps: CollectionConfig = {
       name: 'pageTitleMetatag',
       type: 'text',
       required: true,
+      admin: {
+        description: 'Browser tab / meta title for SEO.',
+      },
     },
     {
       name: 'pageTitle',
       type: 'text',
       required: true,
+      admin: {
+        description: 'Visible H1 heading on the landing page.',
+      },
     },
     {
       name: 'headerSupportingText',
       type: 'richText',
       required: true,
+      admin: {
+        description: 'Rich text shown below the heading in the hero section.',
+      },
     },
     {
       name: 'heroImageUrl',
       type: 'text',
       required: true,
+      admin: {
+        description: 'Cloudinary URL for the hero banner image.',
+      },
     },
     {
       name: 'contactPhone',
       type: 'text',
       required: true,
+      admin: {
+        description: 'Phone number displayed on the landing page.',
+      },
     },
     {
       name: 'callLink',
       type: 'text',
       required: true,
+      admin: {
+        description: 'tel: link for click-to-call. Example: "tel:+919876543210"',
+      },
     },
     {
       name: 'formHeading',
       type: 'text',
       required: true,
+      admin: {
+        description: 'Heading above the booking form.',
+      },
     },
     {
       name: 'experience',
@@ -157,46 +178,59 @@ export const Lps: CollectionConfig = {
     {
       name: 'benefits',
       type: 'group',
+      label: 'Benefits Section',
+      admin: {
+        description: 'Four benefit items with icon images and short text.',
+      },
       fields: [
         {
           name: 'heading',
           type: 'text',
+          admin: { description: 'Section heading. Example: "Why Choose Uncover?"' },
         },
         {
           name: 'image1Url',
           type: 'text',
           required: true,
+          admin: { description: 'Cloudinary URL for benefit 1 icon.' },
         },
         {
           name: 'text1',
           type: 'text',
+          admin: { description: 'Benefit 1 label.' },
         },
         {
           name: 'image2Url',
           type: 'text',
           required: true,
+          admin: { description: 'Cloudinary URL for benefit 2 icon.' },
         },
         {
           name: 'text2',
           type: 'text',
+          admin: { description: 'Benefit 2 label.' },
         },
         {
           name: 'image3Url',
           type: 'text',
           required: true,
+          admin: { description: 'Cloudinary URL for benefit 3 icon.' },
         },
         {
           name: 'text3',
           type: 'text',
+          admin: { description: 'Benefit 3 label.' },
         },
         {
           name: 'image4Url',
           type: 'text',
           required: true,
+          admin: { description: 'Cloudinary URL for benefit 4 icon.' },
         },
         {
           name: 'text4',
           type: 'text',
+          admin: { description: 'Benefit 4 label.' },
         },
       ],
     },
@@ -204,6 +238,9 @@ export const Lps: CollectionConfig = {
       name: 'costSectionHeading',
       type: 'text',
       required: true,
+      admin: {
+        description: 'Heading for the pricing section.',
+      },
     },
     {
       name: 'relationships',

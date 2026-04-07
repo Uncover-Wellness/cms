@@ -12,7 +12,7 @@ export const BlogPostCategories: CollectionConfig = {
     plural: 'Blog Post Categories',
   },
   versions: {
-    drafts: false,
+    drafts: true,
   },
   access: {
     read: () => true,
@@ -39,14 +39,23 @@ export const BlogPostCategories: CollectionConfig = {
     {
       name: 'pageMetaTitle',
       type: 'text',
+      admin: {
+        description: 'Browser tab title for the category listing page. Keep under 60 characters.',
+      },
     },
     {
       name: 'pageMetaDescription',
       type: 'textarea',
+      admin: {
+        description: 'Google results summary for the category page. Keep under 160 characters.',
+      },
     },
     {
       name: 'description',
       type: 'textarea',
+      admin: {
+        description: 'Short category description shown at the top of the listing page.',
+      },
     },
   ],
 };

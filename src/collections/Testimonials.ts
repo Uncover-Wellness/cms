@@ -12,7 +12,7 @@ export const Testimonials: CollectionConfig = {
     plural: 'Testimonials',
   },
   versions: {
-    drafts: false,
+    drafts: true,
   },
   access: {
     read: () => true,
@@ -39,32 +39,54 @@ export const Testimonials: CollectionConfig = {
       name: 'testimonialText',
       type: 'textarea',
       required: true,
+      admin: {
+        description: 'The client\'s testimonial in their own words.',
+      },
     },
     {
       name: 'service',
       type: 'text',
       required: true,
+      admin: {
+        description: 'Service/treatment name shown as a label. Example: "Laser Hair Removal"',
+      },
     },
     {
       name: 'clientPhotoUrl',
       type: 'text',
       required: true,
+      admin: {
+        description: 'Cloudinary URL for the client\'s photo.',
+      },
     },
     {
       name: 'videoLink',
       type: 'text',
+      admin: {
+        description: 'YouTube or video URL for video testimonials.',
+      },
     },
     {
       name: 'videoThumbnailUrl',
       type: 'text',
+      admin: {
+        description: 'Cloudinary URL for the video thumbnail image.',
+      },
     },
     {
       name: 'orderIndex',
       type: 'number',
+      admin: {
+        description: 'Display order. Lower = first.',
+      },
     },
     {
       name: 'relationships',
       type: 'group',
+      label: 'Relationships',
+      admin: {
+        description: 'Controls which pages this testimonial appears on.',
+      },
       fields: [
         {
           name: 'serviceCategories',

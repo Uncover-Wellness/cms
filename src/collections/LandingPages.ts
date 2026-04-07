@@ -12,7 +12,7 @@ export const LandingPages: CollectionConfig = {
     plural: 'Landing Pages',
   },
   versions: {
-    drafts: false,
+    drafts: true,
   },
   access: {
     read: () => true,
@@ -40,36 +40,57 @@ export const LandingPages: CollectionConfig = {
       name: 'pageTitleMetatag',
       type: 'text',
       required: true,
+      admin: {
+        description: 'Browser tab / meta title for SEO.',
+      },
     },
     {
       name: 'pageTitle',
       type: 'text',
       required: true,
+      admin: {
+        description: 'Visible H1 heading on the landing page.',
+      },
     },
     {
       name: 'headerSupportingText',
       type: 'richText',
       required: true,
+      admin: {
+        description: 'Rich text shown below the heading in the hero section.',
+      },
     },
     {
       name: 'heroImageUrl',
       type: 'text',
       required: true,
+      admin: {
+        description: 'Cloudinary URL for the hero banner image.',
+      },
     },
     {
       name: 'contactPhone',
       type: 'text',
       required: true,
+      admin: {
+        description: 'Phone number displayed on the landing page.',
+      },
     },
     {
       name: 'callLink',
       type: 'text',
       required: true,
+      admin: {
+        description: 'tel: link for click-to-call. Example: "tel:+919876543210"',
+      },
     },
     {
       name: 'formHeading',
       type: 'text',
       required: true,
+      admin: {
+        description: 'Heading above the booking form. Example: "Book Your Free Consultation"',
+      },
     },
     {
       name: 'experience',

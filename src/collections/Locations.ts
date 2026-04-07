@@ -12,7 +12,7 @@ export const Locations: CollectionConfig = {
     plural: 'Locations',
   },
   versions: {
-    drafts: false,
+    drafts: true,
   },
   access: {
     read: () => true,
@@ -26,6 +26,9 @@ export const Locations: CollectionConfig = {
       type: 'text',
       required: true,
       unique: true,
+      admin: {
+        description: 'Clinic display name. Example: "Uncover Noida"',
+      },
     },
     {
       name: 'slug',
@@ -34,68 +37,109 @@ export const Locations: CollectionConfig = {
       unique: true,
       admin: {
         readOnly: true,
+        description: 'Auto-generated from name. Used in the URL: /locations/{slug}',
       },
     },
     {
       name: 'address',
       type: 'text',
       required: true,
+      admin: {
+        description: 'Full street address without the clinic name prefix.',
+      },
     },
     {
       name: 'shortAddressDisplay',
       type: 'text',
       required: true,
+      admin: {
+        description: 'Short version shown on listing cards. Example: "Sector 104, Noida"',
+      },
     },
     {
       name: 'phoneNumber',
       type: 'text',
       required: true,
+      admin: {
+        description: 'Primary phone number displayed on the website.',
+      },
     },
     {
       name: 'clinicPhone',
       type: 'text',
       required: true,
+      admin: {
+        description: 'Direct clinic phone number (may differ from display number).',
+      },
     },
     {
       name: 'timings',
       type: 'text',
       required: true,
+      admin: {
+        description: 'Operating hours. Use format: "Monday - Sunday 10 AM to 8 PM"',
+      },
     },
     {
       name: 'mapLink',
       type: 'text',
       required: true,
+      admin: {
+        description: 'Google Maps URL for this clinic location.',
+      },
     },
     {
       name: 'clinicPhotoUrl',
       type: 'text',
       required: true,
+      admin: {
+        description: 'Cloudinary URL for the main clinic photo.',
+      },
     },
     {
       name: 'clinicImagesUrls',
       type: 'array',
+      labels: { singular: 'Clinic Image', plural: 'Clinic Images' },
+      admin: {
+        description: 'Additional clinic photos shown in the gallery.',
+      },
       fields: [
         {
           name: 'url',
           type: 'text',
+          admin: {
+            description: 'Cloudinary URL for this gallery image.',
+          },
         },
       ],
     },
     {
       name: 'zenotiCenterId',
       type: 'text',
+      admin: {
+        description: 'Zenoti center ID for booking integration.',
+      },
     },
     {
       name: 'whatsappContact',
       type: 'text',
+      admin: {
+        description: 'WhatsApp phone number (with country code). Example: "+919876543210"',
+      },
     },
     {
       name: 'whatsappLink',
       type: 'text',
+      admin: {
+        description: 'Full WhatsApp click-to-chat URL.',
+      },
     },
     {
       name: 'rankIndex',
       type: 'number',
+      admin: {
+        description: 'Display order on the locations page. Lower = first.',
+      },
     },
   ],
 };

@@ -47,18 +47,30 @@ export const SurveyQuestions: CollectionConfig = {
     {
       name: 'answerOptions',
       type: 'json',
+      admin: {
+        description: 'JSON array of answer options. Example: ["Option A", "Option B"]',
+      },
     },
     {
       name: 'rankIndex',
       type: 'number',
+      admin: {
+        description: 'Display order. Lower = first.',
+      },
     },
     {
       name: 'zenotiQuestionLabel',
       type: 'text',
+      admin: {
+        description: 'Zenoti system label for mapping to the booking questionnaire.',
+      },
     },
     {
       name: 'questionCategory',
       type: 'text',
+      admin: {
+        description: 'Category grouping for the question. Example: "Skin", "Hair"',
+      },
     },
     {
       name: 'relationships',

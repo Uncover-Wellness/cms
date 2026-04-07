@@ -12,7 +12,7 @@ export const TreatmentCosts: CollectionConfig = {
     plural: 'Treatment Costs',
   },
   versions: {
-    drafts: false,
+    drafts: true,
   },
   access: {
     read: () => true,
@@ -40,14 +40,21 @@ export const TreatmentCosts: CollectionConfig = {
       name: 'startingPrice',
       type: 'text',
       required: true,
+      admin: {
+        description: 'Starting price displayed on the card. Example: "₹2,500"',
+      },
     },
     {
       name: 'packageImageUrl',
       type: 'text',
+      admin: {
+        description: 'Cloudinary URL for the treatment package image.',
+      },
     },
     {
       name: 'relationships',
       type: 'group',
+      label: 'Relationships',
       fields: [
         {
           name: 'treatments',
@@ -55,6 +62,9 @@ export const TreatmentCosts: CollectionConfig = {
           relationTo: 'treatments',
           hasMany: true,
           required: true,
+          admin: {
+            description: 'Treatments included in this cost package.',
+          },
         },
         {
           name: 'contentCategories',
@@ -62,6 +72,9 @@ export const TreatmentCosts: CollectionConfig = {
           relationTo: 'content-categories',
           hasMany: true,
           required: true,
+          admin: {
+            description: 'Content categories for page association.',
+          },
         },
       ],
     },

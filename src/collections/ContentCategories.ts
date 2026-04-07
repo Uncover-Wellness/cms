@@ -12,7 +12,7 @@ export const ContentCategories: CollectionConfig = {
     plural: 'Content Categories',
   },
   versions: {
-    drafts: false,
+    drafts: true,
   },
   access: {
     read: () => true,
@@ -39,6 +39,9 @@ export const ContentCategories: CollectionConfig = {
     {
       name: 'description',
       type: 'textarea',
+      admin: {
+        description: 'Internal description of this content category.',
+      },
     },
   ],
 };

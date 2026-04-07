@@ -12,7 +12,7 @@ export const VideoTestimonials: CollectionConfig = {
     plural: 'Video Testimonials',
   },
   versions: {
-    drafts: false,
+    drafts: true,
   },
   access: {
     read: () => true,
@@ -39,19 +39,32 @@ export const VideoTestimonials: CollectionConfig = {
       name: 'testimonialVideoLink',
       type: 'text',
       required: true,
+      admin: {
+        description: 'YouTube or video URL for the testimonial video.',
+      },
     },
     {
       name: 'videoThumbnailUrl',
       type: 'text',
       required: true,
+      admin: {
+        description: 'Cloudinary URL for the video thumbnail image.',
+      },
     },
     {
       name: 'shortTextDescription',
       type: 'textarea',
+      admin: {
+        description: 'Brief text summary shown alongside the video.',
+      },
     },
     {
       name: 'relationships',
       type: 'group',
+      label: 'Relationships',
+      admin: {
+        description: 'Controls which pages this video testimonial appears on.',
+      },
       fields: [
         {
           name: 'serviceCategories',
