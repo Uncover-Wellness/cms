@@ -369,24 +369,6 @@ export const ServiceCategories: CollectionConfig = {
             },
           ],
         },
-        // ─── SEO ───
-        {
-          label: 'SEO',
-          fields: [
-            {
-              name: 'seoPageTitle',
-              type: 'text',
-              admin: {
-                description:
-                  'Overrides the default <title> on /c/:slug. If blank, the page title falls back to "{name} Treatments in India".',
-              },
-            },
-            {
-              name: 'seoMetaDescription',
-              type: 'textarea',
-            },
-          ],
-        },
       ],
     },
   ],

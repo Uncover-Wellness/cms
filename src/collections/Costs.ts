@@ -38,29 +38,6 @@ export const Costs: CollectionConfig = {
       },
     },
     {
-      name: 'seo',
-      type: 'group',
-      label: 'SEO',
-      fields: [
-        {
-          name: 'pageTitle',
-          type: 'text',
-          maxLength: 60,
-          admin: {
-            description: 'Browser tab title. Keep under 60 characters.',
-          },
-        },
-        {
-          name: 'metaDescription',
-          type: 'textarea',
-          maxLength: 160,
-          admin: {
-            description: 'Google results summary. Keep under 160 characters.',
-          },
-        },
-      ],
-    },
-    {
       name: 'pageTitle',
       type: 'richText',
       admin: {

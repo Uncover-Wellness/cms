@@ -37,14 +37,6 @@ export const Lps: CollectionConfig = {
       },
     },
     {
-      name: 'pageTitleMetatag',
-      type: 'text',
-      required: true,
-      admin: {
-        description: 'Browser tab / meta title for SEO.',
-      },
-    },
-    {
       name: 'pageTitle',
       type: 'text',
       required: true,

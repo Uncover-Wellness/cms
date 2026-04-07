@@ -38,29 +38,6 @@ export const Doctors: CollectionConfig = {
       },
     },
     {
-      name: 'seo',
-      type: 'group',
-      label: 'SEO',
-      fields: [
-        {
-          name: 'pageTitle',
-          type: 'text',
-          maxLength: 80,
-          admin: {
-            description: 'Browser tab title. Keep under 65 characters for best Google display.',
-          },
-        },
-        {
-          name: 'metaDescription',
-          type: 'textarea',
-          maxLength: 200,
-          admin: {
-            description: 'Short summary shown in Google results. Keep under 160 characters.',
-          },
-        },
-      ],
-    },
-    {
       name: 'portraitImageUrl',
       type: 'text',
       admin: {

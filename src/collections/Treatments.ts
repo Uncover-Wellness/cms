@@ -39,32 +39,6 @@ export const Treatments: CollectionConfig = {
       },
     },
     {
-      name: 'seo',
-      type: 'group',
-      label: 'SEO',
-      admin: {
-        description: 'Search engine optimisation fields for the treatment page.',
-      },
-      fields: [
-        {
-          name: 'pageTitle',
-          type: 'text',
-          maxLength: 60,
-          admin: {
-            description: 'Browser tab title shown in Google results. Keep under 60 characters.',
-          },
-        },
-        {
-          name: 'metaDescription',
-          type: 'textarea',
-          maxLength: 160,
-          admin: {
-            description: 'Short summary shown below the title in Google results. Keep under 160 characters.',
-          },
-        },
-      ],
-    },
-    {
       name: 'hero',
       type: 'group',
       label: 'Hero Section',
