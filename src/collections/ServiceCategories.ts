@@ -57,17 +57,35 @@ export const ServiceCategories: CollectionConfig = {
           label: 'Overview',
           fields: [
             {
+              name: 'thumbnailImage',
+              type: 'upload',
+              relationTo: 'media',
+              admin: {
+                description: 'Square thumbnail for homepage category grid. Drag and drop or browse to upload.',
+              },
+            },
+            {
               name: 'thumbnailImageUrl',
               type: 'text',
               admin: {
-                description: 'Square thumbnail used in homepage category grid',
+                description: 'Legacy: Old URL. Use the upload field above for new images.',
+                readOnly: true,
+              },
+            },
+            {
+              name: 'featuredImage',
+              type: 'upload',
+              relationTo: 'media',
+              admin: {
+                description: 'Featured image. Drag and drop or browse to upload.',
               },
             },
             {
               name: 'featuredImageUrl',
               type: 'text',
               admin: {
-                description: 'Legacy featured image. Prefer `hero.image` on the Hero tab.',
+                description: 'Legacy: Old URL. Use the upload field above for new images.',
+                readOnly: true,
               },
             },
             {

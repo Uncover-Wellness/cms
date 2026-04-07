@@ -89,11 +89,20 @@ export const Locations: CollectionConfig = {
       },
     },
     {
+      name: 'clinicPhoto',
+      type: 'upload',
+      relationTo: 'media',
+      admin: {
+        description: 'Main clinic photo. Drag and drop or browse to upload.',
+      },
+    },
+    {
       name: 'clinicPhotoUrl',
       type: 'text',
       required: true,
       admin: {
-        description: 'Cloudinary URL for the main clinic photo.',
+        description: 'Legacy: Old URL. Use the upload field above for new images.',
+        readOnly: true,
       },
     },
     {

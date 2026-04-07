@@ -39,11 +39,28 @@ export const Concerns: CollectionConfig = {
       },
     },
     {
+      name: 'iconImage',
+      type: 'upload',
+      relationTo: 'media',
+      admin: {
+        description: 'Small icon shown in concern listing grids. Drag and drop or browse to upload.',
+      },
+    },
+    {
       name: 'iconImageUrl',
       type: 'text',
       required: true,
       admin: {
-        description: 'Cloudinary URL for the small icon shown in concern listing grids.',
+        description: 'Legacy: Old URL. Use the upload field above for new images.',
+        readOnly: true,
+      },
+    },
+    {
+      name: 'headerImage',
+      type: 'upload',
+      relationTo: 'media',
+      admin: {
+        description: 'Hero banner image for the concern page. Drag and drop or browse to upload.',
       },
     },
     {
@@ -51,7 +68,8 @@ export const Concerns: CollectionConfig = {
       type: 'text',
       required: true,
       admin: {
-        description: 'Cloudinary URL for the hero banner image on the concern page.',
+        description: 'Legacy: Old URL. Use the upload field above for new images.',
+        readOnly: true,
       },
     },
     {
@@ -110,10 +128,19 @@ export const Concerns: CollectionConfig = {
           type: 'richText',
         },
         {
+          name: 'imageUpload',
+          type: 'upload',
+          relationTo: 'media',
+          admin: {
+            description: 'Section image. Drag and drop or browse to upload.',
+          },
+        },
+        {
           name: 'imageUrl',
           type: 'text',
           admin: {
-            description: 'Cloudinary URL for the section image.',
+            description: 'Legacy: Old URL. Use the upload field above for new images.',
+            readOnly: true,
           },
         },
         {
@@ -144,10 +171,19 @@ export const Concerns: CollectionConfig = {
           type: 'text',
         },
         {
+          name: 'imageUpload',
+          type: 'upload',
+          relationTo: 'media',
+          admin: {
+            description: 'Technology/device image. Drag and drop or browse to upload.',
+          },
+        },
+        {
           name: 'imageUrl',
           type: 'text',
           admin: {
-            description: 'Cloudinary URL for the technology/device image.',
+            description: 'Legacy: Old URL. Use the upload field above for new images.',
+            readOnly: true,
           },
         },
         {

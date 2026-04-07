@@ -63,10 +63,19 @@ export const Treatments: CollectionConfig = {
           },
         },
         {
+          name: 'mainImageUpload',
+          type: 'upload',
+          relationTo: 'media',
+          admin: {
+            description: 'Hero banner image. Drag and drop or browse to upload.',
+          },
+        },
+        {
           name: 'mainImage',
           type: 'text',
           admin: {
-            description: 'Cloudinary URL for the hero banner image.',
+            description: 'Legacy: Old URL. Use the upload field above for new images.',
+            readOnly: true,
           },
         },
         {
@@ -161,10 +170,19 @@ export const Treatments: CollectionConfig = {
           required: true,
         },
         {
+          name: 'imageUpload',
+          type: 'upload',
+          relationTo: 'media',
+          admin: {
+            description: 'Section image. Drag and drop or browse to upload.',
+          },
+        },
+        {
           name: 'image',
           type: 'text',
           admin: {
-            description: 'Cloudinary URL for the section image.',
+            description: 'Legacy: Old URL. Use the upload field above for new images.',
+            readOnly: true,
           },
         },
         {
@@ -205,10 +223,19 @@ export const Treatments: CollectionConfig = {
           type: 'text',
         },
         {
+          name: 'imageUpload',
+          type: 'upload',
+          relationTo: 'media',
+          admin: {
+            description: 'Technology/device image. Drag and drop or browse to upload.',
+          },
+        },
+        {
           name: 'image',
           type: 'text',
           admin: {
-            description: 'Cloudinary URL for the technology/device image.',
+            description: 'Legacy: Old URL. Use the upload field above for new images.',
+            readOnly: true,
           },
         },
         {

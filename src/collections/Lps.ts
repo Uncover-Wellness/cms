@@ -53,11 +53,20 @@ export const Lps: CollectionConfig = {
       },
     },
     {
+      name: 'heroImage',
+      type: 'upload',
+      relationTo: 'media',
+      admin: {
+        description: 'Hero banner image. Drag and drop or browse to upload.',
+      },
+    },
+    {
       name: 'heroImageUrl',
       type: 'text',
       required: true,
       admin: {
-        description: 'Cloudinary URL for the hero banner image.',
+        description: 'Legacy: Old URL. Use the upload field above for new images.',
+        readOnly: true,
       },
     },
     {

@@ -45,10 +45,19 @@ export const TreatmentCosts: CollectionConfig = {
       },
     },
     {
+      name: 'packageImage',
+      type: 'upload',
+      relationTo: 'media',
+      admin: {
+        description: 'Treatment package image. Drag and drop or browse to upload.',
+      },
+    },
+    {
       name: 'packageImageUrl',
       type: 'text',
       admin: {
-        description: 'Cloudinary URL for the treatment package image.',
+        description: 'Legacy: Old URL. Use the upload field above for new images.',
+        readOnly: true,
       },
     },
     {

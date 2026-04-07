@@ -44,11 +44,20 @@ export const VideoTestimonials: CollectionConfig = {
       },
     },
     {
+      name: 'videoThumbnail',
+      type: 'upload',
+      relationTo: 'media',
+      admin: {
+        description: 'Video thumbnail image. Drag and drop or browse to upload.',
+      },
+    },
+    {
       name: 'videoThumbnailUrl',
       type: 'text',
       required: true,
       admin: {
-        description: 'Cloudinary URL for the video thumbnail image.',
+        description: 'Legacy: Old URL. Use the upload field above for new images.',
+        readOnly: true,
       },
     },
     {

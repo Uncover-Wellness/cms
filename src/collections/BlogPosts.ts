@@ -40,10 +40,19 @@ export const BlogPosts: CollectionConfig = {
       },
     },
     {
+      name: 'featuredImage',
+      type: 'upload',
+      relationTo: 'media',
+      admin: {
+        description: 'Main blog post hero image. Drag and drop or browse to upload.',
+      },
+    },
+    {
       name: 'featuredImageUrl',
       type: 'text',
       admin: {
-        description: 'Cloudinary URL for the main blog post hero image.',
+        description: 'Legacy: Old URL. Use the upload field above for new images.',
+        readOnly: true,
       },
     },
     {
@@ -57,14 +66,24 @@ export const BlogPosts: CollectionConfig = {
       name: 'thumbnailImageV1Url',
       type: 'text',
       admin: {
-        description: 'Cloudinary URL for the small thumbnail used in blog listing cards.',
+        description: 'Legacy: Old URL (no data). Deprecated.',
+        readOnly: true,
+      },
+    },
+    {
+      name: 'thumbnailImage',
+      type: 'upload',
+      relationTo: 'media',
+      admin: {
+        description: 'Blog thumbnail image. Drag and drop or browse to upload.',
       },
     },
     {
       name: 'thumbnailImageV2Url',
       type: 'text',
       admin: {
-        description: 'Cloudinary URL for the alternate/larger thumbnail.',
+        description: 'Legacy: Old URL. Use the upload field above for new images.',
+        readOnly: true,
       },
     },
     {
