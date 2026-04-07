@@ -52,6 +52,14 @@ export default buildConfig({
       }
     : {}),
   secret: process.env.PAYLOAD_SECRET || 'uncover-cms-change-this-in-production',
+  cors: [
+    process.env.PREVIEW_URL || 'http://agentsunny.in:4322',
+    'http://localhost:4322',
+  ],
+  csrf: [
+    process.env.PREVIEW_URL || 'http://agentsunny.in:4322',
+    'http://localhost:4322',
+  ],
   admin: {
     user: 'users',
     meta: {
@@ -59,6 +67,24 @@ export default buildConfig({
     },
     components: {
       beforeNavLinks: ['/src/components/admin/PublishButton/index.tsx#default'],
+    },
+    livePreview: {
+      url: ({ data, collectionConfig }) => {
+        const previewBase = process.env.PREVIEW_URL || 'http://agentsunny.in:4322';
+        if (collectionConfig?.slug === 'treatments') {
+          return `${previewBase}/preview/treatment/${data?.slug || ''}`;
+        }
+        if (collectionConfig?.slug === 'blog-posts') {
+          return `${previewBase}/preview/post/${data?.slug || ''}`;
+        }
+        return previewBase;
+      },
+      breakpoints: [
+        { label: 'Mobile', name: 'mobile', width: 375, height: 667 },
+        { label: 'Tablet', name: 'tablet', width: 768, height: 1024 },
+        { label: 'Desktop', name: 'desktop', width: 1440, height: 900 },
+      ],
+      collections: ['treatments', 'blog-posts'],
     },
   },
   editor: lexicalEditor({
