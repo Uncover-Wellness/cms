@@ -1,4 +1,5 @@
 import type { Adapter, GeneratedAdapter } from '@payloadcms/plugin-cloud-storage/types';
+import sharp from 'sharp';
 
 interface CloudinaryAdapterOptions {
   cloud_name: string;
@@ -15,6 +16,22 @@ export const cloudinaryAdapter = (opts: CloudinaryAdapterOptions): Adapter => {
       name: 'cloudinary',
 
       handleUpload: async ({ file }) => {
+        // Convert raster images to optimised WebP; pass SVGs through unchanged
+        const isSvg = file.mimeType === 'image/svg+xml';
+        let buffer: Buffer;
+        let mimeType: string;
+        let filename: string;
+
+        if (isSvg) {
+          buffer = file.buffer;
+          mimeType = file.mimeType;
+          filename = file.filename;
+        } else {
+          buffer = await sharp(file.buffer).webp({ quality: 82 }).toBuffer();
+          mimeType = 'image/webp';
+          filename = file.filename.replace(/\.[^.]+$/, '.webp');
+        }
+
         // Lazy import to avoid breaking when cloudinary isn't configured
         const { v2: cloudinary } = await import('cloudinary');
         cloudinary.config({
@@ -23,9 +40,9 @@ export const cloudinaryAdapter = (opts: CloudinaryAdapterOptions): Adapter => {
           api_secret: opts.api_secret,
         });
 
-        const b64 = file.buffer.toString('base64');
-        const dataUri = `data:${file.mimeType};base64,${b64}`;
-        const publicId = file.filename.replace(/\.[^.]+$/, '');
+        const b64 = buffer.toString('base64');
+        const dataUri = `data:${mimeType};base64,${b64}`;
+        const publicId = filename.replace(/\.[^.]+$/, '');
 
         const result = await cloudinary.uploader.upload(dataUri, {
           folder,
@@ -34,11 +51,10 @@ export const cloudinaryAdapter = (opts: CloudinaryAdapterOptions): Adapter => {
           overwrite: true,
         });
 
-        // Return metadata to be saved on the document
         return {
-          filename: file.filename,
-          filesize: file.filesize,
-          mimeType: file.mimeType,
+          filename,
+          filesize: buffer.length,
+          mimeType,
           width: result.width,
           height: result.height,
         };
