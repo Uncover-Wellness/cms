@@ -74,20 +74,41 @@ export default buildConfig({
     livePreview: {
       url: ({ data, collectionConfig }) => {
         const previewBase = process.env.PREVIEW_URL || 'https://ai.uncover.co.in';
-        if (collectionConfig?.slug === 'treatments') {
-          return `${previewBase}/preview/treatment/${data?.slug || ''}`;
-        }
-        if (collectionConfig?.slug === 'blog-posts') {
-          return `${previewBase}/preview/post/${data?.slug || ''}`;
-        }
-        return previewBase;
+        const slug = data?.slug || '';
+        const routeMap: Record<string, string> = {
+          treatments: `/preview/treatment/${slug}`,
+          'blog-posts': `/preview/post/${slug}`,
+          doctors: `/preview/doctor/${slug}`,
+          concerns: `/preview/concern/${slug}`,
+          costs: `/preview/cost/${slug}`,
+          'landing-pages': `/preview/landing/${slug}`,
+          lps: `/preview/lp/${slug}`,
+          lp2s: `/preview/lp2/${slug}`,
+          'service-categories': `/preview/c/${slug}`,
+          'job-openings': `/preview/careers/${slug}`,
+          'blog-post-categories': `/preview/categories/${slug}`,
+        };
+        const path = collectionConfig?.slug ? routeMap[collectionConfig.slug] : null;
+        return path ? `${previewBase}${path}` : previewBase;
       },
       breakpoints: [
         { label: 'Mobile', name: 'mobile', width: 375, height: 667 },
         { label: 'Tablet', name: 'tablet', width: 768, height: 1024 },
         { label: 'Desktop', name: 'desktop', width: 1440, height: 900 },
       ],
-      collections: ['treatments', 'blog-posts'],
+      collections: [
+        'treatments',
+        'blog-posts',
+        'doctors',
+        'concerns',
+        'costs',
+        'landing-pages',
+        'lps',
+        'lp2s',
+        'service-categories',
+        'job-openings',
+        'blog-post-categories',
+      ],
     },
   },
   editor: lexicalEditor({
