@@ -136,23 +136,19 @@ export default buildConfig({
   globals: [DeployState],
   endpoints: [publishNow],
   plugins: [
-    ...(process.env.CLOUDINARY_CLOUD_NAME
-      ? [
-          cloudStoragePlugin({
-            collections: {
-              media: {
-                adapter: cloudinaryAdapter({
-                  cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
-                  api_key: process.env.CLOUDINARY_API_KEY!,
-                  api_secret: process.env.CLOUDINARY_API_SECRET!,
-                  folder: 'uncover-cms',
-                }),
-                disableLocalStorage: true,
-              },
-            },
+    cloudStoragePlugin({
+      collections: {
+        media: {
+          adapter: cloudinaryAdapter({
+            cloud_name: process.env.CLOUDINARY_CLOUD_NAME || '',
+            api_key: process.env.CLOUDINARY_API_KEY || '',
+            api_secret: process.env.CLOUDINARY_API_SECRET || '',
+            folder: 'uncover-cms',
           }),
-        ]
-      : []),
+          disableLocalStorage: true,
+        },
+      },
+    }),
     seoPlugin({
       collections: [
         'treatments',
