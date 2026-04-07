@@ -128,8 +128,38 @@ export default buildConfig({
         verify: true,
         forgotPassword: {},
       },
-      admin: { useAsTitle: 'email' },
-      fields: [],
+      admin: {
+        useAsTitle: 'email',
+        group: 'Admin',
+        hidden: ({ user }) => user?.role !== 'admin',
+      },
+      access: {
+        read: ({ req: { user } }) => user?.role === 'admin',
+        create: ({ req: { user } }) => user?.role === 'admin',
+        update: ({ req: { user } }) => {
+          if (user?.role === 'admin') return true;
+          // Non-admins can update their own profile (password etc)
+          return { id: { equals: user?.id } };
+        },
+        delete: ({ req: { user } }) => user?.role === 'admin',
+        admin: ({ req: { user } }) => Boolean(user),
+      },
+      fields: [
+        {
+          name: 'role',
+          type: 'select',
+          options: [
+            { label: 'Admin', value: 'admin' },
+            { label: 'Editor', value: 'editor' },
+          ],
+          defaultValue: 'editor',
+          required: true,
+          access: {
+            update: ({ req: { user } }) => user?.role === 'admin',
+            create: ({ req: { user } }) => user?.role === 'admin',
+          },
+        },
+      ],
     },
     // Content collections that affect the public Astro site get auto-deploy hooks.
     withDeployHooks(ContentCategories),
