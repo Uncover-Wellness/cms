@@ -158,13 +158,4 @@ export default buildConfig({
   typescript: {
     outputFile: path.resolve(dirname, 'payload-types.ts'),
   },
-  onInit: async (payload) => {
-    // In production, Drizzle push is skipped (NODE_ENV=production).
-    // Run it manually to ensure new tables/columns are created.
-    if (process.env.NODE_ENV === 'production' && payload.db.push !== false) {
-      const { pushDevSchema } = await import('@payloadcms/drizzle');
-      await pushDevSchema(payload.db);
-      payload.logger.info('Schema push completed in production.');
-    }
-  },
 });
