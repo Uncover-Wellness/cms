@@ -20,6 +20,7 @@ import { SubscriptFeatureClient as SubscriptFeatureClient_16 } from '@payloadcms
 import { SuperscriptFeatureClient as SuperscriptFeatureClient_17 } from '@payloadcms/richtext-lexical/client'
 import { IndentFeatureClient as IndentFeatureClient_18 } from '@payloadcms/richtext-lexical/client'
 import { AlignFeatureClient as AlignFeatureClient_19 } from '@payloadcms/richtext-lexical/client'
+import { TableFeatureClient as TableFeatureClient_25 } from '@payloadcms/richtext-lexical/client'
 import { OverviewComponent as OverviewComponent_20 } from '@payloadcms/plugin-seo/client'
 import { MetaTitleComponent as MetaTitleComponent_21 } from '@payloadcms/plugin-seo/client'
 import { MetaDescriptionComponent as MetaDescriptionComponent_22 } from '@payloadcms/plugin-seo/client'
@@ -49,6 +50,7 @@ export const importMap = {
   '@payloadcms/richtext-lexical/client#SuperscriptFeatureClient': SuperscriptFeatureClient_17,
   '@payloadcms/richtext-lexical/client#IndentFeatureClient': IndentFeatureClient_18,
   '@payloadcms/richtext-lexical/client#AlignFeatureClient': AlignFeatureClient_19,
+  '@payloadcms/richtext-lexical/client#TableFeatureClient': TableFeatureClient_25,
   '@payloadcms/plugin-seo/client#OverviewComponent': OverviewComponent_20,
   '@payloadcms/plugin-seo/client#MetaTitleComponent': MetaTitleComponent_21,
   '@payloadcms/plugin-seo/client#MetaDescriptionComponent': MetaDescriptionComponent_22,

@@ -1,6 +1,6 @@
 import { buildConfig } from 'payload';
 import { postgresAdapter } from '@payloadcms/db-postgres';
-import { lexicalEditor } from '@payloadcms/richtext-lexical';
+import { lexicalEditor, EXPERIMENTAL_TableFeature } from '@payloadcms/richtext-lexical';
 import { nodemailerAdapter } from '@payloadcms/email-nodemailer';
 import { seoPlugin } from '@payloadcms/plugin-seo';
 import type { GenerateTitle, GenerateDescription } from '@payloadcms/plugin-seo/types';
@@ -57,7 +57,9 @@ export default buildConfig({
       beforeNavLinks: ['/src/components/admin/PublishButton/index.tsx#default'],
     },
   },
-  editor: lexicalEditor({}),
+  editor: lexicalEditor({
+    features: ({ defaultFeatures }) => [...defaultFeatures, EXPERIMENTAL_TableFeature()],
+  }),
   db: postgresAdapter({
     pool: {
       connectionString: process.env.DATABASE_URL,
