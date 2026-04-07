@@ -1,6 +1,7 @@
 import { buildConfig } from 'payload';
 import { postgresAdapter } from '@payloadcms/db-postgres';
 import { lexicalEditor } from '@payloadcms/richtext-lexical';
+import { nodemailerAdapter } from '@payloadcms/email-nodemailer';
 import { seoPlugin } from '@payloadcms/plugin-seo';
 import type { GenerateTitle, GenerateDescription } from '@payloadcms/plugin-seo/types';
 import path from 'path';
@@ -34,6 +35,18 @@ const dirname = path.dirname(filename);
 
 export default buildConfig({
   serverURL: process.env.PAYLOAD_PUBLIC_SERVER_URL || 'http://localhost:3001',
+  email: nodemailerAdapter({
+    defaultFromAddress: process.env.SMTP_FROM_ADDRESS || 'noreply@uncover.co.in',
+    defaultFromName: process.env.SMTP_FROM_NAME || 'Uncover Clinics',
+    transportOptions: {
+      host: process.env.SMTP_HOST,
+      port: Number(process.env.SMTP_PORT) || 587,
+      auth: {
+        user: process.env.SMTP_USER,
+        pass: process.env.SMTP_PASS,
+      },
+    },
+  }),
   secret: process.env.PAYLOAD_SECRET || 'uncover-cms-change-this-in-production',
   admin: {
     user: 'users',
@@ -55,7 +68,10 @@ export default buildConfig({
   collections: [
     {
       slug: 'users',
-      auth: true,
+      auth: {
+        verify: true,
+        forgotPassword: {},
+      },
       admin: { useAsTitle: 'email' },
       fields: [],
     },
