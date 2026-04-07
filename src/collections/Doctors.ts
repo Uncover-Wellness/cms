@@ -38,10 +38,19 @@ export const Doctors: CollectionConfig = {
       },
     },
     {
+      name: 'portraitImage',
+      type: 'upload',
+      relationTo: 'media',
+      admin: {
+        description: 'Doctor\'s portrait photo. Drag and drop or browse to upload.',
+      },
+    },
+    {
       name: 'portraitImageUrl',
       type: 'text',
       admin: {
-        description: 'Cloudinary URL for the doctor\'s portrait photo.',
+        description: 'Legacy: Old Cloudinary URL. Use the upload field above for new images.',
+        readOnly: true,
       },
     },
     {
