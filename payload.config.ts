@@ -2,6 +2,7 @@ import { buildConfig } from 'payload';
 import { postgresAdapter } from '@payloadcms/db-postgres';
 import { lexicalEditor, EXPERIMENTAL_TableFeature } from '@payloadcms/richtext-lexical';
 import { nodemailerAdapter } from '@payloadcms/email-nodemailer';
+import { cloudStoragePlugin } from '@payloadcms/plugin-cloud-storage';
 import { seoPlugin } from '@payloadcms/plugin-seo';
 import type { GenerateTitle, GenerateDescription } from '@payloadcms/plugin-seo/types';
 import path from 'path';
@@ -25,6 +26,8 @@ import { Lps } from './src/collections/Lps';
 import { Lp2s } from './src/collections/Lp2s';
 import { JobOpenings } from './src/collections/JobOpenings';
 import { SurveyQuestions } from './src/collections/SurveyQuestions';
+import { Media } from './src/collections/Media';
+import { cloudinaryAdapter } from './src/adapters/cloudinaryAdapter';
 
 import { DeployState } from './src/globals/DeployState';
 import { withDeployHooks } from './src/hooks/deployHooks';
@@ -127,10 +130,26 @@ export default buildConfig({
     withDeployHooks(JobOpenings),
     // Internal — no public-facing pages, no deploy hook needed
     SurveyQuestions,
+    // Media uploads — stored on Cloudinary, no deploy hook needed
+    Media,
   ],
   globals: [DeployState],
   endpoints: [publishNow],
   plugins: [
+    cloudStoragePlugin({
+      collections: {
+        media: {
+          adapter: cloudinaryAdapter({
+            cloud_name: process.env.CLOUDINARY_CLOUD_NAME!,
+            api_key: process.env.CLOUDINARY_API_KEY!,
+            api_secret: process.env.CLOUDINARY_API_SECRET!,
+            folder: 'uncover-cms',
+          }),
+          disableLocalStorage: true,
+          disablePayloadAccessControl: true,
+        },
+      },
+    }),
     seoPlugin({
       collections: [
         'treatments',
@@ -145,6 +164,7 @@ export default buildConfig({
         'service-categories',
         'blog-post-categories',
       ],
+      uploadsCollection: 'media',
       generateTitle: (({ doc }) => doc?.name || '') as GenerateTitle,
       generateDescription: (({ doc }) => (doc as any)?.excerpt || '') as GenerateDescription,
     }),
