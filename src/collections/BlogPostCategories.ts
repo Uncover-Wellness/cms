@@ -1,5 +1,6 @@
 import { CollectionConfig } from 'payload';
 import { isEditor } from '../access';
+import { slugFromName } from '../hooks/slugFromName';
 
 export const BlogPostCategories: CollectionConfig = {
   slug: 'blog-post-categories',
@@ -20,6 +21,7 @@ export const BlogPostCategories: CollectionConfig = {
     update: isEditor,
     delete: isEditor,
   },
+  hooks: { beforeChange: [slugFromName] },
   fields: [
     {
       name: 'name',

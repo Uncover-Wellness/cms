@@ -1,5 +1,6 @@
 import { CollectionConfig } from 'payload';
 import { isEditor } from '../access';
+import { slugFromName } from '../hooks/slugFromName';
 
 export const Lps: CollectionConfig = {
   slug: 'lps',
@@ -20,6 +21,7 @@ export const Lps: CollectionConfig = {
     update: isEditor,
     delete: isEditor,
   },
+  hooks: { beforeChange: [slugFromName] },
   fields: [
     {
       name: 'name',

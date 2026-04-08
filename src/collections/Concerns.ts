@@ -1,5 +1,6 @@
 import { CollectionConfig } from 'payload';
 import { isEditor } from '../access';
+import { slugFromName } from '../hooks/slugFromName';
 import { TextSection, VideoEmbed, HtmlEmbed } from '../blocks';
 
 export const Concerns: CollectionConfig = {
@@ -21,6 +22,7 @@ export const Concerns: CollectionConfig = {
     update: isEditor,
     delete: isEditor,
   },
+  hooks: { beforeChange: [slugFromName] },
   fields: [
     {
       name: 'name',

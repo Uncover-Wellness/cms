@@ -1,5 +1,6 @@
 import { CollectionConfig } from 'payload';
 import { isEditor } from '../access';
+import { slugFromName } from '../hooks/slugFromName';
 
 /**
  * Service Categories drive the `/c/:slug` pages (Skin, Hair, Body,
@@ -34,6 +35,7 @@ export const ServiceCategories: CollectionConfig = {
     update: isEditor,
     delete: isEditor,
   },
+  hooks: { beforeChange: [slugFromName] },
   fields: [
     // Always-visible header fields
     {
