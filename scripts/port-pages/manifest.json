@@ -1,0 +1,2522 @@
+{
+  "generatedAt": "2026-04-17T20:23:42.244Z",
+  "entries": [
+    {
+      "slug": "acne-buster-peel",
+      "kind": "treatment",
+      "collection": "treatments",
+      "referenceUrl": "https://uncover-web.netlify.app/treatment/acne-buster-peel/",
+      "referenceStatus": 200,
+      "cmsId": 126,
+      "cmsName": "Acne Buster Peel",
+      "existingBlocks": {
+        "total": 8,
+        "counts": {
+          "doctors_embed": 1,
+          "faqs_embed": 1,
+          "technology": 1,
+          "testimonials_embed": 1,
+          "text_section": 4
+        }
+      },
+      "ported": true,
+      "similarity": null,
+      "notes": "4 textSections + 3 embeds + 0 inline FAQs",
+      "portedAt": "2026-04-17T20:39:33.871Z",
+      "sectionCount": 4,
+      "faqCount": 0,
+      "preservedEmbedCount": 3,
+      "verify": {
+        "ok": true,
+        "netlifyH2s": 4,
+        "cmsTextSections": 4,
+        "headingMatch": 1,
+        "similarity": 0.96
+      }
+    },
+    {
+      "slug": "advanced-microneedling",
+      "kind": "treatment",
+      "collection": "treatments",
+      "referenceUrl": "https://uncover-web.netlify.app/treatment/advanced-microneedling/",
+      "referenceStatus": 200,
+      "cmsId": 135,
+      "cmsName": "Advanced Microneedling",
+      "existingBlocks": {
+        "total": 8,
+        "counts": {
+          "doctors_embed": 1,
+          "faqs_embed": 1,
+          "technology": 1,
+          "testimonials_embed": 1,
+          "text_section": 4
+        }
+      },
+      "ported": true,
+      "similarity": null,
+      "notes": "4 textSections + 3 embeds + 0 inline FAQs",
+      "portedAt": "2026-04-17T20:39:41.939Z",
+      "sectionCount": 4,
+      "faqCount": 0,
+      "preservedEmbedCount": 3,
+      "verify": {
+        "ok": true,
+        "netlifyH2s": 4,
+        "cmsTextSections": 4,
+        "headingMatch": 1,
+        "similarity": 0.99
+      }
+    },
+    {
+      "slug": "anti-aging-peel",
+      "kind": "treatment",
+      "collection": "treatments",
+      "referenceUrl": "https://uncover-web.netlify.app/treatment/anti-aging-peel/",
+      "referenceStatus": 200,
+      "cmsId": 154,
+      "cmsName": "Anti-Aging Peel",
+      "existingBlocks": {
+        "total": 8,
+        "counts": {
+          "doctors_embed": 1,
+          "faqs_embed": 1,
+          "technology": 1,
+          "testimonials_embed": 1,
+          "text_section": 4
+        }
+      },
+      "ported": true,
+      "similarity": null,
+      "notes": "4 textSections + 3 embeds + 0 inline FAQs",
+      "portedAt": "2026-04-17T20:39:50.153Z",
+      "sectionCount": 4,
+      "faqCount": 0,
+      "preservedEmbedCount": 3,
+      "verify": {
+        "ok": true,
+        "netlifyH2s": 4,
+        "cmsTextSections": 4,
+        "headingMatch": 1,
+        "similarity": 0.98
+      }
+    },
+    {
+      "slug": "anti-scar-peel",
+      "kind": "treatment",
+      "collection": "treatments",
+      "referenceUrl": "https://uncover-web.netlify.app/treatment/anti-scar-peel/",
+      "referenceStatus": 200,
+      "cmsId": 153,
+      "cmsName": "Anti Scar Peel",
+      "existingBlocks": {
+        "total": 8,
+        "counts": {
+          "doctors_embed": 1,
+          "faqs_embed": 1,
+          "technology": 1,
+          "testimonials_embed": 1,
+          "text_section": 4
+        }
+      },
+      "ported": true,
+      "similarity": null,
+      "notes": "4 textSections + 3 embeds + 0 inline FAQs",
+      "portedAt": "2026-04-17T20:39:58.312Z",
+      "sectionCount": 4,
+      "faqCount": 0,
+      "preservedEmbedCount": 3,
+      "verify": {
+        "ok": true,
+        "netlifyH2s": 4,
+        "cmsTextSections": 4,
+        "headingMatch": 1,
+        "similarity": 0.97
+      }
+    },
+    {
+      "slug": "black-peel",
+      "kind": "treatment",
+      "collection": "treatments",
+      "referenceUrl": "https://uncover-web.netlify.app/treatment/black-peel/",
+      "referenceStatus": 200,
+      "cmsId": 152,
+      "cmsName": "Black Peel",
+      "existingBlocks": {
+        "total": 8,
+        "counts": {
+          "doctors_embed": 1,
+          "faqs_embed": 1,
+          "technology": 1,
+          "testimonials_embed": 1,
+          "text_section": 4
+        }
+      },
+      "ported": true,
+      "similarity": null,
+      "notes": "4 textSections + 3 embeds + 0 inline FAQs",
+      "portedAt": "2026-04-17T20:40:06.433Z",
+      "sectionCount": 4,
+      "faqCount": 0,
+      "preservedEmbedCount": 3,
+      "verify": {
+        "ok": true,
+        "netlifyH2s": 4,
+        "cmsTextSections": 4,
+        "headingMatch": 1,
+        "similarity": 0.98
+      }
+    },
+    {
+      "slug": "body-skin-tightening",
+      "kind": "treatment",
+      "collection": "treatments",
+      "referenceUrl": "https://uncover-web.netlify.app/treatment/body-skin-tightening/",
+      "referenceStatus": 200,
+      "cmsId": 133,
+      "cmsName": "Body Skin Tightening",
+      "existingBlocks": {
+        "total": 8,
+        "counts": {
+          "doctors_embed": 1,
+          "faqs_embed": 1,
+          "technology": 1,
+          "testimonials_embed": 1,
+          "text_section": 4
+        }
+      },
+      "ported": true,
+      "similarity": null,
+      "notes": "4 textSections + 3 embeds + 0 inline FAQs",
+      "portedAt": "2026-04-17T20:40:14.837Z",
+      "sectionCount": 4,
+      "faqCount": 0,
+      "preservedEmbedCount": 3,
+      "verify": {
+        "ok": true,
+        "netlifyH2s": 4,
+        "cmsTextSections": 4,
+        "headingMatch": 1,
+        "similarity": 0.98
+      }
+    },
+    {
+      "slug": "carbon-facial",
+      "kind": "treatment",
+      "collection": "treatments",
+      "referenceUrl": "https://uncover-web.netlify.app/treatment/carbon-facial/",
+      "referenceStatus": 200,
+      "cmsId": 186,
+      "cmsName": "Carbon Facial",
+      "existingBlocks": {
+        "total": 8,
+        "counts": {
+          "doctors_embed": 1,
+          "faqs_embed": 1,
+          "technology": 1,
+          "testimonials_embed": 1,
+          "text_section": 4
+        }
+      },
+      "ported": true,
+      "similarity": null,
+      "notes": "4 textSections + 3 embeds + 0 inline FAQs",
+      "portedAt": "2026-04-17T20:40:22.967Z",
+      "sectionCount": 4,
+      "faqCount": 0,
+      "preservedEmbedCount": 3,
+      "verify": {
+        "ok": true,
+        "netlifyH2s": 4,
+        "cmsTextSections": 4,
+        "headingMatch": 1,
+        "similarity": 0.99
+      }
+    },
+    {
+      "slug": "chemical-peels",
+      "kind": "treatment",
+      "collection": "treatments",
+      "referenceUrl": "https://uncover-web.netlify.app/treatment/chemical-peels/",
+      "referenceStatus": 200,
+      "cmsId": 1,
+      "cmsName": "Chemical Peels",
+      "existingBlocks": {
+        "total": 3,
+        "counts": {
+          "doctors_embed": 1,
+          "faqs_embed": 1,
+          "testimonials_embed": 1
+        }
+      },
+      "ported": false,
+      "similarity": null,
+      "notes": ""
+    },
+    {
+      "slug": "chest-laser-hair-removal",
+      "kind": "treatment",
+      "collection": "treatments",
+      "referenceUrl": "https://uncover-web.netlify.app/treatment/chest-laser-hair-removal/",
+      "referenceStatus": 200,
+      "cmsId": 160,
+      "cmsName": "Chest - Laser Hair Removal",
+      "existingBlocks": {
+        "total": 8,
+        "counts": {
+          "doctors_embed": 1,
+          "faqs_embed": 1,
+          "technology": 1,
+          "testimonials_embed": 1,
+          "text_section": 4
+        }
+      },
+      "ported": true,
+      "similarity": null,
+      "notes": "4 textSections + 3 embeds + 0 inline FAQs",
+      "portedAt": "2026-04-17T20:40:31.162Z",
+      "sectionCount": 4,
+      "faqCount": 0,
+      "preservedEmbedCount": 3,
+      "verify": {
+        "ok": true,
+        "netlifyH2s": 4,
+        "cmsTextSections": 4,
+        "headingMatch": 1,
+        "similarity": 0.97
+      }
+    },
+    {
+      "slug": "chin-laser-hair-removal",
+      "kind": "treatment",
+      "collection": "treatments",
+      "referenceUrl": "https://uncover-web.netlify.app/treatment/chin-laser-hair-removal/",
+      "referenceStatus": 200,
+      "cmsId": 159,
+      "cmsName": "Chin - Laser Hair Removal",
+      "existingBlocks": {
+        "total": 8,
+        "counts": {
+          "doctors_embed": 1,
+          "faqs_embed": 1,
+          "technology": 1,
+          "testimonials_embed": 1,
+          "text_section": 4
+        }
+      },
+      "ported": true,
+      "similarity": null,
+      "notes": "4 textSections + 3 embeds + 0 inline FAQs",
+      "portedAt": "2026-04-17T20:40:39.363Z",
+      "sectionCount": 4,
+      "faqCount": 0,
+      "preservedEmbedCount": 3,
+      "verify": {
+        "ok": true,
+        "netlifyH2s": 4,
+        "cmsTextSections": 4,
+        "headingMatch": 1,
+        "similarity": 0.97
+      }
+    },
+    {
+      "slug": "co2-laser-treatment",
+      "kind": "treatment",
+      "collection": "treatments",
+      "referenceUrl": "https://uncover-web.netlify.app/treatment/co2-laser-treatment/",
+      "referenceStatus": 200,
+      "cmsId": 166,
+      "cmsName": "CO2 Laser Treatment",
+      "existingBlocks": {
+        "total": 8,
+        "counts": {
+          "doctors_embed": 1,
+          "faqs_embed": 1,
+          "technology": 1,
+          "testimonials_embed": 1,
+          "text_section": 4
+        }
+      },
+      "ported": true,
+      "similarity": null,
+      "notes": "4 textSections + 3 embeds + 0 inline FAQs",
+      "portedAt": "2026-04-17T20:40:47.752Z",
+      "sectionCount": 4,
+      "faqCount": 0,
+      "preservedEmbedCount": 3,
+      "verify": {
+        "ok": true,
+        "netlifyH2s": 4,
+        "cmsTextSections": 4,
+        "headingMatch": 1,
+        "similarity": 0.96
+      }
+    },
+    {
+      "slug": "comedone-extraction",
+      "kind": "treatment",
+      "collection": "treatments",
+      "referenceUrl": "https://uncover-web.netlify.app/treatment/comedone-extraction/",
+      "referenceStatus": 200,
+      "cmsId": 151,
+      "cmsName": "Comedone Extraction",
+      "existingBlocks": {
+        "total": 8,
+        "counts": {
+          "doctors_embed": 1,
+          "faqs_embed": 1,
+          "technology": 1,
+          "testimonials_embed": 1,
+          "text_section": 4
+        }
+      },
+      "ported": true,
+      "similarity": null,
+      "notes": "4 textSections + 3 embeds + 0 inline FAQs",
+      "portedAt": "2026-04-17T20:40:56.033Z",
+      "sectionCount": 4,
+      "faqCount": 0,
+      "preservedEmbedCount": 3,
+      "verify": {
+        "ok": true,
+        "netlifyH2s": 4,
+        "cmsTextSections": 4,
+        "headingMatch": 1,
+        "similarity": 0.99
+      }
+    },
+    {
+      "slug": "core-derma-services",
+      "kind": "treatment",
+      "collection": "treatments",
+      "referenceUrl": "https://uncover-web.netlify.app/treatment/core-derma-services/",
+      "referenceStatus": 200,
+      "cmsId": 121,
+      "cmsName": "Core Derma Services",
+      "existingBlocks": {
+        "total": 8,
+        "counts": {
+          "doctors_embed": 1,
+          "faqs_embed": 1,
+          "technology": 1,
+          "testimonials_embed": 1,
+          "text_section": 4
+        }
+      },
+      "ported": true,
+      "similarity": null,
+      "notes": "4 textSections + 3 embeds + 0 inline FAQs",
+      "portedAt": "2026-04-17T20:41:04.357Z",
+      "sectionCount": 4,
+      "faqCount": 0,
+      "preservedEmbedCount": 3,
+      "verify": {
+        "ok": true,
+        "netlifyH2s": 4,
+        "cmsTextSections": 4,
+        "headingMatch": 1,
+        "similarity": 0.98
+      }
+    },
+    {
+      "slug": "corn-removal",
+      "kind": "treatment",
+      "collection": "treatments",
+      "referenceUrl": "https://uncover-web.netlify.app/treatment/corn-removal/",
+      "referenceStatus": 200,
+      "cmsId": 150,
+      "cmsName": "Corn Removal",
+      "existingBlocks": {
+        "total": 8,
+        "counts": {
+          "doctors_embed": 1,
+          "faqs_embed": 1,
+          "technology": 1,
+          "testimonials_embed": 1,
+          "text_section": 4
+        }
+      },
+      "ported": true,
+      "similarity": null,
+      "notes": "4 textSections + 3 embeds + 0 inline FAQs",
+      "portedAt": "2026-04-17T20:41:12.670Z",
+      "sectionCount": 4,
+      "faqCount": 0,
+      "preservedEmbedCount": 3,
+      "verify": {
+        "ok": true,
+        "netlifyH2s": 4,
+        "cmsTextSections": 4,
+        "headingMatch": 1,
+        "similarity": 0.99
+      }
+    },
+    {
+      "slug": "ems-with-rf",
+      "kind": "treatment",
+      "collection": "treatments",
+      "referenceUrl": "https://uncover-web.netlify.app/treatment/ems-with-rf/",
+      "referenceStatus": 200,
+      "cmsId": 145,
+      "cmsName": "EMS  Muscle Toning with RF",
+      "existingBlocks": {
+        "total": 8,
+        "counts": {
+          "doctors_embed": 1,
+          "faqs_embed": 1,
+          "technology": 1,
+          "testimonials_embed": 1,
+          "text_section": 4
+        }
+      },
+      "ported": true,
+      "similarity": null,
+      "notes": "4 textSections + 3 embeds + 0 inline FAQs",
+      "portedAt": "2026-04-17T20:41:20.879Z",
+      "sectionCount": 4,
+      "faqCount": 0,
+      "preservedEmbedCount": 3,
+      "verify": {
+        "ok": true,
+        "netlifyH2s": 4,
+        "cmsTextSections": 4,
+        "headingMatch": 1,
+        "similarity": 0.99
+      }
+    },
+    {
+      "slug": "eye-perk",
+      "kind": "treatment",
+      "collection": "treatments",
+      "referenceUrl": "https://uncover-web.netlify.app/treatment/eye-perk/",
+      "referenceStatus": 200,
+      "cmsId": 164,
+      "cmsName": "Eye Perk",
+      "existingBlocks": {
+        "total": 8,
+        "counts": {
+          "doctors_embed": 1,
+          "faqs_embed": 1,
+          "technology": 1,
+          "testimonials_embed": 1,
+          "text_section": 4
+        }
+      },
+      "ported": true,
+      "similarity": null,
+      "notes": "4 textSections + 3 embeds + 0 inline FAQs",
+      "portedAt": "2026-04-17T20:41:29.200Z",
+      "sectionCount": 4,
+      "faqCount": 0,
+      "preservedEmbedCount": 3,
+      "verify": {
+        "ok": true,
+        "netlifyH2s": 4,
+        "cmsTextSections": 4,
+        "headingMatch": 1,
+        "similarity": 0.97
+      }
+    },
+    {
+      "slug": "face-laser-hair-removal",
+      "kind": "treatment",
+      "collection": "treatments",
+      "referenceUrl": "https://uncover-web.netlify.app/treatment/face-laser-hair-removal/",
+      "referenceStatus": 200,
+      "cmsId": 183,
+      "cmsName": "Facial Laser Hair Removal",
+      "existingBlocks": {
+        "total": 8,
+        "counts": {
+          "doctors_embed": 1,
+          "faqs_embed": 1,
+          "technology": 1,
+          "testimonials_embed": 1,
+          "text_section": 4
+        }
+      },
+      "ported": true,
+      "similarity": null,
+      "notes": "4 textSections + 3 embeds + 0 inline FAQs",
+      "portedAt": "2026-04-17T20:41:37.306Z",
+      "sectionCount": 4,
+      "faqCount": 0,
+      "preservedEmbedCount": 3,
+      "verify": {
+        "ok": true,
+        "netlifyH2s": 4,
+        "cmsTextSections": 4,
+        "headingMatch": 1,
+        "similarity": 0.94
+      }
+    },
+    {
+      "slug": "fillers",
+      "kind": "treatment",
+      "collection": "treatments",
+      "referenceUrl": "https://uncover-web.netlify.app/treatment/fillers/",
+      "referenceStatus": 200,
+      "cmsId": 170,
+      "cmsName": "Fillers",
+      "existingBlocks": {
+        "total": 8,
+        "counts": {
+          "doctors_embed": 1,
+          "faqs_embed": 1,
+          "technology": 1,
+          "testimonials_embed": 1,
+          "text_section": 4
+        }
+      },
+      "ported": true,
+      "similarity": null,
+      "notes": "4 textSections + 3 embeds + 0 inline FAQs",
+      "portedAt": "2026-04-17T20:41:45.108Z",
+      "sectionCount": 4,
+      "faqCount": 0,
+      "preservedEmbedCount": 3,
+      "verify": {
+        "ok": true,
+        "netlifyH2s": 4,
+        "cmsTextSections": 4,
+        "headingMatch": 1,
+        "similarity": 0.99
+      }
+    },
+    {
+      "slug": "fire-and-ice-facial",
+      "kind": "treatment",
+      "collection": "treatments",
+      "referenceUrl": "https://uncover-web.netlify.app/treatment/fire-and-ice-facial/",
+      "referenceStatus": 200,
+      "cmsId": 134,
+      "cmsName": "Fire and Ice Facial",
+      "existingBlocks": {
+        "total": 8,
+        "counts": {
+          "doctors_embed": 1,
+          "faqs_embed": 1,
+          "technology": 1,
+          "testimonials_embed": 1,
+          "text_section": 4
+        }
+      },
+      "ported": true,
+      "similarity": null,
+      "notes": "4 textSections + 3 embeds + 0 inline FAQs",
+      "portedAt": "2026-04-17T20:41:53.152Z",
+      "sectionCount": 4,
+      "faqCount": 0,
+      "preservedEmbedCount": 3,
+      "verify": {
+        "ok": true,
+        "netlifyH2s": 4,
+        "cmsTextSections": 4,
+        "headingMatch": 1,
+        "similarity": 0.96
+      }
+    },
+    {
+      "slug": "forma-rf-skin-tightening",
+      "kind": "treatment",
+      "collection": "treatments",
+      "referenceUrl": "https://uncover-web.netlify.app/treatment/forma-rf-skin-tightening/",
+      "referenceStatus": 200,
+      "cmsId": 144,
+      "cmsName": "Forma RF Skin Tightening",
+      "existingBlocks": {
+        "total": 8,
+        "counts": {
+          "doctors_embed": 1,
+          "faqs_embed": 1,
+          "technology": 1,
+          "testimonials_embed": 1,
+          "text_section": 4
+        }
+      },
+      "ported": true,
+      "similarity": null,
+      "notes": "4 textSections + 3 embeds + 0 inline FAQs",
+      "portedAt": "2026-04-17T20:42:01.332Z",
+      "sectionCount": 4,
+      "faqCount": 0,
+      "preservedEmbedCount": 3,
+      "verify": {
+        "ok": true,
+        "netlifyH2s": 4,
+        "cmsTextSections": 4,
+        "headingMatch": 1,
+        "similarity": 0.99
+      }
+    },
+    {
+      "slug": "gfc-face",
+      "kind": "treatment",
+      "collection": "treatments",
+      "referenceUrl": "https://uncover-web.netlify.app/treatment/gfc-face/",
+      "referenceStatus": 200,
+      "cmsId": 122,
+      "cmsName": "UnWrinkle GFC Face",
+      "existingBlocks": {
+        "total": 8,
+        "counts": {
+          "doctors_embed": 1,
+          "faqs_embed": 1,
+          "technology": 1,
+          "testimonials_embed": 1,
+          "text_section": 4
+        }
+      },
+      "ported": true,
+      "similarity": null,
+      "notes": "4 textSections + 3 embeds + 0 inline FAQs",
+      "portedAt": "2026-04-17T20:42:09.437Z",
+      "sectionCount": 4,
+      "faqCount": 0,
+      "preservedEmbedCount": 3,
+      "verify": {
+        "ok": true,
+        "netlifyH2s": 4,
+        "cmsTextSections": 4,
+        "headingMatch": 1,
+        "similarity": 0.97
+      }
+    },
+    {
+      "slug": "gfc-hair-restoration",
+      "kind": "treatment",
+      "collection": "treatments",
+      "referenceUrl": "https://uncover-web.netlify.app/treatment/gfc-hair-restoration/",
+      "referenceStatus": 200,
+      "cmsId": 174,
+      "cmsName": "GFC Hair Restoration",
+      "existingBlocks": {
+        "total": 8,
+        "counts": {
+          "doctors_embed": 1,
+          "faqs_embed": 1,
+          "technology": 1,
+          "testimonials_embed": 1,
+          "text_section": 4
+        }
+      },
+      "ported": true,
+      "similarity": null,
+      "notes": "4 textSections + 3 embeds + 0 inline FAQs",
+      "portedAt": "2026-04-17T20:42:17.886Z",
+      "sectionCount": 4,
+      "faqCount": 0,
+      "preservedEmbedCount": 3,
+      "verify": {
+        "ok": true,
+        "netlifyH2s": 4,
+        "cmsTextSections": 4,
+        "headingMatch": 1,
+        "similarity": 0.99
+      }
+    },
+    {
+      "slug": "gfc-mesotherapy",
+      "kind": "treatment",
+      "collection": "treatments",
+      "referenceUrl": "https://uncover-web.netlify.app/treatment/gfc-mesotherapy/",
+      "referenceStatus": 200,
+      "cmsId": 138,
+      "cmsName": "GFC Mesotherapy - Hair Restoration",
+      "existingBlocks": {
+        "total": 8,
+        "counts": {
+          "doctors_embed": 1,
+          "faqs_embed": 1,
+          "technology": 1,
+          "testimonials_embed": 1,
+          "text_section": 4
+        }
+      },
+      "ported": true,
+      "similarity": null,
+      "notes": "4 textSections + 3 embeds + 0 inline FAQs",
+      "portedAt": "2026-04-17T20:42:25.766Z",
+      "sectionCount": 4,
+      "faqCount": 0,
+      "preservedEmbedCount": 3,
+      "verify": {
+        "ok": true,
+        "netlifyH2s": 4,
+        "cmsTextSections": 4,
+        "headingMatch": 1,
+        "similarity": 0.99
+      }
+    },
+    {
+      "slug": "gfc-with-microneedling",
+      "kind": "treatment",
+      "collection": "treatments",
+      "referenceUrl": "https://uncover-web.netlify.app/treatment/gfc-with-microneedling/",
+      "referenceStatus": 200,
+      "cmsId": 137,
+      "cmsName": "GFC with Microneedling Hair",
+      "existingBlocks": {
+        "total": 8,
+        "counts": {
+          "doctors_embed": 1,
+          "faqs_embed": 1,
+          "technology": 1,
+          "testimonials_embed": 1,
+          "text_section": 4
+        }
+      },
+      "ported": true,
+      "similarity": null,
+      "notes": "4 textSections + 3 embeds + 0 inline FAQs",
+      "portedAt": "2026-04-17T20:42:34.073Z",
+      "sectionCount": 4,
+      "faqCount": 0,
+      "preservedEmbedCount": 3,
+      "verify": {
+        "ok": true,
+        "netlifyH2s": 4,
+        "cmsTextSections": 4,
+        "headingMatch": 1,
+        "similarity": 0.97
+      }
+    },
+    {
+      "slug": "hair-transplant",
+      "kind": "treatment",
+      "collection": "treatments",
+      "referenceUrl": "https://uncover-web.netlify.app/treatment/hair-transplant/",
+      "referenceStatus": 200,
+      "cmsId": 173,
+      "cmsName": "Hair Transplant",
+      "existingBlocks": {
+        "total": 8,
+        "counts": {
+          "doctors_embed": 1,
+          "faqs_embed": 1,
+          "technology": 1,
+          "testimonials_embed": 1,
+          "text_section": 4
+        }
+      },
+      "ported": true,
+      "similarity": null,
+      "notes": "6 textSections + 3 embeds + 0 inline FAQs",
+      "portedAt": "2026-04-17T20:42:42.169Z",
+      "sectionCount": 6,
+      "faqCount": 0,
+      "preservedEmbedCount": 3,
+      "verify": {
+        "ok": true,
+        "netlifyH2s": 6,
+        "cmsTextSections": 6,
+        "headingMatch": 1,
+        "similarity": 0.96
+      }
+    },
+    {
+      "slug": "hifu",
+      "kind": "treatment",
+      "collection": "treatments",
+      "referenceUrl": "https://uncover-web.netlify.app/treatment/hifu/",
+      "referenceStatus": 200,
+      "cmsId": 184,
+      "cmsName": "HIFU",
+      "existingBlocks": {
+        "total": 8,
+        "counts": {
+          "doctors_embed": 1,
+          "faqs_embed": 1,
+          "technology": 1,
+          "testimonials_embed": 1,
+          "text_section": 4
+        }
+      },
+      "ported": true,
+      "similarity": null,
+      "notes": "4 textSections + 3 embeds + 0 inline FAQs",
+      "portedAt": "2026-04-17T20:42:50.441Z",
+      "sectionCount": 4,
+      "faqCount": 0,
+      "preservedEmbedCount": 3,
+      "verify": {
+        "ok": true,
+        "netlifyH2s": 4,
+        "cmsTextSections": 4,
+        "headingMatch": 1,
+        "similarity": 0.99
+      }
+    },
+    {
+      "slug": "hydrafacial",
+      "kind": "treatment",
+      "collection": "treatments",
+      "referenceUrl": "https://uncover-web.netlify.app/treatment/hydrafacial/",
+      "referenceStatus": 200,
+      "cmsId": 119,
+      "cmsName": "Hydrafacial",
+      "existingBlocks": {
+        "total": 8,
+        "counts": {
+          "doctors_embed": 1,
+          "faqs_embed": 1,
+          "technology": 1,
+          "testimonials_embed": 1,
+          "text_section": 4
+        }
+      },
+      "ported": true,
+      "similarity": null,
+      "notes": "5 textSections + 3 embeds + 0 inline FAQs",
+      "portedAt": "2026-04-17T20:42:58.460Z",
+      "sectionCount": 5,
+      "faqCount": 0,
+      "preservedEmbedCount": 3,
+      "verify": {
+        "ok": true,
+        "netlifyH2s": 5,
+        "cmsTextSections": 5,
+        "headingMatch": 1,
+        "similarity": 1
+      }
+    },
+    {
+      "slug": "hydrafacial-keravive",
+      "kind": "treatment",
+      "collection": "treatments",
+      "referenceUrl": "https://uncover-web.netlify.app/treatment/hydrafacial-keravive/",
+      "referenceStatus": 200,
+      "cmsId": 168,
+      "cmsName": "Hydrafacial Keravive",
+      "existingBlocks": {
+        "total": 8,
+        "counts": {
+          "doctors_embed": 1,
+          "faqs_embed": 1,
+          "technology": 1,
+          "testimonials_embed": 1,
+          "text_section": 4
+        }
+      },
+      "ported": true,
+      "similarity": null,
+      "notes": "4 textSections + 3 embeds + 0 inline FAQs",
+      "portedAt": "2026-04-17T20:43:06.688Z",
+      "sectionCount": 4,
+      "faqCount": 0,
+      "preservedEmbedCount": 3,
+      "verify": {
+        "ok": true,
+        "netlifyH2s": 4,
+        "cmsTextSections": 4,
+        "headingMatch": 1,
+        "similarity": 0.97
+      }
+    },
+    {
+      "slug": "iv-glow-drips",
+      "kind": "treatment",
+      "collection": "treatments",
+      "referenceUrl": "https://uncover-web.netlify.app/treatment/iv-glow-drips/",
+      "referenceStatus": 200,
+      "cmsId": 132,
+      "cmsName": "Glow Drips (IV Infusion)",
+      "existingBlocks": {
+        "total": 8,
+        "counts": {
+          "doctors_embed": 1,
+          "faqs_embed": 1,
+          "technology": 1,
+          "testimonials_embed": 1,
+          "text_section": 4
+        }
+      },
+      "ported": true,
+      "similarity": null,
+      "notes": "4 textSections + 3 embeds + 0 inline FAQs",
+      "portedAt": "2026-04-17T20:43:14.754Z",
+      "sectionCount": 4,
+      "faqCount": 0,
+      "preservedEmbedCount": 3,
+      "verify": {
+        "ok": true,
+        "netlifyH2s": 4,
+        "cmsTextSections": 4,
+        "headingMatch": 1,
+        "similarity": 0.98
+      }
+    },
+    {
+      "slug": "laser-hair-body-upper-body",
+      "kind": "treatment",
+      "collection": "treatments",
+      "referenceUrl": "https://uncover-web.netlify.app/treatment/laser-hair-body-upper-body/",
+      "referenceStatus": 200,
+      "cmsId": 141,
+      "cmsName": "Upper Body - Laser Hair Removal",
+      "existingBlocks": {
+        "total": 8,
+        "counts": {
+          "doctors_embed": 1,
+          "faqs_embed": 1,
+          "technology": 1,
+          "testimonials_embed": 1,
+          "text_section": 4
+        }
+      },
+      "ported": true,
+      "similarity": null,
+      "notes": "4 textSections + 3 embeds + 0 inline FAQs",
+      "portedAt": "2026-04-17T20:43:23.074Z",
+      "sectionCount": 4,
+      "faqCount": 0,
+      "preservedEmbedCount": 3,
+      "verify": {
+        "ok": true,
+        "netlifyH2s": 4,
+        "cmsTextSections": 4,
+        "headingMatch": 1,
+        "similarity": 0.99
+      }
+    },
+    {
+      "slug": "laser-hair-removal-arms",
+      "kind": "treatment",
+      "collection": "treatments",
+      "referenceUrl": "https://uncover-web.netlify.app/treatment/laser-hair-removal-arms/",
+      "referenceStatus": 200,
+      "cmsId": 167,
+      "cmsName": "Arms - Laser Hair Removal",
+      "existingBlocks": {
+        "total": 8,
+        "counts": {
+          "doctors_embed": 1,
+          "faqs_embed": 1,
+          "technology": 1,
+          "testimonials_embed": 1,
+          "text_section": 4
+        }
+      },
+      "ported": true,
+      "similarity": null,
+      "notes": "4 textSections + 3 embeds + 0 inline FAQs",
+      "portedAt": "2026-04-17T20:43:31.143Z",
+      "sectionCount": 4,
+      "faqCount": 0,
+      "preservedEmbedCount": 3,
+      "verify": {
+        "ok": true,
+        "netlifyH2s": 4,
+        "cmsTextSections": 4,
+        "headingMatch": 1,
+        "similarity": 1
+      }
+    },
+    {
+      "slug": "laser-hair-removal-at-home",
+      "kind": "treatment",
+      "collection": "treatments",
+      "referenceUrl": "https://uncover-web.netlify.app/treatment/laser-hair-removal-at-home/",
+      "referenceStatus": 200,
+      "cmsId": 139,
+      "cmsName": "Laser Hair Removal at home",
+      "existingBlocks": {
+        "total": 8,
+        "counts": {
+          "doctors_embed": 1,
+          "faqs_embed": 1,
+          "technology": 1,
+          "testimonials_embed": 1,
+          "text_section": 4
+        }
+      },
+      "ported": true,
+      "similarity": null,
+      "notes": "4 textSections + 3 embeds + 0 inline FAQs",
+      "portedAt": "2026-04-17T20:43:39.492Z",
+      "sectionCount": 4,
+      "faqCount": 0,
+      "preservedEmbedCount": 3,
+      "verify": {
+        "ok": true,
+        "netlifyH2s": 4,
+        "cmsTextSections": 4,
+        "headingMatch": 1,
+        "similarity": 1
+      }
+    },
+    {
+      "slug": "laser-hair-removal-back",
+      "kind": "treatment",
+      "collection": "treatments",
+      "referenceUrl": "https://uncover-web.netlify.app/treatment/laser-hair-removal-back/",
+      "referenceStatus": 200,
+      "cmsId": 161,
+      "cmsName": "Back - Laser Hair Removal",
+      "existingBlocks": {
+        "total": 8,
+        "counts": {
+          "doctors_embed": 1,
+          "faqs_embed": 1,
+          "technology": 1,
+          "testimonials_embed": 1,
+          "text_section": 4
+        }
+      },
+      "ported": true,
+      "similarity": null,
+      "notes": "4 textSections + 3 embeds + 0 inline FAQs",
+      "portedAt": "2026-04-17T20:43:47.331Z",
+      "sectionCount": 4,
+      "faqCount": 0,
+      "preservedEmbedCount": 3,
+      "verify": {
+        "ok": true,
+        "netlifyH2s": 4,
+        "cmsTextSections": 4,
+        "headingMatch": 1,
+        "similarity": 0.98
+      }
+    },
+    {
+      "slug": "laser-hair-removal-bikini",
+      "kind": "treatment",
+      "collection": "treatments",
+      "referenceUrl": "https://uncover-web.netlify.app/treatment/laser-hair-removal-bikini/",
+      "referenceStatus": 200,
+      "cmsId": 179,
+      "cmsName": "Bikini - Laser Hair Removal",
+      "existingBlocks": {
+        "total": 8,
+        "counts": {
+          "doctors_embed": 1,
+          "faqs_embed": 1,
+          "technology": 1,
+          "testimonials_embed": 1,
+          "text_section": 4
+        }
+      },
+      "ported": true,
+      "similarity": null,
+      "notes": "4 textSections + 3 embeds + 0 inline FAQs",
+      "portedAt": "2026-04-17T20:43:55.279Z",
+      "sectionCount": 4,
+      "faqCount": 0,
+      "preservedEmbedCount": 3,
+      "verify": {
+        "ok": true,
+        "netlifyH2s": 4,
+        "cmsTextSections": 4,
+        "headingMatch": 1,
+        "similarity": 0.99
+      }
+    },
+    {
+      "slug": "laser-hair-removal-for-men-face-and-beard-shaping",
+      "kind": "treatment",
+      "collection": "treatments",
+      "referenceUrl": "https://uncover-web.netlify.app/treatment/laser-hair-removal-for-men-face-and-beard-shaping/",
+      "referenceStatus": 200,
+      "cmsId": 177,
+      "cmsName": "Beard Shaping",
+      "existingBlocks": {
+        "total": 8,
+        "counts": {
+          "doctors_embed": 1,
+          "faqs_embed": 1,
+          "technology": 1,
+          "testimonials_embed": 1,
+          "text_section": 4
+        }
+      },
+      "ported": true,
+      "similarity": null,
+      "notes": "5 textSections + 3 embeds + 0 inline FAQs",
+      "portedAt": "2026-04-17T20:44:03.733Z",
+      "sectionCount": 5,
+      "faqCount": 0,
+      "preservedEmbedCount": 3,
+      "verify": {
+        "ok": true,
+        "netlifyH2s": 5,
+        "cmsTextSections": 5,
+        "headingMatch": 1,
+        "similarity": 0.99
+      }
+    },
+    {
+      "slug": "laser-hair-removal-men",
+      "kind": "treatment",
+      "collection": "treatments",
+      "referenceUrl": "https://uncover-web.netlify.app/treatment/laser-hair-removal-men/",
+      "referenceStatus": 200,
+      "cmsId": 175,
+      "cmsName": "Full Body Laser Hair Removal Men",
+      "existingBlocks": {
+        "total": 8,
+        "counts": {
+          "doctors_embed": 1,
+          "faqs_embed": 1,
+          "technology": 1,
+          "testimonials_embed": 1,
+          "text_section": 4
+        }
+      },
+      "ported": true,
+      "similarity": null,
+      "notes": "4 textSections + 3 embeds + 0 inline FAQs",
+      "portedAt": "2026-04-17T20:44:11.646Z",
+      "sectionCount": 4,
+      "faqCount": 0,
+      "preservedEmbedCount": 3,
+      "verify": {
+        "ok": true,
+        "netlifyH2s": 4,
+        "cmsTextSections": 4,
+        "headingMatch": 1,
+        "similarity": 0.97
+      }
+    },
+    {
+      "slug": "laser-hair-removal-stomach",
+      "kind": "treatment",
+      "collection": "treatments",
+      "referenceUrl": "https://uncover-web.netlify.app/treatment/laser-hair-removal-stomach/",
+      "referenceStatus": 200,
+      "cmsId": 142,
+      "cmsName": "Stomach -  Laser Hair Removal",
+      "existingBlocks": {
+        "total": 8,
+        "counts": {
+          "doctors_embed": 1,
+          "faqs_embed": 1,
+          "technology": 1,
+          "testimonials_embed": 1,
+          "text_section": 4
+        }
+      },
+      "ported": true,
+      "similarity": null,
+      "notes": "4 textSections + 3 embeds + 0 inline FAQs",
+      "portedAt": "2026-04-17T20:44:19.961Z",
+      "sectionCount": 4,
+      "faqCount": 0,
+      "preservedEmbedCount": 3,
+      "verify": {
+        "ok": true,
+        "netlifyH2s": 4,
+        "cmsTextSections": 4,
+        "headingMatch": 1,
+        "similarity": 1
+      }
+    },
+    {
+      "slug": "laser-hair-removal-upper-lips",
+      "kind": "treatment",
+      "collection": "treatments",
+      "referenceUrl": "https://uncover-web.netlify.app/treatment/laser-hair-removal-upper-lips/",
+      "referenceStatus": 200,
+      "cmsId": 140,
+      "cmsName": "Upper Lips - Laser Hair Removal",
+      "existingBlocks": {
+        "total": 8,
+        "counts": {
+          "doctors_embed": 1,
+          "faqs_embed": 1,
+          "technology": 1,
+          "testimonials_embed": 1,
+          "text_section": 4
+        }
+      },
+      "ported": true,
+      "similarity": null,
+      "notes": "4 textSections + 3 embeds + 0 inline FAQs",
+      "portedAt": "2026-04-17T20:44:28.171Z",
+      "sectionCount": 4,
+      "faqCount": 0,
+      "preservedEmbedCount": 3,
+      "verify": {
+        "ok": true,
+        "netlifyH2s": 4,
+        "cmsTextSections": 4,
+        "headingMatch": 1,
+        "similarity": 0.98
+      }
+    },
+    {
+      "slug": "laser-hair-removal-women",
+      "kind": "treatment",
+      "collection": "treatments",
+      "referenceUrl": "https://uncover-web.netlify.app/treatment/laser-hair-removal-women/",
+      "referenceStatus": 200,
+      "cmsId": 181,
+      "cmsName": "Full Body Laser Hair Removal for women",
+      "existingBlocks": {
+        "total": 8,
+        "counts": {
+          "doctors_embed": 1,
+          "faqs_embed": 1,
+          "technology": 1,
+          "testimonials_embed": 1,
+          "text_section": 4
+        }
+      },
+      "ported": true,
+      "similarity": null,
+      "notes": "8 textSections + 3 embeds + 0 inline FAQs",
+      "portedAt": "2026-04-17T20:44:36.948Z",
+      "sectionCount": 8,
+      "faqCount": 0,
+      "preservedEmbedCount": 3,
+      "verify": {
+        "ok": true,
+        "netlifyH2s": 8,
+        "cmsTextSections": 8,
+        "headingMatch": 1,
+        "similarity": 0.99
+      }
+    },
+    {
+      "slug": "laser-toning",
+      "kind": "treatment",
+      "collection": "treatments",
+      "referenceUrl": "https://uncover-web.netlify.app/treatment/laser-toning/",
+      "referenceStatus": 200,
+      "cmsId": 171,
+      "cmsName": "Laser Toning",
+      "existingBlocks": {
+        "total": 8,
+        "counts": {
+          "doctors_embed": 1,
+          "faqs_embed": 1,
+          "technology": 1,
+          "testimonials_embed": 1,
+          "text_section": 4
+        }
+      },
+      "ported": true,
+      "similarity": null,
+      "notes": "4 textSections + 3 embeds + 0 inline FAQs",
+      "portedAt": "2026-04-17T20:44:44.796Z",
+      "sectionCount": 4,
+      "faqCount": 0,
+      "preservedEmbedCount": 3,
+      "verify": {
+        "ok": true,
+        "netlifyH2s": 4,
+        "cmsTextSections": 4,
+        "headingMatch": 1,
+        "similarity": 0.99
+      }
+    },
+    {
+      "slug": "legs-laser-hair-removal",
+      "kind": "treatment",
+      "collection": "treatments",
+      "referenceUrl": "https://uncover-web.netlify.app/treatment/legs-laser-hair-removal/",
+      "referenceStatus": 200,
+      "cmsId": 143,
+      "cmsName": "Legs - Laser Hair Removal",
+      "existingBlocks": {
+        "total": 8,
+        "counts": {
+          "doctors_embed": 1,
+          "faqs_embed": 1,
+          "technology": 1,
+          "testimonials_embed": 1,
+          "text_section": 4
+        }
+      },
+      "ported": true,
+      "similarity": null,
+      "notes": "4 textSections + 3 embeds + 0 inline FAQs",
+      "portedAt": "2026-04-17T20:44:52.924Z",
+      "sectionCount": 4,
+      "faqCount": 0,
+      "preservedEmbedCount": 3,
+      "verify": {
+        "ok": true,
+        "netlifyH2s": 4,
+        "cmsTextSections": 4,
+        "headingMatch": 1,
+        "similarity": 1
+      }
+    },
+    {
+      "slug": "lesion-treatment",
+      "kind": "treatment",
+      "collection": "treatments",
+      "referenceUrl": "https://uncover-web.netlify.app/treatment/lesion-treatment/",
+      "referenceStatus": 200,
+      "cmsId": 149,
+      "cmsName": "Lesion Treatment",
+      "existingBlocks": {
+        "total": 8,
+        "counts": {
+          "doctors_embed": 1,
+          "faqs_embed": 1,
+          "technology": 1,
+          "testimonials_embed": 1,
+          "text_section": 4
+        }
+      },
+      "ported": true,
+      "similarity": null,
+      "notes": "4 textSections + 3 embeds + 0 inline FAQs",
+      "portedAt": "2026-04-17T20:45:01.049Z",
+      "sectionCount": 4,
+      "faqCount": 0,
+      "preservedEmbedCount": 3,
+      "verify": {
+        "ok": true,
+        "netlifyH2s": 4,
+        "cmsTextSections": 4,
+        "headingMatch": 1,
+        "similarity": 0.98
+      }
+    },
+    {
+      "slug": "lip-peel",
+      "kind": "treatment",
+      "collection": "treatments",
+      "referenceUrl": "https://uncover-web.netlify.app/treatment/lip-peel/",
+      "referenceStatus": 200,
+      "cmsId": 131,
+      "cmsName": "Lip Peel",
+      "existingBlocks": {
+        "total": 8,
+        "counts": {
+          "doctors_embed": 1,
+          "faqs_embed": 1,
+          "technology": 1,
+          "testimonials_embed": 1,
+          "text_section": 4
+        }
+      },
+      "ported": true,
+      "similarity": null,
+      "notes": "4 textSections + 3 embeds + 0 inline FAQs",
+      "portedAt": "2026-04-17T20:45:09.278Z",
+      "sectionCount": 4,
+      "faqCount": 0,
+      "preservedEmbedCount": 3,
+      "verify": {
+        "ok": true,
+        "netlifyH2s": 4,
+        "cmsTextSections": 4,
+        "headingMatch": 1,
+        "similarity": 0.99
+      }
+    },
+    {
+      "slug": "lip-perk",
+      "kind": "treatment",
+      "collection": "treatments",
+      "referenceUrl": "https://uncover-web.netlify.app/treatment/lip-perk/",
+      "referenceStatus": 200,
+      "cmsId": 165,
+      "cmsName": "Lip Perk",
+      "existingBlocks": {
+        "total": 8,
+        "counts": {
+          "doctors_embed": 1,
+          "faqs_embed": 1,
+          "technology": 1,
+          "testimonials_embed": 1,
+          "text_section": 4
+        }
+      },
+      "ported": true,
+      "similarity": null,
+      "notes": "4 textSections + 3 embeds + 0 inline FAQs",
+      "portedAt": "2026-04-17T20:45:17.299Z",
+      "sectionCount": 4,
+      "faqCount": 0,
+      "preservedEmbedCount": 3,
+      "verify": {
+        "ok": true,
+        "netlifyH2s": 4,
+        "cmsTextSections": 4,
+        "headingMatch": 1,
+        "similarity": 0.97
+      }
+    },
+    {
+      "slug": "medifacials-and-peels",
+      "kind": "treatment",
+      "collection": "treatments",
+      "referenceUrl": "https://uncover-web.netlify.app/treatment/medifacials-and-peels/",
+      "referenceStatus": 200,
+      "cmsId": 169,
+      "cmsName": "Medifacials & Peels",
+      "existingBlocks": {
+        "total": 8,
+        "counts": {
+          "doctors_embed": 1,
+          "faqs_embed": 1,
+          "technology": 1,
+          "testimonials_embed": 1,
+          "text_section": 4
+        }
+      },
+      "ported": true,
+      "similarity": null,
+      "notes": "4 textSections + 3 embeds + 0 inline FAQs",
+      "portedAt": "2026-04-17T20:45:25.430Z",
+      "sectionCount": 4,
+      "faqCount": 0,
+      "preservedEmbedCount": 3,
+      "verify": {
+        "ok": true,
+        "netlifyH2s": 4,
+        "cmsTextSections": 4,
+        "headingMatch": 1,
+        "similarity": 0.96
+      }
+    },
+    {
+      "slug": "mole-treatment",
+      "kind": "treatment",
+      "collection": "treatments",
+      "referenceUrl": "https://uncover-web.netlify.app/treatment/mole-treatment/",
+      "referenceStatus": 200,
+      "cmsId": 148,
+      "cmsName": "Mole Treatment",
+      "existingBlocks": {
+        "total": 8,
+        "counts": {
+          "doctors_embed": 1,
+          "faqs_embed": 1,
+          "technology": 1,
+          "testimonials_embed": 1,
+          "text_section": 4
+        }
+      },
+      "ported": true,
+      "similarity": null,
+      "notes": "4 textSections + 3 embeds + 0 inline FAQs",
+      "portedAt": "2026-04-17T20:45:33.483Z",
+      "sectionCount": 4,
+      "faqCount": 0,
+      "preservedEmbedCount": 3,
+      "verify": {
+        "ok": true,
+        "netlifyH2s": 4,
+        "cmsTextSections": 4,
+        "headingMatch": 1,
+        "similarity": 0.98
+      }
+    },
+    {
+      "slug": "morpheus8-microneedling-and-radiofrequency",
+      "kind": "treatment",
+      "collection": "treatments",
+      "referenceUrl": "https://uncover-web.netlify.app/treatment/morpheus8-microneedling-and-radiofrequency/",
+      "referenceStatus": 200,
+      "cmsId": 128,
+      "cmsName": "Morpheus8 Microneedling RF",
+      "existingBlocks": {
+        "total": 8,
+        "counts": {
+          "doctors_embed": 1,
+          "faqs_embed": 1,
+          "technology": 1,
+          "testimonials_embed": 1,
+          "text_section": 4
+        }
+      },
+      "ported": true,
+      "similarity": null,
+      "notes": "4 textSections + 3 embeds + 0 inline FAQs",
+      "portedAt": "2026-04-17T20:45:41.962Z",
+      "sectionCount": 4,
+      "faqCount": 0,
+      "preservedEmbedCount": 3,
+      "verify": {
+        "ok": true,
+        "netlifyH2s": 4,
+        "cmsTextSections": 4,
+        "headingMatch": 1,
+        "similarity": 0.97
+      }
+    },
+    {
+      "slug": "oxybright-facial",
+      "kind": "treatment",
+      "collection": "treatments",
+      "referenceUrl": "https://uncover-web.netlify.app/treatment/oxybright-facial/",
+      "referenceStatus": 200,
+      "cmsId": 176,
+      "cmsName": "Oxybright Facial",
+      "existingBlocks": {
+        "total": 8,
+        "counts": {
+          "doctors_embed": 1,
+          "faqs_embed": 1,
+          "technology": 1,
+          "testimonials_embed": 1,
+          "text_section": 4
+        }
+      },
+      "ported": true,
+      "similarity": null,
+      "notes": "4 textSections + 3 embeds + 0 inline FAQs",
+      "portedAt": "2026-04-17T20:45:50.219Z",
+      "sectionCount": 4,
+      "faqCount": 0,
+      "preservedEmbedCount": 3,
+      "verify": {
+        "ok": true,
+        "netlifyH2s": 4,
+        "cmsTextSections": 4,
+        "headingMatch": 1,
+        "similarity": 0.98
+      }
+    },
+    {
+      "slug": "party-peel",
+      "kind": "treatment",
+      "collection": "treatments",
+      "referenceUrl": "https://uncover-web.netlify.app/treatment/party-peel/",
+      "referenceStatus": 200,
+      "cmsId": 163,
+      "cmsName": "Party Peel",
+      "existingBlocks": {
+        "total": 8,
+        "counts": {
+          "doctors_embed": 1,
+          "faqs_embed": 1,
+          "technology": 1,
+          "testimonials_embed": 1,
+          "text_section": 4
+        }
+      },
+      "ported": true,
+      "similarity": null,
+      "notes": "4 textSections + 3 embeds + 0 inline FAQs",
+      "portedAt": "2026-04-17T20:45:58.516Z",
+      "sectionCount": 4,
+      "faqCount": 0,
+      "preservedEmbedCount": 3,
+      "verify": {
+        "ok": true,
+        "netlifyH2s": 4,
+        "cmsTextSections": 4,
+        "headingMatch": 1,
+        "similarity": 0.97
+      }
+    },
+    {
+      "slug": "photo-facial",
+      "kind": "treatment",
+      "collection": "treatments",
+      "referenceUrl": "https://uncover-web.netlify.app/treatment/photo-facial/",
+      "referenceStatus": 200,
+      "cmsId": 158,
+      "cmsName": "Photo Facial",
+      "existingBlocks": {
+        "total": 8,
+        "counts": {
+          "doctors_embed": 1,
+          "faqs_embed": 1,
+          "technology": 1,
+          "testimonials_embed": 1,
+          "text_section": 4
+        }
+      },
+      "ported": true,
+      "similarity": null,
+      "notes": "4 textSections + 3 embeds + 0 inline FAQs",
+      "portedAt": "2026-04-17T20:46:06.328Z",
+      "sectionCount": 4,
+      "faqCount": 0,
+      "preservedEmbedCount": 3,
+      "verify": {
+        "ok": true,
+        "netlifyH2s": 4,
+        "cmsTextSections": 4,
+        "headingMatch": 1,
+        "similarity": 0.99
+      }
+    },
+    {
+      "slug": "pigment-buster-peel",
+      "kind": "treatment",
+      "collection": "treatments",
+      "referenceUrl": "https://uncover-web.netlify.app/treatment/pigment-buster-peel/",
+      "referenceStatus": 200,
+      "cmsId": 123,
+      "cmsName": "Pigment Buster Peel",
+      "existingBlocks": {
+        "total": 8,
+        "counts": {
+          "doctors_embed": 1,
+          "faqs_embed": 1,
+          "technology": 1,
+          "testimonials_embed": 1,
+          "text_section": 4
+        }
+      },
+      "ported": true,
+      "similarity": null,
+      "notes": "4 textSections + 3 embeds + 0 inline FAQs",
+      "portedAt": "2026-04-17T20:46:14.551Z",
+      "sectionCount": 4,
+      "faqCount": 0,
+      "preservedEmbedCount": 3,
+      "verify": {
+        "ok": true,
+        "netlifyH2s": 4,
+        "cmsTextSections": 4,
+        "headingMatch": 1,
+        "similarity": 0.96
+      }
+    },
+    {
+      "slug": "qr-678",
+      "kind": "treatment",
+      "collection": "treatments",
+      "referenceUrl": "https://uncover-web.netlify.app/treatment/qr-678/",
+      "referenceStatus": 200,
+      "cmsId": 136,
+      "cmsName": "QR678",
+      "existingBlocks": {
+        "total": 8,
+        "counts": {
+          "doctors_embed": 1,
+          "faqs_embed": 1,
+          "technology": 1,
+          "testimonials_embed": 1,
+          "text_section": 4
+        }
+      },
+      "ported": true,
+      "similarity": null,
+      "notes": "4 textSections + 3 embeds + 0 inline FAQs",
+      "portedAt": "2026-04-17T20:46:22.647Z",
+      "sectionCount": 4,
+      "faqCount": 0,
+      "preservedEmbedCount": 3,
+      "verify": {
+        "ok": true,
+        "netlifyH2s": 4,
+        "cmsTextSections": 4,
+        "headingMatch": 1,
+        "similarity": 0.99
+      }
+    },
+    {
+      "slug": "skin-boosters",
+      "kind": "treatment",
+      "collection": "treatments",
+      "referenceUrl": "https://uncover-web.netlify.app/treatment/skin-boosters/",
+      "referenceStatus": 200,
+      "cmsId": 162,
+      "cmsName": "Skin Boosters",
+      "existingBlocks": {
+        "total": 8,
+        "counts": {
+          "doctors_embed": 1,
+          "faqs_embed": 1,
+          "technology": 1,
+          "testimonials_embed": 1,
+          "text_section": 4
+        }
+      },
+      "ported": true,
+      "similarity": null,
+      "notes": "5 textSections + 3 embeds + 0 inline FAQs",
+      "portedAt": "2026-04-17T20:46:30.886Z",
+      "sectionCount": 5,
+      "faqCount": 0,
+      "preservedEmbedCount": 3,
+      "verify": {
+        "ok": true,
+        "netlifyH2s": 5,
+        "cmsTextSections": 5,
+        "headingMatch": 1,
+        "similarity": 0.96
+      }
+    },
+    {
+      "slug": "skin-tag-removal",
+      "kind": "treatment",
+      "collection": "treatments",
+      "referenceUrl": "https://uncover-web.netlify.app/treatment/skin-tag-removal/",
+      "referenceStatus": 200,
+      "cmsId": 147,
+      "cmsName": "Skin Tag Removal",
+      "existingBlocks": {
+        "total": 8,
+        "counts": {
+          "doctors_embed": 1,
+          "faqs_embed": 1,
+          "technology": 1,
+          "testimonials_embed": 1,
+          "text_section": 4
+        }
+      },
+      "ported": true,
+      "similarity": null,
+      "notes": "4 textSections + 3 embeds + 0 inline FAQs",
+      "portedAt": "2026-04-17T20:46:39.018Z",
+      "sectionCount": 4,
+      "faqCount": 0,
+      "preservedEmbedCount": 3,
+      "verify": {
+        "ok": true,
+        "netlifyH2s": 4,
+        "cmsTextSections": 4,
+        "headingMatch": 1,
+        "similarity": 0.97
+      }
+    },
+    {
+      "slug": "tattoo-removal",
+      "kind": "treatment",
+      "collection": "treatments",
+      "referenceUrl": "https://uncover-web.netlify.app/treatment/tattoo-removal/",
+      "referenceStatus": 200,
+      "cmsId": 157,
+      "cmsName": "Tatto Removal",
+      "existingBlocks": {
+        "total": 8,
+        "counts": {
+          "doctors_embed": 1,
+          "faqs_embed": 1,
+          "technology": 1,
+          "testimonials_embed": 1,
+          "text_section": 4
+        }
+      },
+      "ported": true,
+      "similarity": null,
+      "notes": "4 textSections + 3 embeds + 0 inline FAQs",
+      "portedAt": "2026-04-17T20:46:47.295Z",
+      "sectionCount": 4,
+      "faqCount": 0,
+      "preservedEmbedCount": 3,
+      "verify": {
+        "ok": true,
+        "netlifyH2s": 4,
+        "cmsTextSections": 4,
+        "headingMatch": 1,
+        "similarity": 0.98
+      }
+    },
+    {
+      "slug": "threadlift",
+      "kind": "treatment",
+      "collection": "treatments",
+      "referenceUrl": "https://uncover-web.netlify.app/treatment/threadlift/",
+      "referenceStatus": 200,
+      "cmsId": 156,
+      "cmsName": "Threadlift",
+      "existingBlocks": {
+        "total": 8,
+        "counts": {
+          "doctors_embed": 1,
+          "faqs_embed": 1,
+          "technology": 1,
+          "testimonials_embed": 1,
+          "text_section": 4
+        }
+      },
+      "ported": true,
+      "similarity": null,
+      "notes": "4 textSections + 3 embeds + 0 inline FAQs",
+      "portedAt": "2026-04-17T20:46:55.542Z",
+      "sectionCount": 4,
+      "faqCount": 0,
+      "preservedEmbedCount": 3,
+      "verify": {
+        "ok": true,
+        "netlifyH2s": 4,
+        "cmsTextSections": 4,
+        "headingMatch": 1,
+        "similarity": 0.96
+      }
+    },
+    {
+      "slug": "underarm-laser-hair-removal",
+      "kind": "treatment",
+      "collection": "treatments",
+      "referenceUrl": "https://uncover-web.netlify.app/treatment/underarm-laser-hair-removal/",
+      "referenceStatus": 200,
+      "cmsId": 180,
+      "cmsName": "Underarm - Laser Hair Removal",
+      "existingBlocks": {
+        "total": 8,
+        "counts": {
+          "doctors_embed": 1,
+          "faqs_embed": 1,
+          "technology": 1,
+          "testimonials_embed": 1,
+          "text_section": 4
+        }
+      },
+      "ported": true,
+      "similarity": null,
+      "notes": "4 textSections + 3 embeds + 0 inline FAQs",
+      "portedAt": "2026-04-17T20:47:03.653Z",
+      "sectionCount": 4,
+      "faqCount": 0,
+      "preservedEmbedCount": 3,
+      "verify": {
+        "ok": true,
+        "netlifyH2s": 4,
+        "cmsTextSections": 4,
+        "headingMatch": 1,
+        "similarity": 0.99
+      }
+    },
+    {
+      "slug": "underarm-pigmentation-peel",
+      "kind": "treatment",
+      "collection": "treatments",
+      "referenceUrl": "https://uncover-web.netlify.app/treatment/underarm-pigmentation-peel/",
+      "referenceStatus": 200,
+      "cmsId": 125,
+      "cmsName": "UnTint Pigmentation Peel",
+      "existingBlocks": {
+        "total": 8,
+        "counts": {
+          "doctors_embed": 1,
+          "faqs_embed": 1,
+          "technology": 1,
+          "testimonials_embed": 1,
+          "text_section": 4
+        }
+      },
+      "ported": true,
+      "similarity": null,
+      "notes": "4 textSections + 3 embeds + 0 inline FAQs",
+      "portedAt": "2026-04-17T20:47:11.974Z",
+      "sectionCount": 4,
+      "faqCount": 0,
+      "preservedEmbedCount": 3,
+      "verify": {
+        "ok": true,
+        "netlifyH2s": 4,
+        "cmsTextSections": 4,
+        "headingMatch": 1,
+        "similarity": 0.95
+      }
+    },
+    {
+      "slug": "undereye-peel",
+      "kind": "treatment",
+      "collection": "treatments",
+      "referenceUrl": "https://uncover-web.netlify.app/treatment/undereye-peel/",
+      "referenceStatus": 200,
+      "cmsId": 155,
+      "cmsName": "Under Eye Peel",
+      "existingBlocks": {
+        "total": 8,
+        "counts": {
+          "doctors_embed": 1,
+          "faqs_embed": 1,
+          "technology": 1,
+          "testimonials_embed": 1,
+          "text_section": 4
+        }
+      },
+      "ported": true,
+      "similarity": null,
+      "notes": "4 textSections + 3 embeds + 0 inline FAQs",
+      "portedAt": "2026-04-17T20:47:20.362Z",
+      "sectionCount": 4,
+      "faqCount": 0,
+      "preservedEmbedCount": 3,
+      "verify": {
+        "ok": true,
+        "netlifyH2s": 4,
+        "cmsTextSections": 4,
+        "headingMatch": 1,
+        "similarity": 0.97
+      }
+    },
+    {
+      "slug": "untan-glow-peel",
+      "kind": "treatment",
+      "collection": "treatments",
+      "referenceUrl": "https://uncover-web.netlify.app/treatment/untan-glow-peel/",
+      "referenceStatus": 200,
+      "cmsId": 124,
+      "cmsName": "UnTan Glow Peel",
+      "existingBlocks": {
+        "total": 8,
+        "counts": {
+          "doctors_embed": 1,
+          "faqs_embed": 1,
+          "technology": 1,
+          "testimonials_embed": 1,
+          "text_section": 4
+        }
+      },
+      "ported": true,
+      "similarity": null,
+      "notes": "4 textSections + 3 embeds + 0 inline FAQs",
+      "portedAt": "2026-04-17T20:47:28.540Z",
+      "sectionCount": 4,
+      "faqCount": 0,
+      "preservedEmbedCount": 3,
+      "verify": {
+        "ok": true,
+        "netlifyH2s": 4,
+        "cmsTextSections": 4,
+        "headingMatch": 1,
+        "similarity": 0.97
+      }
+    },
+    {
+      "slug": "vampire-facial",
+      "kind": "treatment",
+      "collection": "treatments",
+      "referenceUrl": "https://uncover-web.netlify.app/treatment/vampire-facial/",
+      "referenceStatus": 200,
+      "cmsId": 130,
+      "cmsName": "Vampire Facial",
+      "existingBlocks": {
+        "total": 8,
+        "counts": {
+          "doctors_embed": 1,
+          "faqs_embed": 1,
+          "technology": 1,
+          "testimonials_embed": 1,
+          "text_section": 4
+        }
+      },
+      "ported": true,
+      "similarity": null,
+      "notes": "4 textSections + 3 embeds + 0 inline FAQs",
+      "portedAt": "2026-04-17T20:47:36.658Z",
+      "sectionCount": 4,
+      "faqCount": 0,
+      "preservedEmbedCount": 3,
+      "verify": {
+        "ok": true,
+        "netlifyH2s": 4,
+        "cmsTextSections": 4,
+        "headingMatch": 1,
+        "similarity": 0.99
+      }
+    },
+    {
+      "slug": "wart-removal",
+      "kind": "treatment",
+      "collection": "treatments",
+      "referenceUrl": "https://uncover-web.netlify.app/treatment/wart-removal/",
+      "referenceStatus": 200,
+      "cmsId": 146,
+      "cmsName": "Wart Removal",
+      "existingBlocks": {
+        "total": 8,
+        "counts": {
+          "doctors_embed": 1,
+          "faqs_embed": 1,
+          "technology": 1,
+          "testimonials_embed": 1,
+          "text_section": 4
+        }
+      },
+      "ported": true,
+      "similarity": null,
+      "notes": "4 textSections + 3 embeds + 0 inline FAQs",
+      "portedAt": "2026-04-17T20:47:44.856Z",
+      "sectionCount": 4,
+      "faqCount": 0,
+      "preservedEmbedCount": 3,
+      "verify": {
+        "ok": true,
+        "netlifyH2s": 4,
+        "cmsTextSections": 4,
+        "headingMatch": 1,
+        "similarity": 0.98
+      }
+    },
+    {
+      "slug": "weight-management-program",
+      "kind": "treatment",
+      "collection": "treatments",
+      "referenceUrl": "https://uncover-web.netlify.app/treatment/weight-management-program/",
+      "referenceStatus": 200,
+      "cmsId": 182,
+      "cmsName": "Weight Management  Program",
+      "existingBlocks": {
+        "total": 8,
+        "counts": {
+          "doctors_embed": 1,
+          "faqs_embed": 1,
+          "technology": 1,
+          "testimonials_embed": 1,
+          "text_section": 4
+        }
+      },
+      "ported": true,
+      "similarity": null,
+      "notes": "4 textSections + 3 embeds + 0 inline FAQs",
+      "portedAt": "2026-04-17T20:47:53.180Z",
+      "sectionCount": 4,
+      "faqCount": 0,
+      "preservedEmbedCount": 3,
+      "verify": {
+        "ok": true,
+        "netlifyH2s": 4,
+        "cmsTextSections": 4,
+        "headingMatch": 1,
+        "similarity": 0.98
+      }
+    },
+    {
+      "slug": "wrinkle-relaxer",
+      "kind": "treatment",
+      "collection": "treatments",
+      "referenceUrl": "https://uncover-web.netlify.app/treatment/wrinkle-relaxer/",
+      "referenceStatus": 200,
+      "cmsId": 172,
+      "cmsName": "Wrinkle Relaxer",
+      "existingBlocks": {
+        "total": 8,
+        "counts": {
+          "doctors_embed": 1,
+          "faqs_embed": 1,
+          "technology": 1,
+          "testimonials_embed": 1,
+          "text_section": 4
+        }
+      },
+      "ported": true,
+      "similarity": null,
+      "notes": "4 textSections + 3 embeds + 0 inline FAQs",
+      "portedAt": "2026-04-17T20:48:01.497Z",
+      "sectionCount": 4,
+      "faqCount": 0,
+      "preservedEmbedCount": 3,
+      "verify": {
+        "ok": true,
+        "netlifyH2s": 4,
+        "cmsTextSections": 4,
+        "headingMatch": 1,
+        "similarity": 0.99
+      }
+    },
+    {
+      "slug": "zo-obagi-facial",
+      "kind": "treatment",
+      "collection": "treatments",
+      "referenceUrl": "https://uncover-web.netlify.app/treatment/zo-obagi-facial/",
+      "referenceStatus": 200,
+      "cmsId": 178,
+      "cmsName": "Zo-Obagi Hello Bright Facial",
+      "existingBlocks": {
+        "total": 8,
+        "counts": {
+          "doctors_embed": 1,
+          "faqs_embed": 1,
+          "technology": 1,
+          "testimonials_embed": 1,
+          "text_section": 4
+        }
+      },
+      "ported": true,
+      "similarity": null,
+      "notes": "4 textSections + 3 embeds + 0 inline FAQs",
+      "portedAt": "2026-04-17T20:48:09.824Z",
+      "sectionCount": 4,
+      "faqCount": 0,
+      "preservedEmbedCount": 3,
+      "verify": {
+        "ok": true,
+        "netlifyH2s": 4,
+        "cmsTextSections": 4,
+        "headingMatch": 1,
+        "similarity": 0.99
+      }
+    },
+    {
+      "slug": "acne-scars",
+      "kind": "concern",
+      "collection": "concerns",
+      "referenceUrl": "https://uncover-web.netlify.app/concern/acne-scars/",
+      "referenceStatus": 200,
+      "cmsId": 84,
+      "cmsName": "Acne Scars",
+      "existingBlocks": {
+        "total": 11,
+        "counts": {
+          "content_grid": 1,
+          "cta_block": 1,
+          "doctors_embed": 1,
+          "faqs_embed": 1,
+          "notice_block": 1,
+          "text_section": 6
+        }
+      },
+      "ported": true,
+      "similarity": null,
+      "notes": "6 textSections + 2 embeds + 5 inline FAQs",
+      "portedAt": "2026-04-17T20:48:19.037Z",
+      "sectionCount": 6,
+      "faqCount": 5,
+      "preservedEmbedCount": 2,
+      "verify": {
+        "ok": true,
+        "netlifyH2s": 6,
+        "cmsTextSections": 6,
+        "headingMatch": 1,
+        "similarity": 0.99
+      }
+    },
+    {
+      "slug": "anti-aging",
+      "kind": "concern",
+      "collection": "concerns",
+      "referenceUrl": "https://uncover-web.netlify.app/concern/anti-aging/",
+      "referenceStatus": 200,
+      "cmsId": 87,
+      "cmsName": "Aging, Fine Lines & Wrinkles",
+      "existingBlocks": {
+        "total": 7,
+        "counts": {
+          "doctors_embed": 1,
+          "faqs_embed": 1,
+          "technology": 1,
+          "text_section": 4
+        }
+      },
+      "ported": true,
+      "similarity": null,
+      "notes": "6 textSections + 2 embeds + 5 inline FAQs",
+      "portedAt": "2026-04-17T20:48:28.373Z",
+      "sectionCount": 6,
+      "faqCount": 5,
+      "preservedEmbedCount": 2,
+      "verify": {
+        "ok": true,
+        "netlifyH2s": 6,
+        "cmsTextSections": 6,
+        "headingMatch": 1,
+        "similarity": 1
+      }
+    },
+    {
+      "slug": "baldness",
+      "kind": "concern",
+      "collection": "concerns",
+      "referenceUrl": "https://uncover-web.netlify.app/concern/baldness/",
+      "referenceStatus": 200,
+      "cmsId": 92,
+      "cmsName": "Baldness",
+      "existingBlocks": {
+        "total": 7,
+        "counts": {
+          "doctors_embed": 1,
+          "faqs_embed": 1,
+          "technology": 1,
+          "text_section": 4
+        }
+      },
+      "ported": true,
+      "similarity": null,
+      "notes": "4 textSections + 2 embeds + 5 inline FAQs",
+      "portedAt": "2026-04-17T20:48:37.182Z",
+      "sectionCount": 4,
+      "faqCount": 5,
+      "preservedEmbedCount": 2,
+      "verify": {
+        "ok": true,
+        "netlifyH2s": 4,
+        "cmsTextSections": 4,
+        "headingMatch": 1,
+        "similarity": 1
+      }
+    },
+    {
+      "slug": "fat-loss",
+      "kind": "concern",
+      "collection": "concerns",
+      "referenceUrl": "https://uncover-web.netlify.app/concern/fat-loss/",
+      "referenceStatus": 200,
+      "cmsId": 94,
+      "cmsName": "Fat Loss ",
+      "existingBlocks": {
+        "total": 6,
+        "counts": {
+          "doctors_embed": 1,
+          "faqs_embed": 1,
+          "text_section": 4
+        }
+      },
+      "ported": true,
+      "similarity": null,
+      "notes": "4 textSections + 2 embeds + 5 inline FAQs",
+      "portedAt": "2026-04-17T20:48:46.003Z",
+      "sectionCount": 4,
+      "faqCount": 5,
+      "preservedEmbedCount": 2,
+      "verify": {
+        "ok": true,
+        "netlifyH2s": 4,
+        "cmsTextSections": 4,
+        "headingMatch": 1,
+        "similarity": 1
+      }
+    },
+    {
+      "slug": "feature-enhancement",
+      "kind": "concern",
+      "collection": "concerns",
+      "referenceUrl": "https://uncover-web.netlify.app/concern/feature-enhancement/",
+      "referenceStatus": 200,
+      "cmsId": 90,
+      "cmsName": "Feature Enhancement",
+      "existingBlocks": {
+        "total": 7,
+        "counts": {
+          "doctors_embed": 1,
+          "faqs_embed": 1,
+          "technology": 1,
+          "text_section": 4
+        }
+      },
+      "ported": true,
+      "similarity": null,
+      "notes": "6 textSections + 2 embeds + 5 inline FAQs",
+      "portedAt": "2026-04-17T20:48:54.918Z",
+      "sectionCount": 6,
+      "faqCount": 5,
+      "preservedEmbedCount": 2,
+      "verify": {
+        "ok": true,
+        "netlifyH2s": 6,
+        "cmsTextSections": 6,
+        "headingMatch": 1,
+        "similarity": 1
+      }
+    },
+    {
+      "slug": "hair-loss-thinning",
+      "kind": "concern",
+      "collection": "concerns",
+      "referenceUrl": "https://uncover-web.netlify.app/concern/hair-loss-thinning/",
+      "referenceStatus": 200,
+      "cmsId": 95,
+      "cmsName": "Hair Loss & Thinning ",
+      "existingBlocks": {
+        "total": 7,
+        "counts": {
+          "doctors_embed": 1,
+          "faqs_embed": 1,
+          "technology": 1,
+          "text_section": 4
+        }
+      },
+      "ported": true,
+      "similarity": null,
+      "notes": "3 textSections + 2 embeds + 5 inline FAQs",
+      "portedAt": "2026-04-17T20:49:03.670Z",
+      "sectionCount": 3,
+      "faqCount": 5,
+      "preservedEmbedCount": 2,
+      "verify": {
+        "ok": true,
+        "netlifyH2s": 3,
+        "cmsTextSections": 3,
+        "headingMatch": 1,
+        "similarity": 0.99
+      }
+    },
+    {
+      "slug": "hyper-pigmentation",
+      "kind": "concern",
+      "collection": "concerns",
+      "referenceUrl": "https://uncover-web.netlify.app/concern/hyper-pigmentation/",
+      "referenceStatus": 200,
+      "cmsId": 85,
+      "cmsName": "Hyper-Pigmentation",
+      "existingBlocks": {
+        "total": 7,
+        "counts": {
+          "doctors_embed": 1,
+          "faqs_embed": 1,
+          "technology": 1,
+          "text_section": 4
+        }
+      },
+      "ported": true,
+      "similarity": null,
+      "notes": "6 textSections + 2 embeds + 5 inline FAQs",
+      "portedAt": "2026-04-17T20:49:12.601Z",
+      "sectionCount": 6,
+      "faqCount": 5,
+      "preservedEmbedCount": 2,
+      "verify": {
+        "ok": true,
+        "netlifyH2s": 6,
+        "cmsTextSections": 6,
+        "headingMatch": 1,
+        "similarity": 1
+      }
+    },
+    {
+      "slug": "scalp-health",
+      "kind": "concern",
+      "collection": "concerns",
+      "referenceUrl": "https://uncover-web.netlify.app/concern/scalp-health/",
+      "referenceStatus": 200,
+      "cmsId": 91,
+      "cmsName": "Scalp Health ",
+      "existingBlocks": {
+        "total": 7,
+        "counts": {
+          "doctors_embed": 1,
+          "faqs_embed": 1,
+          "technology": 1,
+          "text_section": 4
+        }
+      },
+      "ported": true,
+      "similarity": null,
+      "notes": "4 textSections + 2 embeds + 5 inline FAQs",
+      "portedAt": "2026-04-17T20:49:21.209Z",
+      "sectionCount": 4,
+      "faqCount": 5,
+      "preservedEmbedCount": 2,
+      "verify": {
+        "ok": true,
+        "netlifyH2s": 4,
+        "cmsTextSections": 4,
+        "headingMatch": 1,
+        "similarity": 0.99
+      }
+    },
+    {
+      "slug": "skin-infections",
+      "kind": "concern",
+      "collection": "concerns",
+      "referenceUrl": "https://uncover-web.netlify.app/concern/skin-infections/",
+      "referenceStatus": 200,
+      "cmsId": 89,
+      "cmsName": "Skin Infections",
+      "existingBlocks": {
+        "total": 7,
+        "counts": {
+          "doctors_embed": 1,
+          "faqs_embed": 1,
+          "technology": 1,
+          "text_section": 4
+        }
+      },
+      "ported": true,
+      "similarity": null,
+      "notes": "4 textSections + 2 embeds + 5 inline FAQs",
+      "portedAt": "2026-04-17T20:49:30.069Z",
+      "sectionCount": 4,
+      "faqCount": 5,
+      "preservedEmbedCount": 2,
+      "verify": {
+        "ok": true,
+        "netlifyH2s": 4,
+        "cmsTextSections": 4,
+        "headingMatch": 1,
+        "similarity": 1
+      }
+    },
+    {
+      "slug": "skin-tags-moles-warts-and-corns",
+      "kind": "concern",
+      "collection": "concerns",
+      "referenceUrl": "https://uncover-web.netlify.app/concern/skin-tags-moles-warts-and-corns/",
+      "referenceStatus": 200,
+      "cmsId": 88,
+      "cmsName": "Skin Tags, Moles, Warts and Corns ",
+      "existingBlocks": {
+        "total": 7,
+        "counts": {
+          "doctors_embed": 1,
+          "faqs_embed": 1,
+          "technology": 1,
+          "text_section": 4
+        }
+      },
+      "ported": true,
+      "similarity": null,
+      "notes": "5 textSections + 2 embeds + 5 inline FAQs",
+      "portedAt": "2026-04-17T20:49:39.037Z",
+      "sectionCount": 5,
+      "faqCount": 5,
+      "preservedEmbedCount": 2,
+      "verify": {
+        "ok": true,
+        "netlifyH2s": 5,
+        "cmsTextSections": 5,
+        "headingMatch": 1,
+        "similarity": 0.99
+      }
+    },
+    {
+      "slug": "skin-tanning",
+      "kind": "concern",
+      "collection": "concerns",
+      "referenceUrl": "https://uncover-web.netlify.app/concern/skin-tanning/",
+      "referenceStatus": 200,
+      "cmsId": 86,
+      "cmsName": "Skin Tanning ",
+      "existingBlocks": {
+        "total": 7,
+        "counts": {
+          "doctors_embed": 1,
+          "faqs_embed": 1,
+          "technology": 1,
+          "text_section": 4
+        }
+      },
+      "ported": true,
+      "similarity": null,
+      "notes": "6 textSections + 2 embeds + 5 inline FAQs",
+      "portedAt": "2026-04-17T20:49:48.316Z",
+      "sectionCount": 6,
+      "faqCount": 5,
+      "preservedEmbedCount": 2,
+      "verify": {
+        "ok": true,
+        "netlifyH2s": 6,
+        "cmsTextSections": 6,
+        "headingMatch": 1,
+        "similarity": 1
+      }
+    },
+    {
+      "slug": "weight-management",
+      "kind": "concern",
+      "collection": "concerns",
+      "referenceUrl": "https://uncover-web.netlify.app/concern/weight-management/",
+      "referenceStatus": 200,
+      "cmsId": 93,
+      "cmsName": "Weight Management",
+      "existingBlocks": {
+        "total": 7,
+        "counts": {
+          "doctors_embed": 1,
+          "faqs_embed": 1,
+          "technology": 1,
+          "text_section": 4
+        }
+      },
+      "ported": true,
+      "similarity": null,
+      "notes": "4 textSections + 2 embeds + 5 inline FAQs",
+      "portedAt": "2026-04-17T20:49:57.199Z",
+      "sectionCount": 4,
+      "faqCount": 5,
+      "preservedEmbedCount": 2,
+      "verify": {
+        "ok": true,
+        "netlifyH2s": 4,
+        "cmsTextSections": 4,
+        "headingMatch": 1,
+        "similarity": 1
+      }
+    }
+  ]
+}
