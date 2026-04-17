@@ -135,15 +135,19 @@ function mdastBlocksToLexical(nodes) {
         break;
       }
       case 'paragraph': {
-        // A paragraph that's just a single image becomes a top-level image line.
+        // A paragraph that's just a single image becomes a top-level upload
+        // node. Our Lexical serializer (richtext.ts) has a handler for
+        // `type: 'upload'` that emits <img>; we synthesise that shape here
+        // so markdown image syntax survives the round-trip.
         const onlyImage = (node.children || []).length === 1 && (node.children || [])[0].type === 'image';
         if (onlyImage) {
           const img = node.children[0];
-          // Represent image as a paragraph carrying alt text — the render
-          // layer already knows how to surface media via block-level image
-          // fields. A plain-text alt keeps content accessible until an
-          // editor promotes it to a dedicated media block.
-          out.push(lxParagraph([lxText(img.alt || '', FMT_ITALIC)]));
+          out.push({
+            type: 'upload',
+            version: 2,
+            format: '',
+            value: { url: img.url || '', alt: img.alt || '' },
+          });
         } else {
           out.push(lxParagraph(mdastInlineToLexical(node.children)));
         }
