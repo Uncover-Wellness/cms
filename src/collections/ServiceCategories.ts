@@ -1,6 +1,7 @@
 import { CollectionConfig } from 'payload';
 import { isEditor } from '../access';
 import { slugFromName } from '../hooks/slugFromName';
+import { ALL_PAGE_BLOCKS } from '../blocks';
 
 /**
  * Service Categories drive the `/c/:slug` pages (Skin, Hair, Body,
@@ -390,6 +391,15 @@ export const ServiceCategories: CollectionConfig = {
           ],
         },
       ],
+    },
+    {
+      name: 'pageBlocks',
+      type: 'blocks',
+      blocks: ALL_PAGE_BLOCKS,
+      admin: {
+        description: 'Flexible page blocks rendered between the existing tabbed sections (hero/whyChoose/technologies/narrative/results) and the closing pitch. Use this to add any block type — text, video, HTML, benefits grid, process steps, before/after, data table, pricing, CTA, content grid, image slider, stats, or embed-style blocks.',
+        initCollapsed: true,
+      },
     },
   ],
 };

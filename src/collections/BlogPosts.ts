@@ -154,5 +154,29 @@ export const BlogPosts: CollectionConfig = {
         description: 'Publication date shown on the blog post. Used for sorting.',
       },
     },
+    {
+      name: 'howToSteps',
+      type: 'array',
+      admin: {
+        description: 'Optional structured steps for how-to posts — populates HowTo JSON-LD for Google rich results. Each step has a short name and a longer text.',
+        initCollapsed: true,
+      },
+      fields: [
+        { name: 'name', type: 'text', required: true },
+        { name: 'text', type: 'textarea', required: true },
+      ],
+    },
+    {
+      name: 'structuredFaqs',
+      type: 'array',
+      admin: {
+        description: 'Optional inline FAQs for this post — populates FAQPage JSON-LD. Separate from the site-wide Faqs collection; use these when an FAQ belongs only to this post.',
+        initCollapsed: true,
+      },
+      fields: [
+        { name: 'question', type: 'text', required: true },
+        { name: 'answer', type: 'textarea', required: true },
+      ],
+    },
   ],
 };

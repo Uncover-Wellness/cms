@@ -1,7 +1,7 @@
 import { CollectionConfig } from 'payload';
 import { isEditor } from '../access';
 import { slugFromName } from '../hooks/slugFromName';
-import { TextSection, VideoEmbed, HtmlEmbed } from '../blocks';
+import { ALL_PAGE_BLOCKS } from '../blocks';
 
 export const Concerns: CollectionConfig = {
   slug: 'concerns',
@@ -154,9 +154,9 @@ export const Concerns: CollectionConfig = {
     {
       name: 'pageBlocks',
       type: 'blocks',
-      blocks: [TextSection, VideoEmbed, HtmlEmbed],
+      blocks: ALL_PAGE_BLOCKS,
       admin: {
-        description: 'Flexible page content. Add text sections, video embeds, or HTML embeds in any order.',
+        description: 'Flexible page content. Compose the concern page from any block type: text, video, HTML, benefits grid, process steps, before/after, data table, pricing, CTA, content grid, image slider, stats, and embed-style blocks (doctors/testimonials/FAQs/booking form). Add blocks in the order they should render.',
         initCollapsed: true,
       },
     },

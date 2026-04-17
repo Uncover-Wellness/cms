@@ -149,6 +149,86 @@ export const Doctors: CollectionConfig = {
       ],
     },
     {
+      name: 'education',
+      type: 'array',
+      admin: {
+        description: 'Structured education entries — populates Physician.alumniOf + hasCredential in JSON-LD (schema.org) for medical E-E-A-T. Use this instead of detailedQualifications when you want machine-readable credentials.',
+        initCollapsed: true,
+      },
+      fields: [
+        { name: 'degree', type: 'text', required: true, admin: { description: 'e.g. MBBS, MD Dermatology, FRCS' } },
+        { name: 'institution', type: 'text', required: true },
+        { name: 'year', type: 'text' },
+        { name: 'location', type: 'text' },
+      ],
+    },
+    {
+      name: 'specializations',
+      type: 'array',
+      admin: {
+        description: 'Areas of expertise rendered as icon cards on the doctor page. Also populates Physician.knowsAbout for schema.org.',
+        initCollapsed: true,
+      },
+      fields: [
+        { name: 'title', type: 'text', required: true },
+        { name: 'description', type: 'textarea' },
+        {
+          name: 'icon',
+          type: 'select',
+          defaultValue: 'stethoscope',
+          options: [
+            { label: 'Shield', value: 'shield' },
+            { label: 'Stethoscope', value: 'stethoscope' },
+            { label: 'Sun', value: 'sun' },
+            { label: 'Heart', value: 'heart' },
+            { label: 'Zap', value: 'zap' },
+            { label: 'Sparkles', value: 'sparkles' },
+            { label: 'Award', value: 'award' },
+            { label: 'Leaf', value: 'leaf' },
+          ],
+        },
+      ],
+    },
+    {
+      name: 'beforeAfter',
+      type: 'array',
+      admin: {
+        description: 'Optional before/after gallery for this doctor. Renders as a gallery section on their profile page.',
+        initCollapsed: true,
+      },
+      fields: [
+        { name: 'title', type: 'text', required: true },
+        { name: 'beforeImageUrl', type: 'text', required: true },
+        { name: 'afterImageUrl', type: 'text', required: true },
+        { name: 'caption', type: 'textarea' },
+      ],
+    },
+    {
+      name: 'sameAs',
+      type: 'array',
+      admin: {
+        description: 'Social/professional profile links — populates Physician.sameAs in JSON-LD for Google Knowledge Graph signals.',
+        initCollapsed: true,
+      },
+      fields: [
+        {
+          name: 'platform',
+          type: 'select',
+          required: true,
+          options: [
+            { label: 'Instagram', value: 'instagram' },
+            { label: 'LinkedIn', value: 'linkedin' },
+            { label: 'Facebook', value: 'facebook' },
+            { label: 'YouTube', value: 'youtube' },
+            { label: 'Twitter / X', value: 'twitter' },
+            { label: 'Practo', value: 'practo' },
+            { label: 'Other', value: 'other' },
+          ],
+        },
+        { name: 'url', type: 'text', required: true },
+      ],
+    },
+    {
       name: 'zenotiReferenceId',
       type: 'text',
       unique: true,
