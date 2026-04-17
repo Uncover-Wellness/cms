@@ -18,10 +18,12 @@ ALTER TABLE cms.treatments
   ADD COLUMN IF NOT EXISTS details_sessions varchar,
   ADD COLUMN IF NOT EXISTS details_downtime varchar;
 
--- ─── Many-to-many join table for linkedDoctors (goes into _rels) ─────────
--- Payload stores polymorphic relationships in collection_rels tables with a
--- `path` column naming the field. No new table needed — just make sure the
--- rels table has an index on parent_id,path for efficient lookups.
--- Payload's relationship resolver reads by path='relationships.linkedDoctors'.
+-- ─── Many-to-many join for linkedDoctors ─────────────────────────────
+-- Payload stores polymorphic relationships on the collection's `_rels`
+-- table with one FK column per target collection + a `path` discriminator.
+-- We need to add `doctors_id` so Payload can persist and query linkedDoctors.
+-- Without this column the API returns 500 on every treatment request.
+ALTER TABLE cms.treatments_rels
+  ADD COLUMN IF NOT EXISTS doctors_id integer REFERENCES cms.doctors(id) ON DELETE CASCADE;
 
 COMMIT;
