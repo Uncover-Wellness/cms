@@ -14,9 +14,17 @@ SET search_path TO cms, public;
 BEGIN;
 
 -- ─── Scalar fields on treatments.details ───────────────────────────────────
+-- Payload also mirrors every row into `_treatments_v` with version_ prefixed
+-- column names for drafts/autosave. Both tables must carry the new columns,
+-- otherwise the admin edit view and drafts API 500 with
+-- "column _treatments_v.version_details_sessions does not exist".
 ALTER TABLE cms.treatments
   ADD COLUMN IF NOT EXISTS details_sessions varchar,
   ADD COLUMN IF NOT EXISTS details_downtime varchar;
+
+ALTER TABLE cms._treatments_v
+  ADD COLUMN IF NOT EXISTS version_details_sessions varchar,
+  ADD COLUMN IF NOT EXISTS version_details_downtime varchar;
 
 -- ─── Many-to-many join for linkedDoctors ─────────────────────────────
 -- Payload stores polymorphic relationships on the collection's `_rels`
