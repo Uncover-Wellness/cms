@@ -24,7 +24,7 @@ import { readFileSync, readdirSync, existsSync } from 'node:fs';
 import { resolve, dirname, basename } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { splitByH2, convertTakeawaysSections } from './lib/split-by-h2.mjs';
-import { writeBlogPageBlocks } from './lib/write-blog-page-blocks.mjs';
+import { writePageBlocks } from './lib/write-page-blocks.mjs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const envPath = resolve(__dirname, '..', '.env');
@@ -109,8 +109,9 @@ for (const row of rows) {
     }
 
     await client.query('BEGIN');
-    const blockCount = await writeBlogPageBlocks(client, {
-      postId: row.id,
+    const blockCount = await writePageBlocks(client, {
+      collection: 'blog_posts',
+      parentId: row.id,
       sections,
       rawHtml,
     });

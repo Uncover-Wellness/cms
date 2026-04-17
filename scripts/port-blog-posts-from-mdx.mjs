@@ -21,7 +21,7 @@ import { resolve, dirname, basename } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { markdownToLexical, lastHtmlSkips } from './lib/markdown-to-lexical.mjs';
 import { splitByH2, convertTakeawaysSections } from './lib/split-by-h2.mjs';
-import { writeBlogPageBlocks } from './lib/write-blog-page-blocks.mjs';
+import { writePageBlocks } from './lib/write-page-blocks.mjs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const envPath = resolve(__dirname, '..', '.env');
@@ -218,7 +218,7 @@ for (const file of files) {
     }
 
     await client.query('BEGIN');
-    const blockCount = await writeBlogPageBlocks(client, { postId, sections });
+    const blockCount = await writePageBlocks(client, { collection: 'blog_posts', parentId: postId, sections });
     await updateMeta(postId, meta);
     await upsertStructuredFaqs(postId, fm.faqs);
     await upsertHowToSteps(postId, fm.howToSteps);
