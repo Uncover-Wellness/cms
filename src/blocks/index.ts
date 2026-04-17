@@ -417,6 +417,30 @@ export const BookingFormBlock: Block = {
   ],
 };
 
+// Device / laser / technology spotlight. Replaces the per-collection
+// `technology` group field so editors can rank it among other blocks.
+export const TechnologyBlock: Block = {
+  slug: 'technology',
+  labels: { singular: 'Technology / Device', plural: 'Technology / Devices' },
+  fields: [
+    { name: 'eyebrow', type: 'text', admin: { description: 'Optional eyebrow above the heading.' } },
+    { name: 'heading', type: 'text', required: true, admin: { description: 'Example: "Powered by Soprano Titanium Laser"' } },
+    { name: 'subHeading', type: 'text', admin: { description: 'Short one-liner describing what the technology does.' } },
+    {
+      name: 'imageUpload',
+      type: 'upload',
+      relationTo: 'media',
+      admin: { description: 'Device/technology image. Upload or pick from Media.' },
+    },
+    {
+      name: 'image',
+      type: 'text',
+      admin: { description: 'Legacy URL fallback. Prefer imageUpload.' },
+    },
+    { name: 'imageAltText', type: 'text' },
+  ],
+};
+
 // Shared list of all page blocks (legacy + new). Import into any collection
 // that needs a pageBlocks field.
 export const ALL_PAGE_BLOCKS: Block[] = [
@@ -433,6 +457,7 @@ export const ALL_PAGE_BLOCKS: Block[] = [
   ContentGridBlock,
   ImageSliderBlock,
   StatsBlock,
+  TechnologyBlock,
   DoctorsEmbedBlock,
   TestimonialsEmbedBlock,
   FaqsEmbedBlock,
