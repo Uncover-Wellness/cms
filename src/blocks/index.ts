@@ -417,6 +417,30 @@ export const BookingFormBlock: Block = {
   ],
 };
 
+// Short callout card, typically used inside a content flow to highlight
+// a non-negotiable tip, note, or warning. Matches the "Consistency Over
+// Intensity" box on uncover-gags concern pages — lead icon, bold heading,
+// body paragraph, left accent bar in one of three variants.
+export const NoticeBlock: Block = {
+  slug: 'noticeBlock',
+  labels: { singular: 'Notice / Callout', plural: 'Notices' },
+  fields: [
+    {
+      name: 'variant',
+      type: 'select',
+      options: [
+        { label: 'Tip (green)', value: 'tip' },
+        { label: 'Note (cream)', value: 'note' },
+        { label: 'Warning (orange)', value: 'warning' },
+      ],
+      defaultValue: 'tip',
+    },
+    { name: 'icon', type: 'select', options: ICON_OPTIONS, defaultValue: 'leaf' },
+    { name: 'heading', type: 'text', required: true, admin: { description: 'Short bold heading — one short sentence.' } },
+    { name: 'body', type: 'textarea', required: true, admin: { description: 'Body copy — 1-3 sentences of supporting detail.' } },
+  ],
+};
+
 // Device / laser / technology spotlight. Replaces the per-collection
 // `technology` group field so editors can rank it among other blocks.
 export const TechnologyBlock: Block = {
@@ -457,6 +481,7 @@ export const ALL_PAGE_BLOCKS: Block[] = [
   ContentGridBlock,
   ImageSliderBlock,
   StatsBlock,
+  NoticeBlock,
   TechnologyBlock,
   DoctorsEmbedBlock,
   TestimonialsEmbedBlock,
