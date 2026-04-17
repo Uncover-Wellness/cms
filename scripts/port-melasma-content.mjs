@@ -1,30 +1,20 @@
 #!/usr/bin/env node
 /**
- * One-off content port for the Melasma blog post — rebuilds it from the
- * uncover-gags reference using the new polymorphic pageBlocks pipeline.
+ * Port the Melasma blog post into polymorphic pageBlocks — verbatim copy
+ * of the uncover-gags reference.
  *
- * Source: https://uncover-web.netlify.app/post/melasma-how-to-remove-pigmentation-from-the-face-permanently/
- * Target: blog_posts.slug='melasma-how-to-remove-pigmentation-from-the-face-permanently'
+ * Reference: uncover-web.netlify.app/post/melasma-how-to-remove-pigmentation-from-the-face-permanently/
  *
- * Inserts 14 blocks in order:
- *   1. textSection — intro (no heading)
- *   2. textSection — What Is Melasma?
- *   3. textSection — What Are the Symptoms of Melasma?
- *   4. textSection — What Causes Melasma? (bullet list)
- *   5. noticeBlock (note) — Also read: Glutathione…
- *   6. textSection — Melasma vs Hyperpigmentation
- *   7. textSection — How to Treat Melasma on the Face?
- *   8. textSection — Home Remedies for Melasma (bullet list)
- *   9. noticeBlock (note) — Also read: Top sunscreens…
- *  10. textSection — Best Products for Melasma & Pigmentation (numbered)
- *  11. noticeBlock (warning) — Important: no single product cures melasma
- *  12. textSection — Can Melasma Be Removed Permanently?
- *  13. textSection — Melasma Treatment at Uncover Clinics
- *  14. ctaBlock (dark) — Ready to treat your melasma?
+ * The reference renders the article as a flat sequence of 10 textSections.
+ * "Also read" pointers, the "Important" callout, and the final "Book a
+ * consultation at Uncover Clinics" CTA are NOT separate blocks — they're
+ * inline paragraphs (bold + link) inside the textSection where they
+ * appear. We mirror that here instead of wrapping them in noticeBlock /
+ * ctaBlock, so the page renders without the extra chrome that doesn't
+ * exist in the reference.
  *
- * Idempotent: DELETEs the existing narrative blocks for this post on every
- * run and re-inserts. Legacy postBody/richText2/codeEmbedCode fields stay
- * untouched (they act as fallback for the /post/ route until we retire them).
+ * Idempotent: DELETEs existing pageBlocks rows across every block table
+ * for this post, then re-inserts.
  */
 
 import pg from 'pg';
@@ -49,16 +39,26 @@ await c.query('SET search_path TO cms, public');
 const lxText = (text, format = 0) => ({
   mode: 'normal', text, type: 'text', style: '', detail: 0, format, version: 1,
 });
+const lxBold = (text) => lxText(text, 1);
+const lxLink = (url, text) => ({
+  type: 'link',
+  version: 2,
+  format: '',
+  indent: 0,
+  direction: 'ltr',
+  fields: { url, newTab: false, linkType: 'custom' },
+  children: [lxText(text)],
+});
 const lxPara = (children) => ({
   type: 'paragraph', format: '', indent: 0, version: 1,
-  children: children.map((c) => typeof c === 'string' ? lxText(c) : c),
+  children: children.map((c) => (typeof c === 'string' ? lxText(c) : c)),
   direction: 'ltr', textStyle: '', textFormat: 0,
 });
 const lxBullet = (items) => ({
   tag: 'ul', type: 'list', start: 1, format: '', indent: 0, version: 1, listType: 'bullet',
   children: items.map((item, i) => ({
     type: 'listitem', value: i + 1, format: '', indent: 0, version: 1,
-    children: Array.isArray(item) ? item.map((x) => typeof x === 'string' ? lxText(x) : x) : [lxText(item)],
+    children: Array.isArray(item) ? item.map((x) => (typeof x === 'string' ? lxText(x) : x)) : [lxText(item)],
     direction: 'ltr',
   })),
   direction: 'ltr',
@@ -67,7 +67,7 @@ const lxNumbered = (items) => ({
   tag: 'ol', type: 'list', start: 1, format: '', indent: 0, version: 1, listType: 'number',
   children: items.map((item, i) => ({
     type: 'listitem', value: i + 1, format: '', indent: 0, version: 1,
-    children: Array.isArray(item) ? item.map((x) => typeof x === 'string' ? lxText(x) : x) : [lxText(item)],
+    children: Array.isArray(item) ? item.map((x) => (typeof x === 'string' ? lxText(x) : x)) : [lxText(item)],
     direction: 'ltr',
   })),
   direction: 'ltr',
@@ -75,7 +75,6 @@ const lxNumbered = (items) => ({
 const lxRoot = (...children) => ({
   root: { type: 'root', format: '', indent: 0, version: 1, direction: 'ltr', children },
 });
-const lxBold = (text) => lxText(text, 1);
 
 // ── Target post ───────────────────────────────────────────────────────────
 const postRow = (
@@ -87,8 +86,10 @@ if (!postRow) { console.error('melasma blog post not found'); process.exit(1); }
 const POST_ID = postRow.id;
 const PATH = 'pageBlocks';
 
-// ── Block content ─────────────────────────────────────────────────────────
-// textSection[0] is the intro (no heading); the rest are H2 sections.
+// ── Text sections (match reference 1:1) ───────────────────────────────────
+// Inline "Also read" / "Important" / final CTA live INSIDE the appropriate
+// textSection as bold + link paragraphs — no separate blocks, mirroring
+// the reference exactly.
 const textSections = [
   {
     heading: null,
@@ -125,6 +126,14 @@ const textSections = [
         [lxBold('Sun exposure'), lxText(' is the biggest aggravating factor. UV rays activate melanocytes directly. Even minimal daily exposure, sitting near a window, or a short commute, is enough to deepen existing patches and undo weeks of treatment.')],
         [lxBold('Genetics'), lxText(' increases susceptibility significantly. A family history of melasma means your skin is more predisposed to developing it.')],
         [lxBold('Harsh skincare and cosmetics'), lxText(' that irritate the skin trigger inflammation, which stimulates melanin production, particularly problematic for Indian skin tones that are already more melanin-reactive.')],
+      ]),
+      // "Also read" inline paragraph (verbatim from reference)
+      lxPara([
+        lxBold('Also read: '),
+        lxLink(
+          '/post/glutathione-injections-for-skin-brightening-complete-guide-to-cost-benefits-and-safety',
+          'Glutathione Injections for Skin Brightening: Complete Guide to Cost, Benefits, and Safety',
+        ),
       ]),
     ),
   },
@@ -172,6 +181,11 @@ const textSections = [
         [lxBold('Avoid harsh physical scrubs'), lxText(' — they can inflame the skin and make pigmentation worse by triggering further melanin production.')],
         [lxBold('Daily SPF'), lxText(' is the most important home habit; no treatment holds without it.')],
       ]),
+      // Second "Also read" inline paragraph
+      lxPara([
+        lxBold('Also read: '),
+        lxLink('/post/top-sunscreens-in-india-recommended-by-dermatologists', 'Top sunscreens in India: recommended by dermatologists'),
+      ]),
     ),
   },
   {
@@ -187,6 +201,11 @@ const textSections = [
         [lxBold('Anti-melasma & pigmentation creams.'), lxText(" Kaya Skin Clinic Brightening Cream, Lotus Herbals White Glow Gel, and Melacare Forte Cream (prescription-only — hydroquinone + tretinoin + mometasone) are commonly recommended. Melacare should only be used under a dermatologist's supervision.")],
         [lxBold('Kojic & azelaic acid products'), lxText(' are gentler alternatives for sensitive skin. Minimalist Azelaic Acid 10% Serum and Peach & Lily Glass Skin Serum reduce pigmentation without harsh irritation.')],
         [lxBold('Retinol / tretinoin creams.'), lxText(" Tretinoin accelerates cell turnover and fades melasma with consistent use. Obagi Tretinoin Cream 0.05% and Differin Adapalene Gel are widely used. Always start low and use only at night under a dermatologist's guidance.")],
+      ]),
+      // "Important" callout — reference uses a single bold paragraph,
+      // not a notice block.
+      lxPara([
+        lxBold('Important: No single product cures melasma. The best results come from a combination of daily SPF, an active ingredient serum (vitamin C or niacinamide), and a dermatologist-prescribed treatment cream, used consistently over months.'),
       ]),
     ),
   },
@@ -214,60 +233,10 @@ const textSections = [
       lxPara([
         "Whether it's melasma on cheeks, dark patches on the forehead, pigmentation around the nose, or chloasma from pregnancy, Uncover's dermatologists assess the root cause and treat it with precision.",
       ]),
+      // Final CTA — reference renders this as a plain inline link paragraph.
+      lxPara([lxLink('/', 'Book a consultation at Uncover Clinics')]),
     ),
   },
-];
-
-// Notices (Also-read + Important). These slot into the sequence at specific
-// positions defined by `orderedBlocks` below.
-const notices = {
-  glutathione: {
-    variant: 'note', icon: 'sparkles',
-    heading: 'Also read',
-    body: 'Glutathione injections for skin brightening — complete guide to cost, benefits, and safety.',
-  },
-  sunscreens: {
-    variant: 'note', icon: 'sun',
-    heading: 'Also read',
-    body: 'Top sunscreens in India — recommended by dermatologists for melasma-prone skin.',
-  },
-  important: {
-    variant: 'warning', icon: 'zap',
-    heading: 'Important',
-    body: 'No single product cures melasma. The best results come from a combination of daily SPF, an active ingredient serum (vitamin C or niacinamide), and a dermatologist-prescribed treatment cream, used consistently over months.',
-  },
-};
-
-const cta = {
-  heading: 'Ready to treat your melasma?',
-  description:
-    'Book a consultation with our dermatologists at Uncover Clinics. Personalised pigmentation treatment tailored to Indian skin — with long-lasting results.',
-  primaryCta:   { label: 'Book Appointment', href: '#booking' },
-  secondaryCta: { label: 'Call +91 9752007200', href: 'tel:+919752007200' },
-  variant: 'dark',
-};
-
-// The composed sequence, in order. Each entry is either a textSection
-// (referenced by index into `textSections`) or a block kind directly.
-// Index map for textSections above:
-//   0 intro, 1 What Is, 2 Symptoms, 3 Causes, 4 vs Hyperpig,
-//   5 How to Treat, 6 Home Remedies, 7 Best Products,
-//   8 Can it be Removed, 9 Uncover Clinics
-const sequence = [
-  { kind: 'text',   idx: 0 },
-  { kind: 'text',   idx: 1 },
-  { kind: 'text',   idx: 2 },
-  { kind: 'text',   idx: 3 },
-  { kind: 'notice', data: notices.glutathione },
-  { kind: 'text',   idx: 4 },
-  { kind: 'text',   idx: 5 },
-  { kind: 'text',   idx: 6 },
-  { kind: 'notice', data: notices.sunscreens },
-  { kind: 'text',   idx: 7 },
-  { kind: 'notice', data: notices.important },
-  { kind: 'text',   idx: 8 },
-  { kind: 'text',   idx: 9 },
-  { kind: 'cta',    data: cta },
 ];
 
 // ── Apply within a transaction ────────────────────────────────────────────
@@ -275,9 +244,6 @@ try {
   await c.query('BEGIN');
 
   // Wipe every pageBlocks row across every block table for this post.
-  // Only tables we're inserting into need clearing, but we're thorough —
-  // the script is idempotent, so any previously-written blocks for other
-  // block types get dropped too.
   const tablesToClear = [
     'text_section', 'notice_block', 'cta_block', 'content_grid', 'content_grid_items',
     'video_embed', 'html_embed', 'overview_block', 'overview_block_paragraphs',
@@ -290,53 +256,22 @@ try {
     'booking_form',
   ];
   for (const t of tablesToClear) {
-    await c.query(
-      `DELETE FROM cms.blog_posts_blocks_${t} WHERE _parent_id=$1`,
-      [POST_ID],
-    );
+    await c.query(`DELETE FROM cms.blog_posts_blocks_${t} WHERE _parent_id=$1`, [POST_ID]);
   }
 
   let order = 0;
-  const next = () => ++order;
-
-  for (const step of sequence) {
-    if (step.kind === 'text') {
-      const section = textSections[step.idx];
-      await c.query(
-        `INSERT INTO cms.blog_posts_blocks_text_section
-           (id, _parent_id, _order, _path, heading, content, image, image_alt_text, block_name)
-         VALUES ($1, $2, $3, $4, $5, $6, NULL, NULL, NULL)`,
-        [randomUUID(), POST_ID, next(), PATH, section.heading, JSON.stringify(section.content)],
-      );
-    } else if (step.kind === 'notice') {
-      const n = step.data;
-      await c.query(
-        `INSERT INTO cms.blog_posts_blocks_notice_block
-           (id, _parent_id, _order, _path, variant, icon, heading, body, block_name)
-         VALUES ($1, $2, $3, $4, $5, $6, $7, $8, NULL)`,
-        [randomUUID(), POST_ID, next(), PATH, n.variant, n.icon, n.heading, n.body],
-      );
-    } else if (step.kind === 'cta') {
-      const d = step.data;
-      await c.query(
-        `INSERT INTO cms.blog_posts_blocks_cta_block
-           (id, _parent_id, _order, _path, heading, description,
-            primary_cta_label, primary_cta_href, secondary_cta_label, secondary_cta_href,
-            variant, block_name)
-         VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, NULL)`,
-        [
-          randomUUID(), POST_ID, next(), PATH,
-          d.heading, d.description,
-          d.primaryCta.label, d.primaryCta.href,
-          d.secondaryCta.label, d.secondaryCta.href,
-          d.variant,
-        ],
-      );
-    }
+  for (const section of textSections) {
+    order += 1;
+    await c.query(
+      `INSERT INTO cms.blog_posts_blocks_text_section
+         (id, _parent_id, _order, _path, heading, content, image, image_alt_text, block_name)
+       VALUES ($1, $2, $3, $4, $5, $6, NULL, NULL, NULL)`,
+      [randomUUID(), POST_ID, order, PATH, section.heading, JSON.stringify(section.content)],
+    );
   }
 
   await c.query('COMMIT');
-  console.log(`Melasma (blog_posts id=${POST_ID}): wrote ${order} blocks`);
+  console.log(`Melasma (blog_posts id=${POST_ID}): wrote ${order} textSections (inline Also-read / Important / CTA)`);
 } catch (err) {
   await c.query('ROLLBACK');
   console.error(err);
