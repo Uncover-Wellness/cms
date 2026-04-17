@@ -207,9 +207,28 @@ function mdastBlocksToLexical(nodes) {
 
 const htmlSkips = [];
 
+// MDX can contain ES-module imports and JSX blocks at the top of a file
+// (e.g. `import DataTable from '@/components/…'` or `<DataTable ... />`).
+// remark-parse treats those as text paragraphs, so they leak into Lexical.
+// Strip them deterministically before parsing.
+function stripMdxJs(md) {
+  if (!md) return md;
+  let s = md;
+  // 1. Remove top-of-file imports (one per line)
+  s = s.replace(/^\s*import[\s\S]+?from\s+['"][^'"\n]+['"]\s*;?\s*$/gm, '');
+  // 2. Remove self-closing JSX tags: <Component .../>
+  s = s.replace(/<\/?[A-Z][A-Za-z0-9_]*\b[^>]*?\/>/g, '');
+  // 3. Remove paired JSX blocks: <Component>...</Component>
+  s = s.replace(/<([A-Z][A-Za-z0-9_]*)\b[^>]*>[\s\S]*?<\/\1>/g, '');
+  // 4. Collapse leading blank lines left behind
+  s = s.replace(/^(\s*\n)+/, '');
+  return s;
+}
+
 export function markdownToLexical(md) {
   htmlSkips.length = 0;
-  const tree = unified().use(remarkParse).use(remarkGfm).parse(md || '');
+  const cleaned = stripMdxJs(md || '');
+  const tree = unified().use(remarkParse).use(remarkGfm).parse(cleaned);
   const children = mdastBlocksToLexical(tree.children || []);
   return {
     root: {

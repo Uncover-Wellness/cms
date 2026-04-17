@@ -15,6 +15,8 @@ const BLOG_BLOCK_TABLES = [
   'text_section',
   'notice_block',
   'cta_block',
+  'takeaways_block',
+  'takeaways_block_items',
   'video_embed',
   'html_embed',
   'overview_block',
@@ -48,27 +50,54 @@ const BLOG_BLOCK_TABLES = [
 
 export async function writeBlogPageBlocks(client, { postId, sections, rawHtml = null, path = 'pageBlocks' }) {
   // 1. Wipe every pageBlocks row for this post.
+  // Parent table rows first so FKs on child tables cascade cleanly.
   for (const t of BLOG_BLOCK_TABLES) {
+    // takeaways_block_items has a varchar FK to takeaways_block.id, NOT
+    // to blog_posts. Skip it in the per-post wipe — the parent cascade
+    // handles it.
+    if (t === 'takeaways_block_items') continue;
     await client.query(`DELETE FROM cms.blog_posts_blocks_${t} WHERE _parent_id = $1`, [postId]);
   }
 
-  // 2. Insert each section as a textSection block.
+  // 2. Insert each section. Two shapes are supported:
+  //    - { kind: 'takeaways', heading, items: [{text}] }  → takeawaysBlock
+  //    - { heading, content }                              → textSection (default)
   let order = 0;
   for (const section of sections) {
     order += 1;
-    await client.query(
-      `INSERT INTO cms.blog_posts_blocks_text_section
-         (id, _parent_id, _order, _path, heading, content, image, image_alt_text, block_name)
-       VALUES ($1, $2, $3, $4, $5, $6, NULL, NULL, NULL)`,
-      [
-        randomUUID(),
-        postId,
-        order,
-        path,
-        section.heading,
-        JSON.stringify(section.content),
-      ],
-    );
+    if (section.kind === 'takeaways') {
+      const blockId = randomUUID();
+      await client.query(
+        `INSERT INTO cms.blog_posts_blocks_takeaways_block
+           (id, _parent_id, _order, _path, heading, block_name)
+         VALUES ($1, $2, $3, $4, $5, NULL)`,
+        [blockId, postId, order, path, section.heading || 'Key Takeaways'],
+      );
+      for (let i = 0; i < (section.items || []).length; i += 1) {
+        const item = section.items[i];
+        if (!item?.text) continue;
+        await client.query(
+          `INSERT INTO cms.blog_posts_blocks_takeaways_block_items
+             (id, _parent_id, _order, text)
+           VALUES ($1, $2, $3, $4)`,
+          [randomUUID(), blockId, i + 1, item.text],
+        );
+      }
+    } else {
+      await client.query(
+        `INSERT INTO cms.blog_posts_blocks_text_section
+           (id, _parent_id, _order, _path, heading, content, image, image_alt_text, block_name)
+         VALUES ($1, $2, $3, $4, $5, $6, NULL, NULL, NULL)`,
+        [
+          randomUUID(),
+          postId,
+          order,
+          path,
+          section.heading,
+          JSON.stringify(section.content),
+        ],
+      );
+    }
   }
 
   // 3. Optional trailing htmlEmbed block for legacy codeEmbedCode

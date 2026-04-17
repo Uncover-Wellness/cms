@@ -465,6 +465,26 @@ export const TechnologyBlock: Block = {
   ],
 };
 
+// "Key Takeaways" callout — a distinct card that summarises the article
+// for skimmers. Structurally just a heading + list, but renders with a
+// luxe standalone treatment (full border, warm tint, accent eyebrow).
+export const TakeawaysBlock: Block = {
+  slug: 'takeawaysBlock',
+  labels: { singular: 'Key Takeaways', plural: 'Key Takeaways' },
+  fields: [
+    { name: 'heading', type: 'text', required: true, defaultValue: 'Key Takeaways' },
+    {
+      name: 'items',
+      type: 'array',
+      minRows: 1,
+      admin: { description: 'One concise takeaway per row. Use **markdown** for inline bold.' },
+      fields: [
+        { name: 'text', type: 'textarea', required: true },
+      ],
+    },
+  ],
+};
+
 // Shared list of all page blocks (legacy + new). Import into any collection
 // that needs a pageBlocks field.
 export const ALL_PAGE_BLOCKS: Block[] = [
@@ -483,6 +503,7 @@ export const ALL_PAGE_BLOCKS: Block[] = [
   StatsBlock,
   NoticeBlock,
   TechnologyBlock,
+  TakeawaysBlock,
   DoctorsEmbedBlock,
   TestimonialsEmbedBlock,
   FaqsEmbedBlock,

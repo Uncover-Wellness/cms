@@ -23,7 +23,7 @@ import pg from 'pg';
 import { readFileSync, readdirSync, existsSync } from 'node:fs';
 import { resolve, dirname, basename } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { splitByH2 } from './lib/split-by-h2.mjs';
+import { splitByH2, convertTakeawaysSections } from './lib/split-by-h2.mjs';
 import { writeBlogPageBlocks } from './lib/write-blog-page-blocks.mjs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -93,7 +93,7 @@ for (const row of rows) {
       continue;
     }
 
-    const sections = splitByH2(lexical);
+    const sections = convertTakeawaysSections(splitByH2(lexical));
     const rawHtml = row.code_embed_code ? String(row.code_embed_code).trim() : null;
 
     if (isDry) {

@@ -35,6 +35,55 @@ function lxRoot(children) {
   };
 }
 
+/**
+ * Post-process sections: any section whose heading matches
+ * "Key Takeaways" / "Takeaways" / "TL;DR" / "Summary" / "At a Glance"
+ * AND whose body is primarily a bulleted list becomes a takeawaysBlock
+ * section instead of a textSection.
+ *
+ * Accepts the output of splitByH2 and returns a new array where
+ * qualifying sections have shape { kind: 'takeaways', heading, items }.
+ */
+const TAKEAWAY_PATTERN = /^(key\s*takeaways?|takeaways?|tl;?\s*dr\b|summary|at\s*a\s*glance)\b/i;
+
+function flattenTextNodes(nodes) {
+  const parts = [];
+  const walk = (ns) => {
+    for (const n of ns) {
+      if (!n) continue;
+      if (n.type === 'text') {
+        // Bold text → **text**
+        const t = n.text || '';
+        if ((n.format & 1) === 1) parts.push(`**${t}**`);
+        else parts.push(t);
+      } else if (n.type === 'link' && Array.isArray(n.children)) {
+        walk(n.children);
+      } else if (Array.isArray(n.children)) {
+        walk(n.children);
+      }
+    }
+  };
+  walk(nodes);
+  return parts.join('').trim();
+}
+
+export function convertTakeawaysSections(sections) {
+  return sections.map((section) => {
+    if (!TAKEAWAY_PATTERN.test((section.heading || '').trim())) return section;
+    const children = section.content?.root?.children || [];
+    // Find the first list in the content; use its items.
+    const list = children.find((c) => c?.type === 'list');
+    if (!list || !Array.isArray(list.children) || list.children.length === 0) {
+      return section;
+    }
+    const items = list.children
+      .map((li) => ({ text: flattenTextNodes(li.children || []) }))
+      .filter((it) => it.text);
+    if (items.length === 0) return section;
+    return { kind: 'takeaways', heading: section.heading || 'Key Takeaways', items };
+  });
+}
+
 export function splitByH2(lexical) {
   const root = lexical?.root;
   if (!root || !Array.isArray(root.children)) {

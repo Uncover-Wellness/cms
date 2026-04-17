@@ -20,7 +20,7 @@ import { readFileSync, readdirSync, existsSync } from 'node:fs';
 import { resolve, dirname, basename } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { markdownToLexical, lastHtmlSkips } from './lib/markdown-to-lexical.mjs';
-import { splitByH2 } from './lib/split-by-h2.mjs';
+import { splitByH2, convertTakeawaysSections } from './lib/split-by-h2.mjs';
 import { writeBlogPageBlocks } from './lib/write-blog-page-blocks.mjs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -180,7 +180,7 @@ for (const file of files) {
     }
 
     const lexical = markdownToLexical(body);
-    const sections = splitByH2(lexical);
+    const sections = convertTakeawaysSections(splitByH2(lexical));
     const htmlSkips = lastHtmlSkips();
     if (htmlSkips.length > 0) htmlSkipsByPost.set(slug, htmlSkips.length);
 
