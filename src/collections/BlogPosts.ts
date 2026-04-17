@@ -1,6 +1,7 @@
 import { CollectionConfig } from 'payload';
 import { isEditor } from '../access';
 import { slugFromName } from '../hooks/slugFromName';
+import { ALL_PAGE_BLOCKS } from '../blocks';
 
 export const BlogPosts: CollectionConfig = {
   slug: 'blog-posts',
@@ -115,6 +116,15 @@ export const BlogPosts: CollectionConfig = {
       admin: {
         language: 'html',
         description: 'Raw HTML embed (e.g. YouTube video, comparison table). Rendered as-is on the page.',
+      },
+    },
+    {
+      name: 'pageBlocks',
+      type: 'blocks',
+      blocks: ALL_PAGE_BLOCKS,
+      admin: {
+        description: 'Flexible post body. Compose the article from any block type: text sections, notices/callouts, CTA bands, video embeds, content grids, before/after, pricing, FAQs, doctor carousels, etc. When populated, this replaces the legacy postBody/richText2 fields on render.',
+        initCollapsed: true,
       },
     },
     {
