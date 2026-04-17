@@ -121,6 +121,20 @@ export const Treatments: CollectionConfig = {
           },
         },
         {
+          name: 'sessions',
+          type: 'text',
+          admin: {
+            description: 'Typical number of sessions. Example: "6-8"',
+          },
+        },
+        {
+          name: 'downtime',
+          type: 'text',
+          admin: {
+            description: 'Expected downtime after the procedure. Example: "None" or "2-3 days"',
+          },
+        },
+        {
           name: 'startingPrice',
           type: 'text',
           admin: {
@@ -307,6 +321,15 @@ export const Treatments: CollectionConfig = {
           required: true,
           admin: {
             description: 'Service categories (Skin, Hair, Body) this treatment belongs to.',
+          },
+        },
+        {
+          name: 'linkedDoctors',
+          type: 'relationship',
+          relationTo: 'doctors',
+          hasMany: true,
+          admin: {
+            description: 'Doctors who specialise in this treatment. Shown in the "Expert Specialists" carousel on the treatment page. When empty, the site falls back to top doctors.',
           },
         },
       ],
