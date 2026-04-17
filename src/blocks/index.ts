@@ -103,7 +103,6 @@ export const HtmlEmbed: Block = {
 
 export const OverviewBlock: Block = {
   slug: 'overviewBlock',
-  dbName: 'ov',
   labels: { singular: 'Overview Prose', plural: 'Overview Proses' },
   fields: [
     { name: 'eyebrow', type: 'text' },
@@ -120,7 +119,6 @@ export const OverviewBlock: Block = {
 
 export const BenefitsBlock: Block = {
   slug: 'benefitsBlock',
-  dbName: 'bn',
   labels: { singular: 'Benefits Grid', plural: 'Benefits Grids' },
   fields: [
     { name: 'eyebrow', type: 'text' },
@@ -140,7 +138,6 @@ export const BenefitsBlock: Block = {
 
 export const ProcessBlock: Block = {
   slug: 'processBlock',
-  dbName: 'pc',
   labels: { singular: 'Process Steps', plural: 'Process Steps' },
   fields: [
     { name: 'eyebrow', type: 'text' },
@@ -159,7 +156,6 @@ export const ProcessBlock: Block = {
 
 export const BeforeAfterBlock: Block = {
   slug: 'beforeAfterBlock',
-  dbName: 'ba',
   labels: { singular: 'Before/After Gallery', plural: 'Before/After Galleries' },
   fields: [
     { name: 'eyebrow', type: 'text' },
@@ -179,8 +175,7 @@ export const BeforeAfterBlock: Block = {
 };
 
 export const DataTableBlock: Block = {
-  slug: 'dataTableBlock',
-  dbName: 'dt',
+  slug: 'dataTable',
   labels: { singular: 'Data Table', plural: 'Data Tables' },
   fields: [
     { name: 'eyebrow', type: 'text' },
@@ -196,6 +191,7 @@ export const DataTableBlock: Block = {
         {
           name: 'align',
           type: 'select',
+          enumName: 'align',
           defaultValue: 'left',
           options: [
             { label: 'Left', value: 'left' },
@@ -226,7 +222,6 @@ export const DataTableBlock: Block = {
 
 export const PricingBlock: Block = {
   slug: 'pricingBlock',
-  dbName: 'pr',
   labels: { singular: 'Pricing Cards', plural: 'Pricing Cards' },
   fields: [
     { name: 'eyebrow', type: 'text' },
@@ -256,7 +251,6 @@ export const PricingBlock: Block = {
 
 export const CtaBlock: Block = {
   slug: 'ctaBlock',
-  dbName: 'ct',
   labels: { singular: 'CTA Band', plural: 'CTA Bands' },
   fields: [
     { name: 'heading', type: 'text', required: true },
@@ -266,6 +260,7 @@ export const CtaBlock: Block = {
     {
       name: 'variant',
       type: 'select',
+      enumName: 'ctaVariant',
       defaultValue: 'dark',
       options: [
         { label: 'Dark (brown-dark bg)', value: 'dark' },
@@ -277,8 +272,7 @@ export const CtaBlock: Block = {
 };
 
 export const ContentGridBlock: Block = {
-  slug: 'contentGridBlock',
-  dbName: 'cg',
+  slug: 'contentGrid',
   labels: { singular: 'Content Grid', plural: 'Content Grids' },
   fields: [
     { name: 'eyebrow', type: 'text' },
@@ -286,6 +280,7 @@ export const ContentGridBlock: Block = {
     {
       name: 'columns',
       type: 'select',
+      enumName: 'gridCols',
       defaultValue: '2',
       options: [
         { label: '2 columns', value: '2' },
@@ -310,8 +305,7 @@ export const ContentGridBlock: Block = {
 };
 
 export const ImageSliderBlock: Block = {
-  slug: 'imageSliderBlock',
-  dbName: 'isl',
+  slug: 'imageSlider',
   labels: { singular: 'Image Slider', plural: 'Image Sliders' },
   fields: [
     { name: 'eyebrow', type: 'text' },
@@ -319,6 +313,7 @@ export const ImageSliderBlock: Block = {
     {
       name: 'aspectRatio',
       type: 'select',
+      enumName: 'aspectRatio',
       defaultValue: '16/9',
       options: [
         { label: '16:9', value: '16/9' },
@@ -343,7 +338,6 @@ export const ImageSliderBlock: Block = {
 
 export const StatsBlock: Block = {
   slug: 'statsBlock',
-  dbName: 'st',
   labels: { singular: 'Stats Strip', plural: 'Stats Strips' },
   fields: [
     { name: 'eyebrow', type: 'text' },
@@ -361,6 +355,7 @@ export const StatsBlock: Block = {
     {
       name: 'variant',
       type: 'select',
+      enumName: 'statsVariant',
       defaultValue: 'dark',
       options: [
         { label: 'Dark', value: 'dark' },
@@ -371,8 +366,7 @@ export const StatsBlock: Block = {
 };
 
 export const DoctorsEmbedBlock: Block = {
-  slug: 'doctorsEmbedBlock',
-  dbName: 'de',
+  slug: 'doctorsEmbed',
   labels: { singular: 'Doctors Carousel', plural: 'Doctors Carousels' },
   fields: [
     { name: 'eyebrow', type: 'text' },
@@ -383,8 +377,7 @@ export const DoctorsEmbedBlock: Block = {
 };
 
 export const TestimonialsEmbedBlock: Block = {
-  slug: 'testimonialsEmbedBlock',
-  dbName: 'te',
+  slug: 'testimonialsEmbed',
   labels: { singular: 'Testimonials Carousel', plural: 'Testimonials Carousels' },
   fields: [
     { name: 'eyebrow', type: 'text' },
@@ -396,8 +389,7 @@ export const TestimonialsEmbedBlock: Block = {
 };
 
 export const FaqsEmbedBlock: Block = {
-  slug: 'faqsEmbedBlock',
-  dbName: 'fe',
+  slug: 'faqsEmbed',
   labels: { singular: 'FAQ Accordion', plural: 'FAQ Accordions' },
   fields: [
     { name: 'eyebrow', type: 'text' },
@@ -416,8 +408,7 @@ export const FaqsEmbedBlock: Block = {
 };
 
 export const BookingFormBlock: Block = {
-  slug: 'bookingFormBlock',
-  dbName: 'bf',
+  slug: 'bookingForm',
   labels: { singular: 'Booking Form', plural: 'Booking Forms' },
   fields: [
     { name: 'eyebrow', type: 'text' },
