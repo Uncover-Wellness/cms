@@ -1,27 +1,28 @@
 #!/usr/bin/env node
 /**
  * Ports a single treatment/concern page from Netlify reference into the CMS
- * pageBlocks architecture.
+ * using typed pageBlocks — no Lexical rich-text.
  *
  * Usage: node scripts/port-pages/portOne.mjs <treatment|concern> <slug>
  *
  * Pipeline:
  *   1. Read manifest to get CMS id + reference URL
- *   2. Fetch Netlify HTML, extract hero + H2-section blocks + inline FAQs
- *   3. Transactionally:
- *        - Update hero fields (page_heading, heading_support_text, meta_*)
+ *   2. Fetch Netlify HTML, extract hero + per-H2 section HTML + inline FAQs
+ *   3. For each section, map HTML → ordered typed blocks
+ *      (overviewBlock, benefitsBlock, processBlock, dataTable, imageSlider)
+ *   4. Transactionally:
+ *        - Update hero fields + meta
  *        - Wipe all narrative pageBlocks (keep doctors/testim/faqs/booking embeds)
- *        - Insert one textSection per H2 in order
- *        - Append inline FAQs to the preserved faqsEmbed
+ *        - Insert blocks in order
+ *        - Append inline FAQs to the faqsEmbed
  *        - Renumber preserved embeds so they sit at the end
- *   4. Verify via CMS API and print a 1-line summary
  */
 import { readFileSync, writeFileSync } from 'node:fs';
 import { resolve, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { connect, wipeNarrativeBlocks, renumberPreservedEmbeds, insertTextSection, insertFaqsInline } from './lib.mjs';
+import { connect, wipeNarrativeBlocks, renumberPreservedEmbeds, insertBlock, insertFaqsInline } from './lib.mjs';
 import { extract } from './extract.mjs';
-import { htmlToLexicalRoot } from './html-to-lexical.mjs';
+import { sectionToBlocks } from './html-to-blocks.mjs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const MANIFEST_PATH = resolve(__dirname, 'manifest.json');
@@ -29,7 +30,6 @@ const MANIFEST_PATH = resolve(__dirname, 'manifest.json');
 function loadManifest() {
   return JSON.parse(readFileSync(MANIFEST_PATH, 'utf8'));
 }
-
 function saveManifest(m) {
   writeFileSync(MANIFEST_PATH, JSON.stringify(m, null, 2));
 }
@@ -46,10 +46,16 @@ export async function portOne(kind, slug, { client, manifest } = {}) {
   const ir = await extract(entry.referenceUrl, { kind });
   if (ir.sections.length === 0) throw new Error(`no H2 sections found in ${entry.referenceUrl}`);
 
+  // Build block plan for all sections.
+  const plan = [];
+  for (const section of ir.sections) {
+    const blocks = sectionToBlocks(section.heading, section.bodyHtml);
+    for (const b of blocks) plan.push(b);
+  }
+
   try {
     await client.query('BEGIN');
 
-    // Update hero + SEO fields
     const heroHeading = ir.hero.heading || entry.cmsName;
     const headingSupport = ir.hero.subheading || '';
     const metaTitle = ir.hero.metaTitle || '';
@@ -70,37 +76,34 @@ export async function portOne(kind, slug, { client, manifest } = {}) {
       );
     }
 
-    // Wipe narrative blocks
     await wipeNarrativeBlocks(client, collection, entry.cmsId);
 
-    // Insert new textSections
     let order = 0;
-    for (const section of ir.sections) {
+    const typeCounts = {};
+    for (const block of plan) {
       order += 1;
-      const content = htmlToLexicalRoot(section.bodyHtml);
-      await insertTextSection(client, collection, entry.cmsId, order, section.heading, content);
+      await insertBlock(client, collection, entry.cmsId, order, block);
+      typeCounts[block.type] = (typeCounts[block.type] || 0) + 1;
     }
 
-    // Renumber preserved embeds to sit after narrative
     const preservedCount = await renumberPreservedEmbeds(client, collection, entry.cmsId, order + 1);
 
-    // Push inline FAQs onto the faqsEmbed
     let faqCount = 0;
-    if (ir.faqs.length > 0) {
-      faqCount = await insertFaqsInline(client, collection, entry.cmsId, ir.faqs);
-    }
+    if (ir.faqs.length > 0) faqCount = await insertFaqsInline(client, collection, entry.cmsId, ir.faqs);
 
     await client.query('COMMIT');
 
     entry.ported = true;
     entry.portedAt = new Date().toISOString();
     entry.sectionCount = ir.sections.length;
+    entry.blockCount = plan.length;
+    entry.blockTypes = typeCounts;
     entry.faqCount = faqCount;
     entry.preservedEmbedCount = preservedCount;
-    entry.notes = `${ir.sections.length} textSections + ${preservedCount} embeds + ${faqCount} inline FAQs`;
+    entry.notes = `${plan.length} blocks (${Object.entries(typeCounts).map(([t,n])=>`${t}×${n}`).join(' ')}), ${preservedCount} embeds, ${faqCount} faqs`;
     saveManifest(manifest);
 
-    console.log(`[OK]  ${kind}/${slug}: ${ir.sections.length} sections, ${preservedCount} embeds, ${faqCount} faqs`);
+    console.log(`[OK]  ${kind}/${slug}: ${entry.notes}`);
     return entry;
   } catch (err) {
     await client.query('ROLLBACK');
@@ -114,7 +117,6 @@ export async function portOne(kind, slug, { client, manifest } = {}) {
   }
 }
 
-// CLI entry
 if (import.meta.url === `file://${process.argv[1]}`) {
   const [kind, slug] = process.argv.slice(2);
   if (!kind || !slug) {

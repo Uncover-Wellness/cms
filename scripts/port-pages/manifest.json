@@ -21,8 +21,8 @@
       },
       "ported": true,
       "similarity": null,
-      "notes": "4 textSections + 3 embeds + 0 inline FAQs",
-      "portedAt": "2026-04-17T20:39:33.871Z",
+      "notes": "9 blocks (overviewBlock×5 imageSlider×4), 3 embeds, 0 faqs",
+      "portedAt": "2026-04-17T21:21:19.552Z",
       "sectionCount": 4,
       "faqCount": 0,
       "preservedEmbedCount": 3,
@@ -32,6 +32,11 @@
         "cmsTextSections": 4,
         "headingMatch": 1,
         "similarity": 0.96
+      },
+      "blockCount": 9,
+      "blockTypes": {
+        "overviewBlock": 5,
+        "imageSlider": 4
       }
     },
     {
@@ -54,8 +59,8 @@
       },
       "ported": true,
       "similarity": null,
-      "notes": "4 textSections + 3 embeds + 0 inline FAQs",
-      "portedAt": "2026-04-17T20:39:41.939Z",
+      "notes": "20 blocks (overviewBlock×11 benefitsBlock×4 imageSlider×4 processBlock×1), 3 embeds, 0 faqs",
+      "portedAt": "2026-04-17T21:21:38.467Z",
       "sectionCount": 4,
       "faqCount": 0,
       "preservedEmbedCount": 3,
@@ -65,6 +70,13 @@
         "cmsTextSections": 4,
         "headingMatch": 1,
         "similarity": 0.99
+      },
+      "blockCount": 20,
+      "blockTypes": {
+        "overviewBlock": 11,
+        "benefitsBlock": 4,
+        "imageSlider": 4,
+        "processBlock": 1
       }
     },
     {
@@ -87,8 +99,8 @@
       },
       "ported": true,
       "similarity": null,
-      "notes": "4 textSections + 3 embeds + 0 inline FAQs",
-      "portedAt": "2026-04-17T20:39:50.153Z",
+      "notes": "14 blocks (overviewBlock×7 imageSlider×4 benefitsBlock×3), 3 embeds, 0 faqs",
+      "portedAt": "2026-04-17T21:21:56.205Z",
       "sectionCount": 4,
       "faqCount": 0,
       "preservedEmbedCount": 3,
@@ -98,6 +110,12 @@
         "cmsTextSections": 4,
         "headingMatch": 1,
         "similarity": 0.98
+      },
+      "blockCount": 14,
+      "blockTypes": {
+        "overviewBlock": 7,
+        "imageSlider": 4,
+        "benefitsBlock": 3
       }
     },
     {
@@ -120,8 +138,8 @@
       },
       "ported": true,
       "similarity": null,
-      "notes": "4 textSections + 3 embeds + 0 inline FAQs",
-      "portedAt": "2026-04-17T20:39:58.312Z",
+      "notes": "13 blocks (overviewBlock×6 imageSlider×4 benefitsBlock×3), 3 embeds, 0 faqs",
+      "portedAt": "2026-04-17T21:22:12.650Z",
       "sectionCount": 4,
       "faqCount": 0,
       "preservedEmbedCount": 3,
@@ -131,6 +149,12 @@
         "cmsTextSections": 4,
         "headingMatch": 1,
         "similarity": 0.97
+      },
+      "blockCount": 13,
+      "blockTypes": {
+        "overviewBlock": 6,
+        "imageSlider": 4,
+        "benefitsBlock": 3
       }
     },
     {
@@ -153,8 +177,8 @@
       },
       "ported": true,
       "similarity": null,
-      "notes": "4 textSections + 3 embeds + 0 inline FAQs",
-      "portedAt": "2026-04-17T20:40:06.433Z",
+      "notes": "14 blocks (overviewBlock×7 imageSlider×4 benefitsBlock×3), 3 embeds, 0 faqs",
+      "portedAt": "2026-04-17T21:22:29.311Z",
       "sectionCount": 4,
       "faqCount": 0,
       "preservedEmbedCount": 3,
@@ -164,6 +188,12 @@
         "cmsTextSections": 4,
         "headingMatch": 1,
         "similarity": 0.98
+      },
+      "blockCount": 14,
+      "blockTypes": {
+        "overviewBlock": 7,
+        "imageSlider": 4,
+        "benefitsBlock": 3
       }
     },
     {
@@ -186,8 +216,8 @@
       },
       "ported": true,
       "similarity": null,
-      "notes": "4 textSections + 3 embeds + 0 inline FAQs",
-      "portedAt": "2026-04-17T20:40:14.837Z",
+      "notes": "14 blocks (overviewBlock×7 benefitsBlock×2 imageSlider×4 processBlock×1), 3 embeds, 0 faqs",
+      "portedAt": "2026-04-17T21:22:47.335Z",
       "sectionCount": 4,
       "faqCount": 0,
       "preservedEmbedCount": 3,
@@ -197,6 +227,13 @@
         "cmsTextSections": 4,
         "headingMatch": 1,
         "similarity": 0.98
+      },
+      "blockCount": 14,
+      "blockTypes": {
+        "overviewBlock": 7,
+        "benefitsBlock": 2,
+        "imageSlider": 4,
+        "processBlock": 1
       }
     },
     {
@@ -219,8 +256,8 @@
       },
       "ported": true,
       "similarity": null,
-      "notes": "4 textSections + 3 embeds + 0 inline FAQs",
-      "portedAt": "2026-04-17T20:40:22.967Z",
+      "notes": "14 blocks (overviewBlock×6 processBlock×4 imageSlider×4), 3 embeds, 0 faqs",
+      "portedAt": "2026-04-17T21:23:05.785Z",
       "sectionCount": 4,
       "faqCount": 0,
       "preservedEmbedCount": 3,
@@ -230,6 +267,12 @@
         "cmsTextSections": 4,
         "headingMatch": 1,
         "similarity": 0.99
+      },
+      "blockCount": 14,
+      "blockTypes": {
+        "overviewBlock": 6,
+        "processBlock": 4,
+        "imageSlider": 4
       }
     },
     {
@@ -272,8 +315,8 @@
       },
       "ported": true,
       "similarity": null,
-      "notes": "4 textSections + 3 embeds + 0 inline FAQs",
-      "portedAt": "2026-04-17T20:40:31.162Z",
+      "notes": "11 blocks (overviewBlock×5 imageSlider×4 benefitsBlock×2), 3 embeds, 0 faqs",
+      "portedAt": "2026-04-17T21:23:21.208Z",
       "sectionCount": 4,
       "faqCount": 0,
       "preservedEmbedCount": 3,
@@ -283,6 +326,12 @@
         "cmsTextSections": 4,
         "headingMatch": 1,
         "similarity": 0.97
+      },
+      "blockCount": 11,
+      "blockTypes": {
+        "overviewBlock": 5,
+        "imageSlider": 4,
+        "benefitsBlock": 2
       }
     },
     {
@@ -305,8 +354,8 @@
       },
       "ported": true,
       "similarity": null,
-      "notes": "4 textSections + 3 embeds + 0 inline FAQs",
-      "portedAt": "2026-04-17T20:40:39.363Z",
+      "notes": "12 blocks (overviewBlock×6 imageSlider×4 benefitsBlock×2), 3 embeds, 0 faqs",
+      "portedAt": "2026-04-17T21:23:36.597Z",
       "sectionCount": 4,
       "faqCount": 0,
       "preservedEmbedCount": 3,
@@ -316,6 +365,12 @@
         "cmsTextSections": 4,
         "headingMatch": 1,
         "similarity": 0.97
+      },
+      "blockCount": 12,
+      "blockTypes": {
+        "overviewBlock": 6,
+        "imageSlider": 4,
+        "benefitsBlock": 2
       }
     },
     {
@@ -338,8 +393,8 @@
       },
       "ported": true,
       "similarity": null,
-      "notes": "4 textSections + 3 embeds + 0 inline FAQs",
-      "portedAt": "2026-04-17T20:40:47.752Z",
+      "notes": "14 blocks (overviewBlock×8 benefitsBlock×2 imageSlider×4), 3 embeds, 0 faqs",
+      "portedAt": "2026-04-17T21:23:53.082Z",
       "sectionCount": 4,
       "faqCount": 0,
       "preservedEmbedCount": 3,
@@ -349,6 +404,12 @@
         "cmsTextSections": 4,
         "headingMatch": 1,
         "similarity": 0.96
+      },
+      "blockCount": 14,
+      "blockTypes": {
+        "overviewBlock": 8,
+        "benefitsBlock": 2,
+        "imageSlider": 4
       }
     },
     {
@@ -371,8 +432,8 @@
       },
       "ported": true,
       "similarity": null,
-      "notes": "4 textSections + 3 embeds + 0 inline FAQs",
-      "portedAt": "2026-04-17T20:40:56.033Z",
+      "notes": "12 blocks (overviewBlock×5 imageSlider×4 benefitsBlock×3), 3 embeds, 0 faqs",
+      "portedAt": "2026-04-17T21:24:09.451Z",
       "sectionCount": 4,
       "faqCount": 0,
       "preservedEmbedCount": 3,
@@ -382,6 +443,12 @@
         "cmsTextSections": 4,
         "headingMatch": 1,
         "similarity": 0.99
+      },
+      "blockCount": 12,
+      "blockTypes": {
+        "overviewBlock": 5,
+        "imageSlider": 4,
+        "benefitsBlock": 3
       }
     },
     {
@@ -404,8 +471,8 @@
       },
       "ported": true,
       "similarity": null,
-      "notes": "4 textSections + 3 embeds + 0 inline FAQs",
-      "portedAt": "2026-04-17T20:41:04.357Z",
+      "notes": "13 blocks (overviewBlock×7 imageSlider×3 benefitsBlock×3), 3 embeds, 0 faqs",
+      "portedAt": "2026-04-17T21:24:24.590Z",
       "sectionCount": 4,
       "faqCount": 0,
       "preservedEmbedCount": 3,
@@ -415,6 +482,12 @@
         "cmsTextSections": 4,
         "headingMatch": 1,
         "similarity": 0.98
+      },
+      "blockCount": 13,
+      "blockTypes": {
+        "overviewBlock": 7,
+        "imageSlider": 3,
+        "benefitsBlock": 3
       }
     },
     {
@@ -437,8 +510,8 @@
       },
       "ported": true,
       "similarity": null,
-      "notes": "4 textSections + 3 embeds + 0 inline FAQs",
-      "portedAt": "2026-04-17T20:41:12.670Z",
+      "notes": "16 blocks (overviewBlock×8 imageSlider×4 benefitsBlock×4), 3 embeds, 0 faqs",
+      "portedAt": "2026-04-17T21:24:41.811Z",
       "sectionCount": 4,
       "faqCount": 0,
       "preservedEmbedCount": 3,
@@ -448,6 +521,12 @@
         "cmsTextSections": 4,
         "headingMatch": 1,
         "similarity": 0.99
+      },
+      "blockCount": 16,
+      "blockTypes": {
+        "overviewBlock": 8,
+        "imageSlider": 4,
+        "benefitsBlock": 4
       }
     },
     {
@@ -470,8 +549,8 @@
       },
       "ported": true,
       "similarity": null,
-      "notes": "4 textSections + 3 embeds + 0 inline FAQs",
-      "portedAt": "2026-04-17T20:41:20.879Z",
+      "notes": "13 blocks (overviewBlock×7 imageSlider×4 benefitsBlock×1 processBlock×1), 3 embeds, 0 faqs",
+      "portedAt": "2026-04-17T21:24:57.353Z",
       "sectionCount": 4,
       "faqCount": 0,
       "preservedEmbedCount": 3,
@@ -481,6 +560,13 @@
         "cmsTextSections": 4,
         "headingMatch": 1,
         "similarity": 0.99
+      },
+      "blockCount": 13,
+      "blockTypes": {
+        "overviewBlock": 7,
+        "imageSlider": 4,
+        "benefitsBlock": 1,
+        "processBlock": 1
       }
     },
     {
@@ -503,8 +589,8 @@
       },
       "ported": true,
       "similarity": null,
-      "notes": "4 textSections + 3 embeds + 0 inline FAQs",
-      "portedAt": "2026-04-17T20:41:29.200Z",
+      "notes": "15 blocks (overviewBlock×8 imageSlider×4 benefitsBlock×3), 3 embeds, 0 faqs",
+      "portedAt": "2026-04-17T21:25:14.496Z",
       "sectionCount": 4,
       "faqCount": 0,
       "preservedEmbedCount": 3,
@@ -514,6 +600,12 @@
         "cmsTextSections": 4,
         "headingMatch": 1,
         "similarity": 0.97
+      },
+      "blockCount": 15,
+      "blockTypes": {
+        "overviewBlock": 8,
+        "imageSlider": 4,
+        "benefitsBlock": 3
       }
     },
     {
@@ -536,8 +628,8 @@
       },
       "ported": true,
       "similarity": null,
-      "notes": "4 textSections + 3 embeds + 0 inline FAQs",
-      "portedAt": "2026-04-17T20:41:37.306Z",
+      "notes": "19 blocks (overviewBlock×9 benefitsBlock×4 imageSlider×4 processBlock×2), 3 embeds, 0 faqs",
+      "portedAt": "2026-04-17T21:25:33.434Z",
       "sectionCount": 4,
       "faqCount": 0,
       "preservedEmbedCount": 3,
@@ -547,6 +639,13 @@
         "cmsTextSections": 4,
         "headingMatch": 1,
         "similarity": 0.94
+      },
+      "blockCount": 19,
+      "blockTypes": {
+        "overviewBlock": 9,
+        "benefitsBlock": 4,
+        "imageSlider": 4,
+        "processBlock": 2
       }
     },
     {
@@ -569,8 +668,8 @@
       },
       "ported": true,
       "similarity": null,
-      "notes": "4 textSections + 3 embeds + 0 inline FAQs",
-      "portedAt": "2026-04-17T20:41:45.108Z",
+      "notes": "17 blocks (overviewBlock×9 imageSlider×4 benefitsBlock×2 processBlock×2), 3 embeds, 0 faqs",
+      "portedAt": "2026-04-17T21:25:53.416Z",
       "sectionCount": 4,
       "faqCount": 0,
       "preservedEmbedCount": 3,
@@ -580,6 +679,13 @@
         "cmsTextSections": 4,
         "headingMatch": 1,
         "similarity": 0.99
+      },
+      "blockCount": 17,
+      "blockTypes": {
+        "overviewBlock": 9,
+        "imageSlider": 4,
+        "benefitsBlock": 2,
+        "processBlock": 2
       }
     },
     {
@@ -602,8 +708,8 @@
       },
       "ported": true,
       "similarity": null,
-      "notes": "4 textSections + 3 embeds + 0 inline FAQs",
-      "portedAt": "2026-04-17T20:41:53.152Z",
+      "notes": "16 blocks (overviewBlock×8 benefitsBlock×3 imageSlider×4 processBlock×1), 3 embeds, 0 faqs",
+      "portedAt": "2026-04-17T21:26:10.419Z",
       "sectionCount": 4,
       "faqCount": 0,
       "preservedEmbedCount": 3,
@@ -613,6 +719,13 @@
         "cmsTextSections": 4,
         "headingMatch": 1,
         "similarity": 0.96
+      },
+      "blockCount": 16,
+      "blockTypes": {
+        "overviewBlock": 8,
+        "benefitsBlock": 3,
+        "imageSlider": 4,
+        "processBlock": 1
       }
     },
     {
@@ -635,8 +748,8 @@
       },
       "ported": true,
       "similarity": null,
-      "notes": "4 textSections + 3 embeds + 0 inline FAQs",
-      "portedAt": "2026-04-17T20:42:01.332Z",
+      "notes": "13 blocks (overviewBlock×7 benefitsBlock×1 imageSlider×4 processBlock×1), 3 embeds, 0 faqs",
+      "portedAt": "2026-04-17T21:26:25.440Z",
       "sectionCount": 4,
       "faqCount": 0,
       "preservedEmbedCount": 3,
@@ -646,6 +759,13 @@
         "cmsTextSections": 4,
         "headingMatch": 1,
         "similarity": 0.99
+      },
+      "blockCount": 13,
+      "blockTypes": {
+        "overviewBlock": 7,
+        "benefitsBlock": 1,
+        "imageSlider": 4,
+        "processBlock": 1
       }
     },
     {
@@ -668,8 +788,8 @@
       },
       "ported": true,
       "similarity": null,
-      "notes": "4 textSections + 3 embeds + 0 inline FAQs",
-      "portedAt": "2026-04-17T20:42:09.437Z",
+      "notes": "13 blocks (overviewBlock×7 imageSlider×4 benefitsBlock×2), 3 embeds, 0 faqs",
+      "portedAt": "2026-04-17T21:26:41.376Z",
       "sectionCount": 4,
       "faqCount": 0,
       "preservedEmbedCount": 3,
@@ -679,6 +799,12 @@
         "cmsTextSections": 4,
         "headingMatch": 1,
         "similarity": 0.97
+      },
+      "blockCount": 13,
+      "blockTypes": {
+        "overviewBlock": 7,
+        "imageSlider": 4,
+        "benefitsBlock": 2
       }
     },
     {
@@ -701,8 +827,8 @@
       },
       "ported": true,
       "similarity": null,
-      "notes": "4 textSections + 3 embeds + 0 inline FAQs",
-      "portedAt": "2026-04-17T20:42:17.886Z",
+      "notes": "35 blocks (overviewBlock×22 processBlock×6 imageSlider×3 benefitsBlock×4), 3 embeds, 0 faqs",
+      "portedAt": "2026-04-17T21:27:07.079Z",
       "sectionCount": 4,
       "faqCount": 0,
       "preservedEmbedCount": 3,
@@ -712,6 +838,13 @@
         "cmsTextSections": 4,
         "headingMatch": 1,
         "similarity": 0.99
+      },
+      "blockCount": 35,
+      "blockTypes": {
+        "overviewBlock": 22,
+        "processBlock": 6,
+        "imageSlider": 3,
+        "benefitsBlock": 4
       }
     },
     {
@@ -734,8 +867,8 @@
       },
       "ported": true,
       "similarity": null,
-      "notes": "4 textSections + 3 embeds + 0 inline FAQs",
-      "portedAt": "2026-04-17T20:42:25.766Z",
+      "notes": "32 blocks (overviewBlock×16 processBlock×5 benefitsBlock×7 imageSlider×4), 3 embeds, 0 faqs",
+      "portedAt": "2026-04-17T21:27:34.993Z",
       "sectionCount": 4,
       "faqCount": 0,
       "preservedEmbedCount": 3,
@@ -745,6 +878,13 @@
         "cmsTextSections": 4,
         "headingMatch": 1,
         "similarity": 0.99
+      },
+      "blockCount": 32,
+      "blockTypes": {
+        "overviewBlock": 16,
+        "processBlock": 5,
+        "benefitsBlock": 7,
+        "imageSlider": 4
       }
     },
     {
@@ -767,8 +907,8 @@
       },
       "ported": true,
       "similarity": null,
-      "notes": "4 textSections + 3 embeds + 0 inline FAQs",
-      "portedAt": "2026-04-17T20:42:34.073Z",
+      "notes": "12 blocks (overviewBlock×7 imageSlider×4 benefitsBlock×1), 3 embeds, 0 faqs",
+      "portedAt": "2026-04-17T21:27:50.263Z",
       "sectionCount": 4,
       "faqCount": 0,
       "preservedEmbedCount": 3,
@@ -778,6 +918,12 @@
         "cmsTextSections": 4,
         "headingMatch": 1,
         "similarity": 0.97
+      },
+      "blockCount": 12,
+      "blockTypes": {
+        "overviewBlock": 7,
+        "imageSlider": 4,
+        "benefitsBlock": 1
       }
     },
     {
@@ -800,8 +946,8 @@
       },
       "ported": true,
       "similarity": null,
-      "notes": "6 textSections + 3 embeds + 0 inline FAQs",
-      "portedAt": "2026-04-17T20:42:42.169Z",
+      "notes": "20 blocks (overviewBlock×10 benefitsBlock×5 imageSlider×4 processBlock×1), 3 embeds, 0 faqs",
+      "portedAt": "2026-04-17T21:28:08.939Z",
       "sectionCount": 6,
       "faqCount": 0,
       "preservedEmbedCount": 3,
@@ -811,6 +957,13 @@
         "cmsTextSections": 6,
         "headingMatch": 1,
         "similarity": 0.96
+      },
+      "blockCount": 20,
+      "blockTypes": {
+        "overviewBlock": 10,
+        "benefitsBlock": 5,
+        "imageSlider": 4,
+        "processBlock": 1
       }
     },
     {
@@ -833,8 +986,8 @@
       },
       "ported": true,
       "similarity": null,
-      "notes": "4 textSections + 3 embeds + 0 inline FAQs",
-      "portedAt": "2026-04-17T20:42:50.441Z",
+      "notes": "40 blocks (overviewBlock×23 processBlock×8 benefitsBlock×5 imageSlider×4), 3 embeds, 0 faqs",
+      "portedAt": "2026-04-17T21:28:38.929Z",
       "sectionCount": 4,
       "faqCount": 0,
       "preservedEmbedCount": 3,
@@ -844,6 +997,13 @@
         "cmsTextSections": 4,
         "headingMatch": 1,
         "similarity": 0.99
+      },
+      "blockCount": 40,
+      "blockTypes": {
+        "overviewBlock": 23,
+        "processBlock": 8,
+        "benefitsBlock": 5,
+        "imageSlider": 4
       }
     },
     {
@@ -866,8 +1026,8 @@
       },
       "ported": true,
       "similarity": null,
-      "notes": "5 textSections + 3 embeds + 0 inline FAQs",
-      "portedAt": "2026-04-17T20:42:58.460Z",
+      "notes": "57 blocks (overviewBlock×35 processBlock×12 imageSlider×4 benefitsBlock×6), 3 embeds, 0 faqs",
+      "portedAt": "2026-04-17T21:29:15.133Z",
       "sectionCount": 5,
       "faqCount": 0,
       "preservedEmbedCount": 3,
@@ -877,6 +1037,13 @@
         "cmsTextSections": 5,
         "headingMatch": 1,
         "similarity": 1
+      },
+      "blockCount": 57,
+      "blockTypes": {
+        "overviewBlock": 35,
+        "processBlock": 12,
+        "imageSlider": 4,
+        "benefitsBlock": 6
       }
     },
     {
@@ -899,8 +1066,8 @@
       },
       "ported": true,
       "similarity": null,
-      "notes": "4 textSections + 3 embeds + 0 inline FAQs",
-      "portedAt": "2026-04-17T20:43:06.688Z",
+      "notes": "12 blocks (overviewBlock×7 imageSlider×3 processBlock×1 benefitsBlock×1), 3 embeds, 0 faqs",
+      "portedAt": "2026-04-17T21:29:30.638Z",
       "sectionCount": 4,
       "faqCount": 0,
       "preservedEmbedCount": 3,
@@ -910,6 +1077,13 @@
         "cmsTextSections": 4,
         "headingMatch": 1,
         "similarity": 0.97
+      },
+      "blockCount": 12,
+      "blockTypes": {
+        "overviewBlock": 7,
+        "imageSlider": 3,
+        "processBlock": 1,
+        "benefitsBlock": 1
       }
     },
     {
@@ -932,8 +1106,8 @@
       },
       "ported": true,
       "similarity": null,
-      "notes": "4 textSections + 3 embeds + 0 inline FAQs",
-      "portedAt": "2026-04-17T20:43:14.754Z",
+      "notes": "13 blocks (overviewBlock×6 imageSlider×4 benefitsBlock×3), 3 embeds, 0 faqs",
+      "portedAt": "2026-04-17T21:29:47.007Z",
       "sectionCount": 4,
       "faqCount": 0,
       "preservedEmbedCount": 3,
@@ -943,6 +1117,12 @@
         "cmsTextSections": 4,
         "headingMatch": 1,
         "similarity": 0.98
+      },
+      "blockCount": 13,
+      "blockTypes": {
+        "overviewBlock": 6,
+        "imageSlider": 4,
+        "benefitsBlock": 3
       }
     },
     {
@@ -965,8 +1145,8 @@
       },
       "ported": true,
       "similarity": null,
-      "notes": "4 textSections + 3 embeds + 0 inline FAQs",
-      "portedAt": "2026-04-17T20:43:23.074Z",
+      "notes": "19 blocks (overviewBlock×9 imageSlider×4 benefitsBlock×5 processBlock×1), 3 embeds, 0 faqs",
+      "portedAt": "2026-04-17T21:30:05.684Z",
       "sectionCount": 4,
       "faqCount": 0,
       "preservedEmbedCount": 3,
@@ -976,6 +1156,13 @@
         "cmsTextSections": 4,
         "headingMatch": 1,
         "similarity": 0.99
+      },
+      "blockCount": 19,
+      "blockTypes": {
+        "overviewBlock": 9,
+        "imageSlider": 4,
+        "benefitsBlock": 5,
+        "processBlock": 1
       }
     },
     {
@@ -998,8 +1185,8 @@
       },
       "ported": true,
       "similarity": null,
-      "notes": "4 textSections + 3 embeds + 0 inline FAQs",
-      "portedAt": "2026-04-17T20:43:31.143Z",
+      "notes": "26 blocks (overviewBlock×12 benefitsBlock×10 imageSlider×4), 3 embeds, 0 faqs",
+      "portedAt": "2026-04-17T21:30:28.074Z",
       "sectionCount": 4,
       "faqCount": 0,
       "preservedEmbedCount": 3,
@@ -1009,6 +1196,12 @@
         "cmsTextSections": 4,
         "headingMatch": 1,
         "similarity": 1
+      },
+      "blockCount": 26,
+      "blockTypes": {
+        "overviewBlock": 12,
+        "benefitsBlock": 10,
+        "imageSlider": 4
       }
     },
     {
@@ -1031,8 +1224,8 @@
       },
       "ported": true,
       "similarity": null,
-      "notes": "4 textSections + 3 embeds + 0 inline FAQs",
-      "portedAt": "2026-04-17T20:43:39.492Z",
+      "notes": "43 blocks (overviewBlock×36 imageSlider×4 benefitsBlock×2 processBlock×1), 3 embeds, 0 faqs",
+      "portedAt": "2026-04-17T21:30:56.519Z",
       "sectionCount": 4,
       "faqCount": 0,
       "preservedEmbedCount": 3,
@@ -1042,6 +1235,13 @@
         "cmsTextSections": 4,
         "headingMatch": 1,
         "similarity": 1
+      },
+      "blockCount": 43,
+      "blockTypes": {
+        "overviewBlock": 36,
+        "imageSlider": 4,
+        "benefitsBlock": 2,
+        "processBlock": 1
       }
     },
     {
@@ -1064,8 +1264,8 @@
       },
       "ported": true,
       "similarity": null,
-      "notes": "4 textSections + 3 embeds + 0 inline FAQs",
-      "portedAt": "2026-04-17T20:43:47.331Z",
+      "notes": "11 blocks (overviewBlock×6 processBlock×1 imageSlider×3 benefitsBlock×1), 3 embeds, 0 faqs",
+      "portedAt": "2026-04-17T21:31:12.985Z",
       "sectionCount": 4,
       "faqCount": 0,
       "preservedEmbedCount": 3,
@@ -1075,6 +1275,13 @@
         "cmsTextSections": 4,
         "headingMatch": 1,
         "similarity": 0.98
+      },
+      "blockCount": 11,
+      "blockTypes": {
+        "overviewBlock": 6,
+        "processBlock": 1,
+        "imageSlider": 3,
+        "benefitsBlock": 1
       }
     },
     {
@@ -1097,8 +1304,8 @@
       },
       "ported": true,
       "similarity": null,
-      "notes": "4 textSections + 3 embeds + 0 inline FAQs",
-      "portedAt": "2026-04-17T20:43:55.279Z",
+      "notes": "35 blocks (overviewBlock×19 processBlock×12 imageSlider×4), 3 embeds, 0 faqs",
+      "portedAt": "2026-04-17T21:31:46.691Z",
       "sectionCount": 4,
       "faqCount": 0,
       "preservedEmbedCount": 3,
@@ -1108,6 +1315,12 @@
         "cmsTextSections": 4,
         "headingMatch": 1,
         "similarity": 0.99
+      },
+      "blockCount": 35,
+      "blockTypes": {
+        "overviewBlock": 19,
+        "processBlock": 12,
+        "imageSlider": 4
       }
     },
     {
@@ -1130,8 +1343,8 @@
       },
       "ported": true,
       "similarity": null,
-      "notes": "5 textSections + 3 embeds + 0 inline FAQs",
-      "portedAt": "2026-04-17T20:44:03.733Z",
+      "notes": "23 blocks (overviewBlock×13 processBlock×4 imageSlider×4 benefitsBlock×2), 3 embeds, 0 faqs",
+      "portedAt": "2026-04-17T21:32:08.093Z",
       "sectionCount": 5,
       "faqCount": 0,
       "preservedEmbedCount": 3,
@@ -1141,6 +1354,13 @@
         "cmsTextSections": 5,
         "headingMatch": 1,
         "similarity": 0.99
+      },
+      "blockCount": 23,
+      "blockTypes": {
+        "overviewBlock": 13,
+        "processBlock": 4,
+        "imageSlider": 4,
+        "benefitsBlock": 2
       }
     },
     {
@@ -1163,8 +1383,8 @@
       },
       "ported": true,
       "similarity": null,
-      "notes": "4 textSections + 3 embeds + 0 inline FAQs",
-      "portedAt": "2026-04-17T20:44:11.646Z",
+      "notes": "33 blocks (overviewBlock×18 processBlock×2 imageSlider×4 benefitsBlock×9), 3 embeds, 0 faqs",
+      "portedAt": "2026-04-17T21:32:38.684Z",
       "sectionCount": 4,
       "faqCount": 0,
       "preservedEmbedCount": 3,
@@ -1174,6 +1394,13 @@
         "cmsTextSections": 4,
         "headingMatch": 1,
         "similarity": 0.97
+      },
+      "blockCount": 33,
+      "blockTypes": {
+        "overviewBlock": 18,
+        "processBlock": 2,
+        "imageSlider": 4,
+        "benefitsBlock": 9
       }
     },
     {
@@ -1196,8 +1423,8 @@
       },
       "ported": true,
       "similarity": null,
-      "notes": "4 textSections + 3 embeds + 0 inline FAQs",
-      "portedAt": "2026-04-17T20:44:19.961Z",
+      "notes": "19 blocks (overviewBlock×7 imageSlider×4 benefitsBlock×6 processBlock×2), 3 embeds, 0 faqs",
+      "portedAt": "2026-04-17T21:32:58.916Z",
       "sectionCount": 4,
       "faqCount": 0,
       "preservedEmbedCount": 3,
@@ -1207,6 +1434,13 @@
         "cmsTextSections": 4,
         "headingMatch": 1,
         "similarity": 1
+      },
+      "blockCount": 19,
+      "blockTypes": {
+        "overviewBlock": 7,
+        "imageSlider": 4,
+        "benefitsBlock": 6,
+        "processBlock": 2
       }
     },
     {
@@ -1229,8 +1463,8 @@
       },
       "ported": true,
       "similarity": null,
-      "notes": "4 textSections + 3 embeds + 0 inline FAQs",
-      "portedAt": "2026-04-17T20:44:28.171Z",
+      "notes": "9 blocks (overviewBlock×5 imageSlider×4), 3 embeds, 0 faqs",
+      "portedAt": "2026-04-17T21:33:13.796Z",
       "sectionCount": 4,
       "faqCount": 0,
       "preservedEmbedCount": 3,
@@ -1240,6 +1474,11 @@
         "cmsTextSections": 4,
         "headingMatch": 1,
         "similarity": 0.98
+      },
+      "blockCount": 9,
+      "blockTypes": {
+        "overviewBlock": 5,
+        "imageSlider": 4
       }
     },
     {
@@ -1262,8 +1501,8 @@
       },
       "ported": true,
       "similarity": null,
-      "notes": "8 textSections + 3 embeds + 0 inline FAQs",
-      "portedAt": "2026-04-17T20:44:36.948Z",
+      "notes": "29 blocks (overviewBlock×18 benefitsBlock×7 imageSlider×4), 3 embeds, 0 faqs",
+      "portedAt": "2026-04-17T21:33:38.407Z",
       "sectionCount": 8,
       "faqCount": 0,
       "preservedEmbedCount": 3,
@@ -1273,6 +1512,12 @@
         "cmsTextSections": 8,
         "headingMatch": 1,
         "similarity": 0.99
+      },
+      "blockCount": 29,
+      "blockTypes": {
+        "overviewBlock": 18,
+        "benefitsBlock": 7,
+        "imageSlider": 4
       }
     },
     {
@@ -1295,8 +1540,8 @@
       },
       "ported": true,
       "similarity": null,
-      "notes": "4 textSections + 3 embeds + 0 inline FAQs",
-      "portedAt": "2026-04-17T20:44:44.796Z",
+      "notes": "14 blocks (overviewBlock×7 benefitsBlock×2 imageSlider×4 processBlock×1), 3 embeds, 0 faqs",
+      "portedAt": "2026-04-17T21:33:56.119Z",
       "sectionCount": 4,
       "faqCount": 0,
       "preservedEmbedCount": 3,
@@ -1306,6 +1551,13 @@
         "cmsTextSections": 4,
         "headingMatch": 1,
         "similarity": 0.99
+      },
+      "blockCount": 14,
+      "blockTypes": {
+        "overviewBlock": 7,
+        "benefitsBlock": 2,
+        "imageSlider": 4,
+        "processBlock": 1
       }
     },
     {
@@ -1328,8 +1580,8 @@
       },
       "ported": true,
       "similarity": null,
-      "notes": "4 textSections + 3 embeds + 0 inline FAQs",
-      "portedAt": "2026-04-17T20:44:52.924Z",
+      "notes": "19 blocks (overviewBlock×7 benefitsBlock×7 imageSlider×4 processBlock×1), 3 embeds, 0 faqs",
+      "portedAt": "2026-04-17T21:34:14.397Z",
       "sectionCount": 4,
       "faqCount": 0,
       "preservedEmbedCount": 3,
@@ -1339,6 +1591,13 @@
         "cmsTextSections": 4,
         "headingMatch": 1,
         "similarity": 1
+      },
+      "blockCount": 19,
+      "blockTypes": {
+        "overviewBlock": 7,
+        "benefitsBlock": 7,
+        "imageSlider": 4,
+        "processBlock": 1
       }
     },
     {
@@ -1361,8 +1620,8 @@
       },
       "ported": true,
       "similarity": null,
-      "notes": "4 textSections + 3 embeds + 0 inline FAQs",
-      "portedAt": "2026-04-17T20:45:01.049Z",
+      "notes": "14 blocks (overviewBlock×7 imageSlider×4 benefitsBlock×3), 3 embeds, 0 faqs",
+      "portedAt": "2026-04-17T21:34:30.980Z",
       "sectionCount": 4,
       "faqCount": 0,
       "preservedEmbedCount": 3,
@@ -1372,6 +1631,12 @@
         "cmsTextSections": 4,
         "headingMatch": 1,
         "similarity": 0.98
+      },
+      "blockCount": 14,
+      "blockTypes": {
+        "overviewBlock": 7,
+        "imageSlider": 4,
+        "benefitsBlock": 3
       }
     },
     {
@@ -1394,8 +1659,8 @@
       },
       "ported": true,
       "similarity": null,
-      "notes": "4 textSections + 3 embeds + 0 inline FAQs",
-      "portedAt": "2026-04-17T20:45:09.278Z",
+      "notes": "20 blocks (overviewBlock×10 benefitsBlock×2 processBlock×4 imageSlider×4), 3 embeds, 0 faqs",
+      "portedAt": "2026-04-17T21:34:51.646Z",
       "sectionCount": 4,
       "faqCount": 0,
       "preservedEmbedCount": 3,
@@ -1405,6 +1670,13 @@
         "cmsTextSections": 4,
         "headingMatch": 1,
         "similarity": 0.99
+      },
+      "blockCount": 20,
+      "blockTypes": {
+        "overviewBlock": 10,
+        "benefitsBlock": 2,
+        "processBlock": 4,
+        "imageSlider": 4
       }
     },
     {
@@ -1427,8 +1699,8 @@
       },
       "ported": true,
       "similarity": null,
-      "notes": "4 textSections + 3 embeds + 0 inline FAQs",
-      "portedAt": "2026-04-17T20:45:17.299Z",
+      "notes": "12 blocks (overviewBlock×6 imageSlider×4 benefitsBlock×2), 3 embeds, 0 faqs",
+      "portedAt": "2026-04-17T21:35:07.298Z",
       "sectionCount": 4,
       "faqCount": 0,
       "preservedEmbedCount": 3,
@@ -1438,6 +1710,12 @@
         "cmsTextSections": 4,
         "headingMatch": 1,
         "similarity": 0.97
+      },
+      "blockCount": 12,
+      "blockTypes": {
+        "overviewBlock": 6,
+        "imageSlider": 4,
+        "benefitsBlock": 2
       }
     },
     {
