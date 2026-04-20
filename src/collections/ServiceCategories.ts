@@ -53,6 +53,15 @@ export const ServiceCategories: CollectionConfig = {
       admin: { readOnly: true },
     },
     {
+      name: 'displayOrder',
+      type: 'number',
+      admin: {
+        description:
+          'Sort order for homepage tiles and any other rank-aware listing. Lower numbers show first. Leave blank to push to the end.',
+        step: 1,
+      },
+    },
+    {
       type: 'tabs',
       tabs: [
         // ─── OVERVIEW (legacy fields kept for compat) ───
