@@ -55,10 +55,10 @@ export const VideoTestimonials: CollectionConfig = {
     {
       name: 'videoThumbnailUrl',
       type: 'text',
-      required: true,
       admin: {
         description: 'Legacy: Old URL. Use the upload field above for new images.',
         readOnly: true,
+        hidden: true,
       },
     },
     {

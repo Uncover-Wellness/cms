@@ -81,6 +81,7 @@ export const ServiceCategories: CollectionConfig = {
               admin: {
                 description: 'Legacy: Old URL. Use the upload field above for new images.',
                 readOnly: true,
+                hidden: true,
               },
             },
             {
@@ -97,6 +98,7 @@ export const ServiceCategories: CollectionConfig = {
               admin: {
                 description: 'Legacy: Old URL. Use the upload field above for new images.',
                 readOnly: true,
+                hidden: true,
               },
             },
             {
@@ -109,25 +111,40 @@ export const ServiceCategories: CollectionConfig = {
             {
               name: 'excerptFeaturedShort',
               type: 'textarea',
+              admin: {
+                description: 'Legacy: unused. Scheduled for removal.',
+                hidden: true,
+              },
             },
             {
               name: 'excerptFeaturedLarge',
               type: 'textarea',
+              admin: {
+                description: 'Legacy: unused. Scheduled for removal.',
+                hidden: true,
+              },
             },
             {
               name: 'categoryLink',
               type: 'text',
+              admin: {
+                description: 'Optional custom href used on homepage category cards when set.',
+              },
             },
             {
               name: 'imageLinks',
               type: 'text',
+              admin: {
+                description: 'Legacy: unused. Scheduled for removal.',
+                hidden: true,
+              },
             },
             {
               name: 'experienceText',
               type: 'richText',
               admin: {
-                description:
-                  'Legacy rich-text field. The structured Why Choose / Technologies tabs should be used instead.',
+                description: 'Legacy: unused. Scheduled for removal.',
+                hidden: true,
               },
             },
           ],

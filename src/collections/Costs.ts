@@ -1,6 +1,7 @@
 import { CollectionConfig } from 'payload';
 import { isEditor } from '../access';
 import { slugFromName } from '../hooks/slugFromName';
+import { ALL_PAGE_BLOCKS } from '../blocks';
 
 export const Costs: CollectionConfig = {
   slug: 'costs',
@@ -74,35 +75,40 @@ export const Costs: CollectionConfig = {
       name: 'costInflationGraphPoints',
       type: 'text',
       admin: {
-        description: 'Comma-separated data points for the cost inflation graph.',
+        description: 'Legacy: unused. Scheduled for removal.',
+        hidden: true,
       },
     },
     {
       name: 'treatmentPointers',
       type: 'richText',
       admin: {
-        description: 'First set of treatment pointers / key takeaways.',
+        description: 'Legacy: superseded by Page Blocks. Fallback-rendered only when Page Blocks is empty.',
+        hidden: true,
       },
     },
     {
       name: 'treatmentPointers2',
       type: 'richText',
       admin: {
-        description: 'Second set of treatment pointers.',
+        description: 'Legacy: unused duplicate. Scheduled for removal.',
+        hidden: true,
       },
     },
     {
       name: 'treatmentContent1',
       type: 'richText',
       admin: {
-        description: 'First body content section.',
+        description: 'Legacy: superseded by Page Blocks. Fallback-rendered only when Page Blocks is empty.',
+        hidden: true,
       },
     },
     {
       name: 'treatmentContent2',
       type: 'richText',
       admin: {
-        description: 'Second body content section.',
+        description: 'Legacy: superseded by Page Blocks. Fallback-rendered only when Page Blocks is empty.',
+        hidden: true,
       },
     },
     {
@@ -110,18 +116,20 @@ export const Costs: CollectionConfig = {
       type: 'code',
       admin: {
         language: 'html',
-        description: 'Raw HTML for a custom pricing table. Rendered as-is on the page.',
+        description: 'Legacy: superseded by the HTML Embed page block. Fallback-rendered only when Page Blocks is empty.',
+        hidden: true,
       },
     },
     {
       name: 'treatmentDetails',
       type: 'array',
-      minRows: 1,
+      minRows: 0,
       maxRows: 4,
       labels: { singular: 'Treatment Detail', plural: 'Treatment Details' },
       admin: {
-        description: 'Expandable detail sections shown below the pricing overview.',
+        description: 'Legacy: superseded by Page Blocks. Fallback-rendered only when Page Blocks is empty.',
         initCollapsed: true,
+        hidden: true,
         components: {
           RowLabel: {
             path: '/src/components/admin/RowLabel/index.tsx#default',
@@ -139,6 +147,15 @@ export const Costs: CollectionConfig = {
           type: 'richText',
         },
       ],
+    },
+    {
+      name: 'pageBlocks',
+      type: 'blocks',
+      blocks: ALL_PAGE_BLOCKS,
+      admin: {
+        description: 'Flexible page content. When populated, supersedes the legacy structured sections above (treatmentPointers, treatmentContent1/2, customTableCode, treatmentDetails). Compose the cost page from any block type.',
+        initCollapsed: true,
+      },
     },
     {
       name: 'relationships',

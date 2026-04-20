@@ -55,6 +55,7 @@ export const BlogPosts: CollectionConfig = {
       admin: {
         description: 'Legacy: Old URL. Use the upload field above for new images.',
         readOnly: true,
+        hidden: true,
       },
     },
     {
@@ -68,8 +69,9 @@ export const BlogPosts: CollectionConfig = {
       name: 'thumbnailImageV1Url',
       type: 'text',
       admin: {
-        description: 'Legacy: Old URL (no data). Deprecated.',
+        description: 'Legacy: unused. Scheduled for removal.',
         readOnly: true,
+        hidden: true,
       },
     },
     {
@@ -77,15 +79,17 @@ export const BlogPosts: CollectionConfig = {
       type: 'upload',
       relationTo: 'media',
       admin: {
-        description: 'Blog thumbnail image. Drag and drop or browse to upload.',
+        description: 'Legacy: unused. Scheduled for removal.',
+        hidden: true,
       },
     },
     {
       name: 'thumbnailImageV2Url',
       type: 'text',
       admin: {
-        description: 'Legacy: Old URL. Use the upload field above for new images.',
+        description: 'Legacy: unused. Scheduled for removal.',
         readOnly: true,
+        hidden: true,
       },
     },
     {

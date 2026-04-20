@@ -1,6 +1,7 @@
 import { CollectionConfig } from 'payload';
 import { isEditor } from '../access';
 import { slugFromName } from '../hooks/slugFromName';
+import { ALL_PAGE_BLOCKS } from '../blocks';
 
 export const LandingPages: CollectionConfig = {
   slug: 'landing-pages',
@@ -64,10 +65,10 @@ export const LandingPages: CollectionConfig = {
     {
       name: 'heroImageUrl',
       type: 'text',
-      required: true,
       admin: {
         description: 'Legacy: Old URL. Use the upload field above for new images.',
         readOnly: true,
+        hidden: true,
       },
     },
     {
@@ -97,85 +98,63 @@ export const LandingPages: CollectionConfig = {
     {
       name: 'experience',
       type: 'group',
+      admin: {
+        description: 'Legacy: superseded by Page Blocks. Fallback-rendered only when Page Blocks is empty.',
+        hidden: true,
+      },
       fields: [
-        {
-          name: 'sectionHeading',
-          type: 'text',
-        },
-        {
-          name: 'uncoverExperienceText',
-          type: 'text',
-          required: true,
-        },
-        {
-          name: 'experienceVideoLink',
-          type: 'text',
-          required: true,
-        },
+        { name: 'sectionHeading', type: 'text' },
+        { name: 'uncoverExperienceText', type: 'text' },
+        { name: 'experienceVideoLink', type: 'text' },
       ],
     },
     {
       name: 'textSection1',
       type: 'group',
+      admin: {
+        description: 'Legacy: superseded by Page Blocks. Fallback-rendered only when Page Blocks is empty.',
+        hidden: true,
+      },
       fields: [
-        {
-          name: 'heading',
-          type: 'text',
-          required: true,
-        },
-        {
-          name: 'content',
-          type: 'richText',
-          required: true,
-        },
-        {
-          name: 'description',
-          type: 'text',
-          required: true,
-        },
+        { name: 'heading', type: 'text' },
+        { name: 'content', type: 'richText' },
+        { name: 'description', type: 'text' },
       ],
     },
     {
       name: 'textSection2',
       type: 'group',
+      admin: {
+        description: 'Legacy: superseded by Page Blocks. Fallback-rendered only when Page Blocks is empty.',
+        hidden: true,
+      },
       fields: [
-        {
-          name: 'heading',
-          type: 'text',
-          required: true,
-        },
-        {
-          name: 'content',
-          type: 'richText',
-          required: true,
-        },
-        {
-          name: 'description',
-          type: 'text',
-          required: true,
-        },
+        { name: 'heading', type: 'text' },
+        { name: 'content', type: 'richText' },
+        { name: 'description', type: 'text' },
       ],
     },
     {
       name: 'treatment',
       type: 'group',
+      admin: {
+        description: 'Legacy: superseded by the Technology page block. Fallback-rendered only when Page Blocks is empty.',
+        hidden: true,
+      },
       fields: [
-        {
-          name: 'textHeadline',
-          type: 'text',
-          required: true,
-        },
-        {
-          name: 'techText',
-          type: 'richText',
-          required: true,
-        },
-        {
-          name: 'technologyImageUrl',
-          type: 'text',
-          required: true,
-        },
+        { name: 'textHeadline', type: 'text' },
+        { name: 'techText', type: 'richText' },
+        { name: 'technologyImageUrl', type: 'text' },
       ],
+    },
+    {
+      name: 'pageBlocks',
+      type: 'blocks',
+      blocks: ALL_PAGE_BLOCKS,
+      admin: {
+        description: 'Flexible page content. When populated, supersedes the legacy structured sections above (experience, textSection1/2, treatment). Compose the landing page from any block type.',
+        initCollapsed: true,
+      },
     },
     {
       name: 'relationships',

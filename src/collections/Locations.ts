@@ -100,10 +100,10 @@ export const Locations: CollectionConfig = {
     {
       name: 'clinicPhotoUrl',
       type: 'text',
-      required: true,
       admin: {
         description: 'Legacy: Old URL. Use the upload field above for new images.',
         readOnly: true,
+        hidden: true,
       },
     },
     {
@@ -127,14 +127,16 @@ export const Locations: CollectionConfig = {
       name: 'zenotiCenterId',
       type: 'text',
       admin: {
-        description: 'Zenoti center ID for booking integration.',
+        description: 'Legacy: unused on site. Scheduled for removal.',
+        hidden: true,
       },
     },
     {
       name: 'whatsappContact',
       type: 'text',
       admin: {
-        description: 'WhatsApp phone number (with country code). Example: "+919876543210"',
+        description: 'Legacy: unused. Use whatsappLink instead. Scheduled for removal.',
+        hidden: true,
       },
     },
     {

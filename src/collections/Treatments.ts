@@ -77,6 +77,7 @@ export const Treatments: CollectionConfig = {
           admin: {
             description: 'Legacy: Old URL. Use the upload field above for new images.',
             readOnly: true,
+            hidden: true,
           },
         },
         {
@@ -144,14 +145,16 @@ export const Treatments: CollectionConfig = {
           name: 'priceRangePerSession',
           type: 'text',
           admin: {
-            description: 'Price range per session. Example: "₹2,500 - ₹5,000"',
+            description: 'Legacy: unused. Scheduled for removal.',
+            hidden: true,
           },
         },
         {
           name: 'priceRangeTotal',
           type: 'text',
           admin: {
-            description: 'Total cost across all sessions. Example: "₹15,000 - ₹30,000"',
+            description: 'Legacy: unused. Scheduled for removal.',
+            hidden: true,
           },
         },
       ],
@@ -162,8 +165,9 @@ export const Treatments: CollectionConfig = {
       minRows: 0,
       labels: { singular: 'Content Section', plural: 'Content Sections' },
       admin: {
-        description: 'Rich-text body sections shown below the hero. Each section has a heading, content, and optional image.',
+        description: 'Legacy: superseded by Page Blocks. Fallback-rendered only when Page Blocks is empty.',
         initCollapsed: true,
+        hidden: true,
         components: {
           RowLabel: {
             path: '/src/components/admin/RowLabel/index.tsx#default',
@@ -198,6 +202,7 @@ export const Treatments: CollectionConfig = {
           admin: {
             description: 'Legacy: Old URL. Use the upload field above for new images.',
             readOnly: true,
+            hidden: true,
           },
         },
         {
@@ -223,7 +228,8 @@ export const Treatments: CollectionConfig = {
       type: 'group',
       label: 'Technology',
       admin: {
-        description: 'Technology or device information shown on the treatment page.',
+        description: 'Legacy: superseded by the Technology page block. Fallback-rendered only when Page Blocks is empty.',
+        hidden: true,
       },
       fields: [
         {
@@ -365,14 +371,16 @@ export const Treatments: CollectionConfig = {
             { label: 'Wellness', value: 'wellness' },
           ],
           admin: {
-            description: 'Which header tab this treatment appears under.',
+            description: 'Legacy: unused. Scheduled for removal.',
+            hidden: true,
           },
         },
         {
           name: 'showInCheckinRecommendations',
           type: 'checkbox',
           admin: {
-            description: 'Show in the check-in recommendations flow.',
+            description: 'Legacy: unused. Scheduled for removal.',
+            hidden: true,
           },
         },
         {

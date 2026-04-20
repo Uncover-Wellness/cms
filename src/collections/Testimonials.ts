@@ -63,10 +63,10 @@ export const Testimonials: CollectionConfig = {
     {
       name: 'clientPhotoUrl',
       type: 'text',
-      required: true,
       admin: {
         description: 'Legacy: Old URL. Use the upload field above for new images.',
         readOnly: true,
+        hidden: true,
       },
     },
     {
@@ -90,6 +90,7 @@ export const Testimonials: CollectionConfig = {
       admin: {
         description: 'Legacy: Old URL. Use the upload field above for new images.',
         readOnly: true,
+        hidden: true,
       },
     },
     {

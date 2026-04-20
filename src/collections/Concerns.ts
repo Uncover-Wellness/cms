@@ -67,10 +67,10 @@ export const Concerns: CollectionConfig = {
     {
       name: 'headerImageUrl',
       type: 'text',
-      required: true,
       admin: {
         description: 'Legacy: Old URL. Use the upload field above for new images.',
         readOnly: true,
+        hidden: true,
       },
     },
     {
@@ -104,11 +104,12 @@ export const Concerns: CollectionConfig = {
     {
       name: 'textSections',
       type: 'array',
-      minRows: 1,
+      minRows: 0,
       labels: { singular: 'Text Section', plural: 'Text Sections' },
       admin: {
-        description: 'Body content sections with heading, rich text, and optional image.',
+        description: 'Legacy: superseded by Page Blocks. Fallback-rendered only when Page Blocks is empty.',
         initCollapsed: true,
+        hidden: true,
         components: {
           RowLabel: {
             path: '/src/components/admin/RowLabel/index.tsx#default',
@@ -142,6 +143,7 @@ export const Concerns: CollectionConfig = {
           admin: {
             description: 'Legacy: Old URL. Use the upload field above for new images.',
             readOnly: true,
+            hidden: true,
           },
         },
         {
@@ -164,7 +166,8 @@ export const Concerns: CollectionConfig = {
       type: 'group',
       label: 'Technology',
       admin: {
-        description: 'Technology or device used for treating this concern.',
+        description: 'Legacy: superseded by the Technology page block. Fallback-rendered only when Page Blocks is empty.',
+        hidden: true,
       },
       fields: [
         {
@@ -251,7 +254,8 @@ export const Concerns: CollectionConfig = {
       name: 'zenotiLabel',
       type: 'text',
       admin: {
-        description: 'Zenoti system label for this concern. Used for booking integration.',
+        description: 'Legacy: unused. Scheduled for removal.',
+        hidden: true,
       },
     },
   ],

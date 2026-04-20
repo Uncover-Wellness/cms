@@ -52,6 +52,7 @@ export const Doctors: CollectionConfig = {
       admin: {
         description: 'Legacy: Old Cloudinary URL. Use the upload field above for new images.',
         readOnly: true,
+        hidden: true,
       },
     },
     {
@@ -232,14 +233,16 @@ export const Doctors: CollectionConfig = {
       type: 'text',
       unique: true,
       admin: {
-        description: 'Zenoti system ID for this doctor. Used for booking integration.',
+        description: 'Legacy: unused on site. Scheduled for removal.',
+        hidden: true,
       },
     },
     {
       name: 'facebookLink',
       type: 'text',
       admin: {
-        description: 'Full Facebook profile URL.',
+        description: 'Legacy: unused. Use sameAs[] for social links. Scheduled for removal.',
+        hidden: true,
       },
     },
     {
