@@ -32,7 +32,6 @@ export const Lp2s: CollectionConfig = {
     {
       name: 'slug',
       type: 'text',
-      required: true,
       unique: true,
       admin: {
         readOnly: true,

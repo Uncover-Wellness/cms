@@ -32,7 +32,6 @@ export const Costs: CollectionConfig = {
     {
       name: 'slug',
       type: 'text',
-      required: true,
       unique: true,
       admin: {
         readOnly: true,
