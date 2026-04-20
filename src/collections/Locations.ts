@@ -153,5 +153,63 @@ export const Locations: CollectionConfig = {
         description: 'Display order on the locations page. Lower = first.',
       },
     },
+    {
+      name: 'latitude',
+      type: 'number',
+      admin: {
+        description: 'Decimal latitude (e.g. 28.5494). Used for LocalBusiness JSON-LD geo.',
+      },
+    },
+    {
+      name: 'longitude',
+      type: 'number',
+      admin: {
+        description: 'Decimal longitude (e.g. 77.2432). Used for LocalBusiness JSON-LD geo.',
+      },
+    },
+    {
+      name: 'priceRange',
+      type: 'text',
+      defaultValue: '₹₹',
+      admin: {
+        description: 'Price range hint for LocalBusiness JSON-LD. Default: ₹₹',
+      },
+    },
+    {
+      name: 'aggregateRating',
+      type: 'group',
+      admin: {
+        description: 'Per-clinic Google review rating. Used for LocalBusiness.aggregateRating JSON-LD.',
+      },
+      fields: [
+        { name: 'ratingValue', type: 'number', min: 0, max: 5 },
+        { name: 'reviewCount', type: 'number', min: 0 },
+      ],
+    },
+    {
+      name: 'neighbourhoodIntro',
+      type: 'textarea',
+      admin: {
+        description: 'Unique 100-150 word intro for the neighbourhood landing page. Explains the clinic and what patients from nearby areas come here for.',
+      },
+    },
+    {
+      name: 'nearestMetro',
+      type: 'text',
+      admin: {
+        description: 'Nearest metro station + distance. Example: "GK Metro Station (5 min walk)"',
+      },
+    },
+    {
+      name: 'catchmentAreas',
+      type: 'array',
+      labels: { singular: 'Catchment Area', plural: 'Catchment Areas' },
+      admin: {
+        description: 'Nearby neighbourhoods this clinic serves. Used in directions block + SEO copy.',
+      },
+      fields: [
+        { name: 'name', type: 'text' },
+      ],
+    },
   ],
 };
