@@ -36,7 +36,7 @@ export const ServiceCategories: CollectionConfig = {
     update: isEditor,
     delete: isEditor,
   },
-  hooks: { beforeChange: [slugFromName] },
+  hooks: { beforeValidate: [slugFromName] },
   fields: [
     // Always-visible header fields
     {

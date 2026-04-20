@@ -21,7 +21,7 @@ export const Lp2s: CollectionConfig = {
     update: isEditor,
     delete: isEditor,
   },
-  hooks: { beforeChange: [slugFromName] },
+  hooks: { beforeValidate: [slugFromName] },
   fields: [
     {
       name: 'name',

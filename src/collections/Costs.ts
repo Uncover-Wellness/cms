@@ -21,7 +21,7 @@ export const Costs: CollectionConfig = {
     update: isEditor,
     delete: isEditor,
   },
-  hooks: { beforeChange: [slugFromName] },
+  hooks: { beforeValidate: [slugFromName] },
   fields: [
     {
       name: 'name',
