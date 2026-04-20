@@ -27,7 +27,7 @@ import { Lp2s } from './src/collections/Lp2s';
 import { JobOpenings } from './src/collections/JobOpenings';
 import { SurveyQuestions } from './src/collections/SurveyQuestions';
 import { Media } from './src/collections/Media';
-import { cloudinaryAdapter } from './src/adapters/cloudinaryAdapter';
+import { r2Adapter } from './src/adapters/r2Adapter';
 
 import { DeployState } from './src/globals/DeployState';
 import { withDeployHooks } from './src/hooks/deployHooks';
@@ -190,10 +190,12 @@ export default buildConfig({
     cloudStoragePlugin({
       collections: {
         media: {
-          adapter: cloudinaryAdapter({
-            cloud_name: process.env.CLOUDINARY_CLOUD_NAME || '',
-            api_key: process.env.CLOUDINARY_API_KEY || '',
-            api_secret: process.env.CLOUDINARY_API_SECRET || '',
+          adapter: r2Adapter({
+            accountId: process.env.R2_ACCOUNT_ID || '',
+            accessKeyId: process.env.R2_ACCESS_KEY_ID || '',
+            secretAccessKey: process.env.R2_SECRET_ACCESS_KEY || '',
+            bucket: process.env.R2_BUCKET || '',
+            publicBase: process.env.R2_PUBLIC_BASE || '',
             folder: 'uncover-cms',
           }),
           disableLocalStorage: true,
