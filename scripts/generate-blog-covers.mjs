@@ -182,8 +182,16 @@ async function main() {
         const { rows: [mediaDoc] } = await client.query(
           `INSERT INTO cms.media
              (alt, url, filename, mime_type, filesize, width, height,
-              focal_x, focal_y, _status, created_at, updated_at)
-           VALUES ($1, $2, $3, $4, $5, $6, $7, 50, 50, 'published', now(), now())
+              focal_x, focal_y, created_at, updated_at)
+           VALUES ($1, $2, $3, $4, $5, $6, $7, 50, 50, now(), now())
+           ON CONFLICT (filename) DO UPDATE
+             SET url = EXCLUDED.url,
+                 alt = EXCLUDED.alt,
+                 mime_type = EXCLUDED.mime_type,
+                 filesize = EXCLUDED.filesize,
+                 width = EXCLUDED.width,
+                 height = EXCLUDED.height,
+                 updated_at = now()
            RETURNING id`,
           [alt, publicUrl, filename, 'image/webp', webp.length, meta.width, meta.height],
         );
