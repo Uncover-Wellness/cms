@@ -5,6 +5,7 @@ import { nodemailerAdapter } from '@payloadcms/email-nodemailer';
 import { cloudStoragePlugin } from '@payloadcms/plugin-cloud-storage';
 import { seoPlugin } from '@payloadcms/plugin-seo';
 import type { GenerateTitle, GenerateDescription } from '@payloadcms/plugin-seo/types';
+import sharp from 'sharp';
 import path from 'path';
 import { fileURLToPath } from 'url';
 
@@ -37,6 +38,7 @@ const filename = fileURLToPath(import.meta.url);
 const dirname = path.dirname(filename);
 
 export default buildConfig({
+  sharp,
   serverURL: process.env.PAYLOAD_PUBLIC_SERVER_URL || 'http://localhost:3001',
   ...(process.env.SMTP_HOST
     ? {
