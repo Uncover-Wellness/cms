@@ -26,7 +26,6 @@ import { LandingPages } from './src/collections/LandingPages';
 import { Lps } from './src/collections/Lps';
 import { Lp2s } from './src/collections/Lp2s';
 import { JobOpenings } from './src/collections/JobOpenings';
-import { SurveyQuestions } from './src/collections/SurveyQuestions';
 import { Media } from './src/collections/Media';
 import { r2Adapter } from './src/adapters/r2Adapter';
 
@@ -181,8 +180,6 @@ export default buildConfig({
     withDeployHooks(Lps),
     withDeployHooks(Lp2s),
     withDeployHooks(JobOpenings),
-    // Internal — no public-facing pages, no deploy hook needed
-    SurveyQuestions,
     // Media uploads — stored on Cloudinary, no deploy hook needed
     Media,
   ],
