@@ -11,6 +11,8 @@ services:
       - key: PAYLOAD_SECRET
         sync: false
       - key: PAYLOAD_PUBLIC_SERVER_URL
-        value: https://uncover-cms.onrender.com
+        value: https://cms.uncover.co.in
+      - key: PREVIEW_URL
+        value: https://ai.uncover.co.in
       - key: NODE_ENV
         value: production
