@@ -1,16 +1,22 @@
 'use client';
 
-import React, { useMemo, useCallback } from 'react';
-import { useField, FieldLabel } from '@payloadcms/ui';
+import React, { useCallback, useMemo } from 'react';
+import { useAllFormFields, useForm, FieldLabel } from '@payloadcms/ui';
 
 /**
  * Custom Field component for the `rows` array on the dataTable block.
  *
- * Renders a real <table> editor: column definitions form the header, each row
- * is a <tr> with an <input> per cell. The editor never types column keys —
- * keys come from the sibling `columns` array. Storage shape is unchanged
- * (rows[].cells[].{key,value}), so existing data round-trips and the Astro
- * renderer (DataTableBlock.astro) needs no changes.
+ * Renders a real <table> editor: the sibling `columns` array forms the header,
+ * each row is a <tr> with an <input> per cell. Editor types into cells; column
+ * keys are derived from sibling state and written back into the `{key,value}`
+ * cell shape behind the scenes — schema is unchanged so existing data
+ * round-trips and the Astro renderer (DataTableBlock.astro) is unaffected.
+ *
+ * Reads/writes go through the Payload form context (useForm) — direct
+ * setValue on an array path doesn't work in Payload v3 because the form
+ * state is flat. Reads use getDataByPath (subscribed to via useAllFormFields).
+ * Writes use dispatchFields(UPDATE) for cells and addFieldRow / removeFieldRow
+ * / moveFieldRow for row mutations.
  */
 
 type Column = {
@@ -21,81 +27,122 @@ type Column = {
   highlight?: boolean | null;
 };
 
-type Cell = { id?: string; key: string; value: string };
+type Cell = { id?: string; key?: string; value?: string };
 type Row = { id?: string; cells?: Cell[] | null };
 
 type Props = {
   path: string;
+  schemaPath?: string;
 };
 
-function genId(): string {
-  return `r${Math.random().toString(36).slice(2, 10)}`;
-}
-
-const DataTableEditor: React.FC<Props> = ({ path }) => {
-  const { value: rawRows, setValue } = useField<Row[]>({ path });
+const DataTableEditor: React.FC<Props> = ({ path, schemaPath }) => {
+  const { addFieldRow, removeFieldRow, moveFieldRow, dispatchFields, getDataByPath } = useForm();
+  // Subscribe to form state changes — without this, our memoised reads from
+  // getDataByPath would never update.
+  const [allFields] = useAllFormFields();
 
   const parentPath = path.includes('.') ? path.slice(0, path.lastIndexOf('.')) : '';
-  const { value: rawColumns } = useField<Column[]>({ path: `${parentPath}.columns` });
+  const columnsPath = `${parentPath}.columns`;
+  const effectiveSchemaPath = schemaPath ?? path;
+  const cellsSchemaPath = `${effectiveSchemaPath}.cells`;
 
-  const columns: Column[] = Array.isArray(rawColumns) ? rawColumns : [];
-  const rows: Row[] = Array.isArray(rawRows) ? rawRows : [];
+  const columns: Column[] = useMemo(() => {
+    const data = getDataByPath<Column[]>(columnsPath);
+    return Array.isArray(data) ? data : [];
+    // allFields included so we re-read after any form-state change
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [getDataByPath, columnsPath, allFields]);
 
-  // Build a positional grid: gridValues[rowIdx][colIdx] = cell value
-  const gridValues: string[][] = useMemo(() => {
-    return rows.map((row) => {
-      const map = new Map<string, string>();
-      (row.cells || []).forEach((c) => {
-        if (c?.key != null) map.set(c.key, c.value ?? '');
-      });
-      return columns.map((col) => map.get(col.key) ?? '');
-    });
-  }, [rows, columns]);
+  const rows: Row[] = useMemo(() => {
+    const data = getDataByPath<Row[]>(path);
+    return Array.isArray(data) ? data : [];
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [getDataByPath, path, allFields]);
 
-  // Serialize the grid back into the storage shape, keyed by current columns.
-  const writeRows = useCallback(
-    (nextGrid: string[][], rowIds: (string | undefined)[]) => {
-      const next: Row[] = nextGrid.map((rowVals, rIdx) => ({
-        id: rowIds[rIdx] ?? genId(),
-        cells: columns.map((col, cIdx) => ({
-          id: rows[rIdx]?.cells?.find((c) => c?.key === col.key)?.id ?? genId(),
-          key: col.key,
-          value: rowVals[cIdx] ?? '',
-        })),
-      }));
-      setValue(next);
+  const valueAt = useCallback((row: Row | undefined, key: string): string => {
+    if (!row?.cells) return '';
+    const found = row.cells.find((c) => c?.key === key);
+    return found?.value ?? '';
+  }, []);
+
+  const cellIndexFor = (row: Row | undefined, key: string): number =>
+    (row?.cells || []).findIndex((c) => c?.key === key);
+
+  const setCell = useCallback(
+    (rIdx: number, col: Column, value: string) => {
+      const row = rows[rIdx];
+      const cIdx = cellIndexFor(row, col.key);
+      if (cIdx >= 0) {
+        // Cell exists — update its value
+        dispatchFields({
+          type: 'UPDATE',
+          path: `${path}.${rIdx}.cells.${cIdx}.value`,
+          value,
+          initialValue: value,
+          valid: true,
+        });
+      } else {
+        // Cell doesn't exist yet — append a new one with this key
+        const nextIdx = (row?.cells || []).length;
+        addFieldRow({
+          path: `${path}.${rIdx}.cells`,
+          rowIndex: nextIdx,
+          schemaPath: cellsSchemaPath,
+        });
+        dispatchFields({
+          type: 'UPDATE',
+          path: `${path}.${rIdx}.cells.${nextIdx}.key`,
+          value: col.key,
+          initialValue: col.key,
+          valid: true,
+        });
+        dispatchFields({
+          type: 'UPDATE',
+          path: `${path}.${rIdx}.cells.${nextIdx}.value`,
+          value,
+          initialValue: value,
+          valid: true,
+        });
+      }
     },
-    [columns, rows, setValue],
+    [rows, path, cellsSchemaPath, addFieldRow, dispatchFields],
   );
 
-  const setCell = (rIdx: number, cIdx: number, value: string) => {
-    const nextGrid = gridValues.map((r) => [...r]);
-    nextGrid[rIdx][cIdx] = value;
-    const ids = rows.map((r) => r.id);
-    writeRows(nextGrid, ids);
-  };
+  const addRow = useCallback(() => {
+    const newRowIdx = rows.length;
+    addFieldRow({ path, rowIndex: newRowIdx, schemaPath: effectiveSchemaPath });
+    // Pre-create one cell per column so the editor can type immediately.
+    columns.forEach((col, cIdx) => {
+      addFieldRow({
+        path: `${path}.${newRowIdx}.cells`,
+        rowIndex: cIdx,
+        schemaPath: cellsSchemaPath,
+      });
+      dispatchFields({
+        type: 'UPDATE',
+        path: `${path}.${newRowIdx}.cells.${cIdx}.key`,
+        value: col.key,
+        initialValue: col.key,
+        valid: true,
+      });
+    });
+  }, [rows.length, columns, path, effectiveSchemaPath, cellsSchemaPath, addFieldRow, dispatchFields]);
 
-  const addRow = () => {
-    const nextGrid = [...gridValues, columns.map(() => '')];
-    const ids = [...rows.map((r) => r.id), genId()];
-    writeRows(nextGrid, ids);
-  };
+  const deleteRow = useCallback(
+    (rIdx: number) => {
+      removeFieldRow({ path, rowIndex: rIdx });
+    },
+    [removeFieldRow, path],
+  );
 
-  const deleteRow = (rIdx: number) => {
-    const nextGrid = gridValues.filter((_, i) => i !== rIdx);
-    const ids = rows.map((r) => r.id).filter((_, i) => i !== rIdx);
-    writeRows(nextGrid, ids);
-  };
-
-  const moveRow = (rIdx: number, dir: -1 | 1) => {
-    const target = rIdx + dir;
-    if (target < 0 || target >= gridValues.length) return;
-    const nextGrid = gridValues.map((r) => [...r]);
-    [nextGrid[rIdx], nextGrid[target]] = [nextGrid[target], nextGrid[rIdx]];
-    const ids = rows.map((r) => r.id);
-    [ids[rIdx], ids[target]] = [ids[target], ids[rIdx]];
-    writeRows(nextGrid, ids);
-  };
+  const moveRow = useCallback(
+    (rIdx: number, dir: -1 | 1) => {
+      const target = rIdx + dir;
+      if (target < 0 || target >= rows.length) return;
+      moveFieldRow({ path, moveFromIndex: rIdx, moveToIndex: target });
+    },
+    [moveFieldRow, path, rows.length],
+  );
 
   if (columns.length === 0) {
     return (
@@ -132,15 +179,15 @@ const DataTableEditor: React.FC<Props> = ({ path }) => {
             </tr>
           </thead>
           <tbody>
-            {gridValues.length === 0 ? (
+            {rows.length === 0 ? (
               <tr>
                 <td colSpan={columns.length + 1} style={styles.emptyRow}>
                   No rows yet — click "Add row" to get started.
                 </td>
               </tr>
             ) : (
-              gridValues.map((rowVals, rIdx) => (
-                <tr key={rows[rIdx]?.id ?? rIdx}>
+              rows.map((row, rIdx) => (
+                <tr key={row?.id ?? rIdx}>
                   <td style={{ ...styles.td, ...styles.controlCol }}>
                     <div style={styles.controls}>
                       <span style={styles.rowNum}>{rIdx + 1}</span>
@@ -157,7 +204,7 @@ const DataTableEditor: React.FC<Props> = ({ path }) => {
                       <button
                         type="button"
                         onClick={() => moveRow(rIdx, 1)}
-                        disabled={rIdx === gridValues.length - 1}
+                        disabled={rIdx === rows.length - 1}
                         style={styles.iconBtn}
                         aria-label="Move row down"
                         title="Move down"
@@ -175,14 +222,14 @@ const DataTableEditor: React.FC<Props> = ({ path }) => {
                       </button>
                     </div>
                   </td>
-                  {rowVals.map((val, cIdx) => (
-                    <td key={cIdx} style={styles.td}>
+                  {columns.map((col, cIdx) => (
+                    <td key={col.id ?? cIdx} style={styles.td}>
                       <input
                         type="text"
-                        value={val}
-                        onChange={(e) => setCell(rIdx, cIdx, e.target.value)}
+                        value={valueAt(row, col.key)}
+                        onChange={(e) => setCell(rIdx, col, e.target.value)}
                         style={styles.input}
-                        placeholder={columns[cIdx]?.label || ''}
+                        placeholder={col.label || ''}
                       />
                     </td>
                   ))}
