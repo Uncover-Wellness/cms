@@ -199,6 +199,12 @@ export default buildConfig({
             folder: 'uncover-cms',
           }),
           disableLocalStorage: true,
+          // Force the `url` field to be (re)generated from `filename` on every
+          // save and read via adapter.generateURL. Without this, re-uploading
+          // a file leaves the doc's `url` pointing at the previous filename
+          // because the plugin's beforeChange just preserves whatever was
+          // already stored.
+          disablePayloadAccessControl: true,
         },
       },
     }),

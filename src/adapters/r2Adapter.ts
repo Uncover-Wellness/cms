@@ -114,11 +114,15 @@ export const r2Adapter = (opts: R2AdapterOptions): Adapter => {
         }
       },
 
-      generateURL: ({ filename }) => `${publicBase}/${folder}/${filename}`,
+      generateURL: ({ filename }) =>
+        `${publicBase}/${folder}/${encodeURIComponent(filename).replace(/%2F/g, '/')}`,
 
       staticHandler: (_req, { params }) => {
         const { filename } = params;
-        return Response.redirect(`${publicBase}/${folder}/${filename}`, 302);
+        return Response.redirect(
+          `${publicBase}/${folder}/${encodeURIComponent(filename).replace(/%2F/g, '/')}`,
+          302,
+        );
       },
     };
 
