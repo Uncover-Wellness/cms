@@ -205,14 +205,19 @@ export const DataTableBlock: Block = {
     {
       name: 'rows',
       type: 'array',
-      minRows: 1,
+      minRows: 0,
+      admin: {
+        components: {
+          Field: '/src/components/admin/DataTableEditor/index.tsx#default',
+        },
+      },
       fields: [
         {
           name: 'cells',
           type: 'array',
           fields: [
             { name: 'key', type: 'text', required: true, admin: { description: 'Matches a column key' } },
-            { name: 'value', type: 'text', required: true },
+            { name: 'value', type: 'text' },
           ],
         },
       ],

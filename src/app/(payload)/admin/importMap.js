@@ -29,6 +29,7 @@ import { MetaImageComponent as MetaImageComponent_a8a977ebc872c5d5ea7ee689724c08
 import { PreviewComponent as PreviewComponent_a8a977ebc872c5d5ea7ee689724c0860 } from '@payloadcms/plugin-seo/client'
 import { default as default_b04ee5442be4af10d0153c1448d04122 } from '../../../../src/components/admin/RowLabel/index.tsx'
 import { default as default_d88b3ab782c29043f70995a2d7073910 } from '../../../../src/components/admin/PublishButton/index.tsx'
+import { default as default_dataTableEditor_2026 } from '../../../../src/components/admin/DataTableEditor/index.tsx'
 import { CollectionCards as CollectionCards_f9c02e79a4aed9a3924487c0cd4cafb1 } from '@payloadcms/next/rsc'
 
 export const importMap = {
@@ -63,5 +64,6 @@ export const importMap = {
   "@payloadcms/plugin-seo/client#PreviewComponent": PreviewComponent_a8a977ebc872c5d5ea7ee689724c0860,
   "/src/components/admin/RowLabel/index.tsx#default": default_b04ee5442be4af10d0153c1448d04122,
   "/src/components/admin/PublishButton/index.tsx#default": default_d88b3ab782c29043f70995a2d7073910,
+  "/src/components/admin/DataTableEditor/index.tsx#default": default_dataTableEditor_2026,
   "@payloadcms/next/rsc#CollectionCards": CollectionCards_f9c02e79a4aed9a3924487c0cd4cafb1
 }

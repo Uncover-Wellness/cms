@@ -180,8 +180,9 @@ export default buildConfig({
     withDeployHooks(Lps),
     withDeployHooks(Lp2s),
     withDeployHooks(JobOpenings),
-    // Media uploads — stored on Cloudinary, no deploy hook needed
-    Media,
+    // Media uploads — re-uploads or alt-text edits change what visitors see,
+    // so wrap in deploy hooks too. Snapshot rebuilds will pick up the new URL/alt.
+    withDeployHooks(Media),
   ],
   globals: [DeployState],
   endpoints: [publishNow],

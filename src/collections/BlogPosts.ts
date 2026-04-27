@@ -103,14 +103,16 @@ export const BlogPosts: CollectionConfig = {
       name: 'postBody',
       type: 'richText',
       admin: {
-        description: 'Main blog post content. Use headings, lists, and links for best readability.',
+        description: 'Legacy: Main blog post content. Replaced by Page Blocks. Hidden from edit view.',
+        hidden: true,
       },
     },
     {
       name: 'richText2',
       type: 'richText',
       admin: {
-        description: 'Additional rich text content appended after the main body.',
+        description: 'Legacy: Additional rich text. Replaced by Page Blocks. Hidden from edit view.',
+        hidden: true,
       },
     },
     {
@@ -118,7 +120,8 @@ export const BlogPosts: CollectionConfig = {
       type: 'code',
       admin: {
         language: 'html',
-        description: 'Raw HTML embed (e.g. YouTube video, comparison table). Rendered as-is on the page.',
+        description: 'Legacy: Raw HTML embed. Use the HTML Embed page block instead. Hidden from edit view.',
+        hidden: true,
       },
     },
     {
@@ -126,7 +129,7 @@ export const BlogPosts: CollectionConfig = {
       type: 'blocks',
       blocks: ALL_PAGE_BLOCKS,
       admin: {
-        description: 'Flexible post body. Compose the article from any block type: text sections, notices/callouts, CTA bands, video embeds, content grids, before/after, pricing, FAQs, doctor carousels, etc. When populated, this replaces the legacy postBody/richText2 fields on render.',
+        description: 'Compose the article from any block type: text sections, notices/callouts, CTA bands, video embeds, content grids, before/after, pricing, FAQs, doctor carousels, etc.',
         initCollapsed: true,
       },
     },
