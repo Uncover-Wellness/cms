@@ -3,6 +3,11 @@ import { isEditor } from '../access';
 import { slugFromName } from '../hooks/slugFromName';
 import { ALL_PAGE_BLOCKS } from '../blocks';
 
+const validateInrPrice = (value: string | null | undefined) =>
+  !value || /^₹(?:\d{1,3}|\d{1,3}(?:,\d{2})*,\d{3})$/.test(value)
+    ? true
+    : 'Use INR format with the ₹ symbol, for example ₹2,500 or ₹1,25,000.';
+
 export const Costs: CollectionConfig = {
   slug: 'costs',
   admin: {
@@ -40,6 +45,14 @@ export const Costs: CollectionConfig = {
       },
     },
     {
+      name: 'includeInLlms',
+      type: 'checkbox',
+      defaultValue: true,
+      admin: {
+        description: 'Include this cost page in /llms.txt.',
+      },
+    },
+    {
       name: 'pageTitle',
       type: 'richText',
       admin: {
@@ -57,16 +70,19 @@ export const Costs: CollectionConfig = {
         {
           name: 'lowestCost',
           type: 'text',
+          validate: validateInrPrice,
           admin: { description: 'Example: "₹2,500"' },
         },
         {
           name: 'averageCost',
           type: 'text',
+          validate: validateInrPrice,
           admin: { description: 'Example: "₹5,000"' },
         },
         {
           name: 'highestCost',
           type: 'text',
+          validate: validateInrPrice,
           admin: { description: 'Example: "₹15,000"' },
         },
       ],

@@ -40,6 +40,23 @@ export const Concerns: CollectionConfig = {
       },
     },
     {
+      name: 'includeInLlms',
+      type: 'checkbox',
+      defaultValue: true,
+      admin: {
+        description: 'Include this concern in /llms.txt.',
+      },
+    },
+    {
+      name: 'llmsOptional',
+      type: 'checkbox',
+      defaultValue: false,
+      admin: {
+        description: 'List this concern under the lower-priority Optional section in /llms.txt.',
+        condition: (_, siblingData) => siblingData?.includeInLlms !== false,
+      },
+    },
+    {
       name: 'iconImage',
       type: 'upload',
       relationTo: 'media',

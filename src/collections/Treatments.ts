@@ -40,6 +40,14 @@ export const Treatments: CollectionConfig = {
       },
     },
     {
+      name: 'includeInLlms',
+      type: 'checkbox',
+      defaultValue: true,
+      admin: {
+        description: 'Include this treatment in /llms.txt. Disable for utility and locality-generated pages.',
+      },
+    },
+    {
       name: 'hero',
       type: 'group',
       label: 'Hero Section',
