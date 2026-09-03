@@ -1,4 +1,12 @@
 import { Block, Field } from 'payload';
+import { HeadingFeature, lexicalEditor } from '@payloadcms/richtext-lexical';
+
+const bodyRichTextEditor = lexicalEditor({
+  features: ({ defaultFeatures }) => [
+    ...defaultFeatures.filter((feature) => feature.key !== 'heading'),
+    HeadingFeature({ enabledHeadingSizes: ['h2', 'h3', 'h4'] }),
+  ],
+});
 
 // Icon options shared by benefits, contentGrid, specializations.
 // Match the SVG inventory at uncover-astro/public/images/icons/.
@@ -37,6 +45,8 @@ export const TextSection: Block = {
       name: 'content',
       type: 'richText',
       required: true,
+      editor: bodyRichTextEditor,
+      admin: { description: 'Article body content. Use H2–H4; the page title is the only H1.' },
     },
     {
       name: 'image',
